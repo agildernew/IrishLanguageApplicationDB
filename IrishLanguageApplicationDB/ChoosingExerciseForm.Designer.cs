@@ -54,6 +54,7 @@
             this.btnMatchIrishWordToPicture.Size = new System.Drawing.Size(300, 24);
             this.btnMatchIrishWordToPicture.TabIndex = 1;
             this.btnMatchIrishWordToPicture.Text = "Match the Irish Word to the Picture";
+            this.btnMatchIrishWordToPicture.Click += new System.EventHandler(this.btnMatchIrishWordToPicture_Click);
             // 
             // btnMatchEnglishWordToIrishWord
             // 
@@ -62,6 +63,7 @@
             this.btnMatchEnglishWordToIrishWord.Size = new System.Drawing.Size(300, 24);
             this.btnMatchEnglishWordToIrishWord.TabIndex = 1;
             this.btnMatchEnglishWordToIrishWord.Text = "Match the English Word to the Irish Word";
+            this.btnMatchEnglishWordToIrishWord.Click += new System.EventHandler(this.btnMatchEnglishWordToIrishWord_Click);
             // 
             // btnMatchIrishWordToEnglishWord
             // 
@@ -70,6 +72,7 @@
             this.btnMatchIrishWordToEnglishWord.Size = new System.Drawing.Size(300, 24);
             this.btnMatchIrishWordToEnglishWord.TabIndex = 1;
             this.btnMatchIrishWordToEnglishWord.Text = "Match the Irish Word to the English Word";
+            this.btnMatchIrishWordToEnglishWord.Click += new System.EventHandler(this.btnMatchIrishWordToEnglishWord_Click);
             // 
             // btnEnterEnglishWordForIrishWord
             // 

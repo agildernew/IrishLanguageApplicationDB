@@ -25,5 +25,30 @@ namespace IrishLanguageApplicationDB
         {
 
         }
+
+
+        private void btnMatchIrishWordToPicture_Click(object sender, EventArgs e)
+        {
+            //this.Enabled = false;
+            //this.Hide();
+            Form MatchWordToPictureExerciseForm = new MatchWordToPictureExerciseForm();
+            MatchWordToPictureExerciseForm.Show();
+        }
+
+        private void btnMatchEnglishWordToIrishWord_Click(object sender, EventArgs e)
+        {
+            //this.Enabled = false;
+            //this.Hide();
+            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm();
+            MatchOrEnterWordForWordExerciseForm.Show();
+        }
+
+        private void btnMatchIrishWordToEnglishWord_Click(object sender, EventArgs e)
+        {
+            //this.Enabled = false;
+            //this.Hide();
+            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm();
+            MatchOrEnterWordForWordExerciseForm.Show();
+        }
     }
 }
