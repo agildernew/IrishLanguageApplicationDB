@@ -33,5 +33,4 @@ namespace IrishLanguageApplicationDB
             connection.Close();
         }
      }
-    }
 }
