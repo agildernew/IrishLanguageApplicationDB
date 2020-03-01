@@ -21,8 +21,6 @@ namespace IrishLanguageApplicationDB
         private void MainForm_Load(object sender, EventArgs e)
         {
             string selectedTopicNameEnglish = "";
-            string selectedVocabularyIrish= "";
-            string selectedVocabularyEnglish = "";
 
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
@@ -109,21 +107,77 @@ namespace IrishLanguageApplicationDB
 
         private void btnFirst_Click(object sender, EventArgs e)
         {
-
+            changeIrishandEnglishVocabulary(0);
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-
+            int currentIndex = lbxVocabulary.SelectedIndex;
+            changeIrishandEnglishVocabulary(currentIndex, -1);
         }
+      
         private void btnNext_Click(object sender, EventArgs e)
         {
-
+            int currentIndex = lbxVocabulary.SelectedIndex;
+            changeIrishandEnglishVocabulary(currentIndex, +1);
         }
 
         private void btnLast_Click(object sender, EventArgs e)
         {
+            int lastIndex = lbxVocabulary.Items.Count;
+            changeIrishandEnglishVocabulary(lastIndex-1);
+        }
 
+        private void changeIrishandEnglishVocabulary(int currentIndex, int newIndex)
+        {
+            int newPosition = currentIndex + newIndex;
+
+            string selectedVocabularyIrish = "";
+            string selectedVocabularyEnglish = "";
+
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
+
+            connection.Open();
+            if (!(newPosition > lbxVocabulary.Items.Count - 1) && !(newPosition < 0))
+            {
+                lbxVocabulary.SelectedIndex = newPosition;
+            }
+
+            int index = lbxVocabulary.SelectedItem.ToString().IndexOf('-');
+            if (index > 0)
+            {
+                selectedVocabularyIrish = lbxVocabulary.SelectedItem.ToString().Substring(index + 2);
+                selectedVocabularyEnglish = lbxVocabulary.SelectedItem.ToString().Substring(0, index);
+            };
+            txtIrishVocabulary.Text = selectedVocabularyIrish;
+            txtEnglishVocabulary.Text = selectedVocabularyEnglish;
+            connection.Close();
+        }
+
+        private void changeIrishandEnglishVocabulary(int newIndex)
+        {
+            int newPosition = newIndex;
+
+            string selectedVocabularyIrish = "";
+            string selectedVocabularyEnglish = "";
+
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
+
+            connection.Open();
+            lbxVocabulary.SelectedIndex = newPosition;
+
+            int index = lbxVocabulary.SelectedItem.ToString().IndexOf('-');
+            if (index > 0)
+            {
+                selectedVocabularyIrish = lbxVocabulary.SelectedItem.ToString().Substring(index + 2);
+                selectedVocabularyEnglish = lbxVocabulary.SelectedItem.ToString().Substring(0, index);
+            };
+            txtIrishVocabulary.Text = selectedVocabularyIrish;
+            txtEnglishVocabulary.Text = selectedVocabularyEnglish;
+            connection.Close();
         }
     }
+    
 }
