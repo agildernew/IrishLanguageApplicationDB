@@ -169,6 +169,7 @@
             this.btnPlayGame.Size = new System.Drawing.Size(130, 24);
             this.btnPlayGame.TabIndex = 1;
             this.btnPlayGame.Text = "Play a Game";
+            this.btnPlayGame.Click += new System.EventHandler(this.btnPlayGame_Click);
             // 
             // btnFirst
             // 

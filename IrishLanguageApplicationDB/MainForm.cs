@@ -98,5 +98,13 @@ namespace IrishLanguageApplicationDB
             txtEnglishVocabulary.Text = selectedVocabularyEnglish;
             connection.Close();
         }
+
+        private void btnPlayGame_Click(object sender, EventArgs e)
+        {
+            //this.Enabled = false;
+            //this.Hide();
+            Form ChoosingExerciseForm = new ChoosingExerciseForm();
+            ChoosingExerciseForm.Show();
+        }
     }
 }
