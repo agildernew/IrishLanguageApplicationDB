@@ -18,8 +18,9 @@ namespace IrishLanguageApplicationDB
             InitializeComponent();
         }
 
-        private void btnPlayGame_Click(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
+            lbxVocabulary.ClearSelected();
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
             connection.Open();
@@ -28,9 +29,16 @@ namespace IrishLanguageApplicationDB
             while (reader.Read())
             {
                 lbxVocabulary.Items.Add(reader["topic_name_english"].ToString() + " - " + reader["topic_name_irish"]);
-
+            }
+            connection.Close();
+            connection.Open();
+            cmd = new SqlCommand("select * from Topics;", connection);
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                cbxTopicList.Items.Add(reader["topic_name_english"].ToString() + " - " + reader["topic_name_irish"]);
             }
             connection.Close();
         }
-     }
+    }
 }
