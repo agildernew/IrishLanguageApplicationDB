@@ -107,6 +107,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MatchOrEnterWordForWordExerciseForm.resx">
+      <DependentUpon>MatchOrEnterWordForWordExerciseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MatchWordToPictureExerciseForm.resx">
       <DependentUpon>MatchWordToPictureExerciseForm.cs</DependentUpon>
     </EmbeddedResource>
