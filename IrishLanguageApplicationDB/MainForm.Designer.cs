@@ -64,6 +64,7 @@
             this.cbxTopicList.Name = "cbxTopicList";
             this.cbxTopicList.Size = new System.Drawing.Size(150, 21);
             this.cbxTopicList.TabIndex = 6;
+            this.cbxTopicList.SelectedIndexChanged += new System.EventHandler(this.cbxTopicList_SelectedIndexChanged);
             // 
             // txtIrishVocabulary
             // 
@@ -159,6 +160,7 @@
             this.lbxVocabulary.Name = "lbxVocabulary";
             this.lbxVocabulary.Size = new System.Drawing.Size(200, 290);
             this.lbxVocabulary.TabIndex = 0;
+            this.lbxVocabulary.SelectedIndexChanged += new System.EventHandler(this.lbxVocabulary_SelectedIndexChanged);
             // 
             // btnPlayGame
             // 
