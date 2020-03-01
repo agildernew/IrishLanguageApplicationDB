@@ -60,15 +60,11 @@
             // cbxTopicList
             // 
             this.cbxTopicList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTopicList.Items.AddRange(new object[] {
-            "List",
-            "Of",
-            "Vocabulary",
-            "Topics"});
             this.cbxTopicList.Location = new System.Drawing.Point(60, 20);
             this.cbxTopicList.Name = "cbxTopicList";
             this.cbxTopicList.Size = new System.Drawing.Size(150, 21);
             this.cbxTopicList.TabIndex = 6;
+            this.cbxTopicList.SelectedIndexChanged += new System.EventHandler(this.cbxTopicList_SelectedIndexChanged);
             // 
             // txtIrishVocabulary
             // 
@@ -160,14 +156,11 @@
             // 
             // lbxVocabulary
             // 
-            this.lbxVocabulary.Items.AddRange(new object[] {
-            "List",
-            "Of",
-            "Vocabulary"});
             this.lbxVocabulary.Location = new System.Drawing.Point(10, 50);
             this.lbxVocabulary.Name = "lbxVocabulary";
             this.lbxVocabulary.Size = new System.Drawing.Size(200, 290);
             this.lbxVocabulary.TabIndex = 0;
+            this.lbxVocabulary.SelectedIndexChanged += new System.EventHandler(this.lbxVocabulary_SelectedIndexChanged);
             // 
             // btnPlayGame
             // 
@@ -176,7 +169,6 @@
             this.btnPlayGame.Size = new System.Drawing.Size(130, 24);
             this.btnPlayGame.TabIndex = 1;
             this.btnPlayGame.Text = "Play a Game";
-            this.btnPlayGame.Click += new System.EventHandler(this.btnPlayGame_Click);
             // 
             // btnFirst
             // 
@@ -314,6 +306,7 @@
             this.Controls.Add(this.btnEditUser);
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImages)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
