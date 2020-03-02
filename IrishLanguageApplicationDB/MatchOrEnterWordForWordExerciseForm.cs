@@ -77,6 +77,7 @@ namespace IrishLanguageApplicationDB
             int numberOfInstances = vocabularyEnglish.Count();
             Random rand = new Random();
 
+            // http://csharphelper.com/blog/2014/07/randomize-arrays-in-c/
             for (int i = 0; i < numberOfInstances - 1; i++)
             {
                 int j = rand.Next(i, numberOfInstances);
@@ -85,7 +86,6 @@ namespace IrishLanguageApplicationDB
                 sortedVocabularyEnglish[j] = temp;
             }
 
-            //http://csharphelper.com/blog/2014/07/randomize-arrays-in-c/
             for (int i = 0; i < numberOfInstances - 1; i++)
             {
                 int j = rand.Next(i, numberOfInstances);
