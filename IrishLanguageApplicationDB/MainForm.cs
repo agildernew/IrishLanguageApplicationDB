@@ -13,8 +13,12 @@ namespace IrishLanguageApplicationDB
 {
     public partial class MainForm : Form
     {
+        public string topic;
+        //public SqlConnection connection = new SqlConnection();
+
         public MainForm()
         {
+            //connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
             InitializeComponent();
         }
 
@@ -44,9 +48,12 @@ namespace IrishLanguageApplicationDB
 
         private void btnPlayGame_Click(object sender, EventArgs e)
         {
+            int index = cbxTopicList.SelectedItem.ToString().IndexOf('-');
+            topic = cbxTopicList.SelectedItem.ToString().Substring(0, index);
             //this.Enabled = false;
             //this.Hide();
-            Form ChoosingExerciseForm = new ChoosingExerciseForm();
+            //Form ChoosingExerciseForm = new ChoosingExerciseForm();
+            Form ChoosingExerciseForm = new ChoosingExerciseForm(topic);
             ChoosingExerciseForm.Show();
         }
 
@@ -179,5 +186,4 @@ namespace IrishLanguageApplicationDB
             connection.Close();
         }
     }
-    
 }
