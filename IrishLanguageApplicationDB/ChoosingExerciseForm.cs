@@ -12,26 +12,32 @@ namespace IrishLanguageApplicationDB
 {
     public partial class ChoosingExerciseForm : Form
     {
+        string exerciseTopic = "";
         public ChoosingExerciseForm()
         {
             InitializeComponent();
         }
 
+        public ChoosingExerciseForm(string topic)
+        {
+            InitializeComponent();
+            exerciseTopic = topic;
+        }
+
         private void ChoosingExerciseForm_Load(object sender, EventArgs e)
         {
-
+            lblChooseExercise.Text = exerciseTopic;
         }
         private void ChoosingExerciseForm_Closing(object sender, EventArgs e)
         {
 
         }
 
-
         private void btnMatchIrishWordToPicture_Click(object sender, EventArgs e)
         {
             //this.Enabled = false;
             //this.Hide();
-            Form MatchWordToPictureExerciseForm = new MatchWordToPictureExerciseForm();
+            Form MatchWordToPictureExerciseForm = new MatchWordToPictureExerciseForm(exerciseTopic);
             MatchWordToPictureExerciseForm.Show();
         }
 
@@ -39,7 +45,7 @@ namespace IrishLanguageApplicationDB
         {
             //this.Enabled = false;
             //this.Hide();
-            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm();
+            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(exerciseTopic);
             MatchOrEnterWordForWordExerciseForm.Show();
         }
 
@@ -47,7 +53,7 @@ namespace IrishLanguageApplicationDB
         {
             //this.Enabled = false;
             //this.Hide();
-            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm();
+            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(exerciseTopic);
             MatchOrEnterWordForWordExerciseForm.Show();
         }
     }
