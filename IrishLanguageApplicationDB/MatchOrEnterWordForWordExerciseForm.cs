@@ -12,8 +12,15 @@ namespace IrishLanguageApplicationDB
 {
     public partial class MatchOrEnterWordForWordExerciseForm : Form
     {
+        string exerciseTopic = "";
+
         public MatchOrEnterWordForWordExerciseForm()
         {
+            InitializeComponent();
+        }
+        public MatchOrEnterWordForWordExerciseForm(string topic)
+        {
+            exerciseTopic = topic;
             InitializeComponent();
         }
     }
