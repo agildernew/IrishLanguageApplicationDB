@@ -18,6 +18,7 @@ namespace IrishLanguageApplicationDB
         List<string> vocabularyIrish = new List<string>();
         List<TextBox> textboxesIrish = new List<TextBox>();
         List<TextBox> textboxesEnglish = new List<TextBox>();
+        List<TextBox> textboxesAnswers = new List<TextBox>();
 
 
         public MatchOrEnterWordForWordExerciseForm()
@@ -55,6 +56,17 @@ namespace IrishLanguageApplicationDB
             textboxesIrish.Add(txtIrishWordEight);
             textboxesIrish.Add(txtIrishWordNine);
             textboxesIrish.Add(txtIrishWordTen);
+
+            textboxesAnswers.Add(txtAnswerOne);
+            textboxesAnswers.Add(txtAnswerTwo);
+            textboxesAnswers.Add(txtAnswerThree);
+            textboxesAnswers.Add(txtAnswerFour);
+            textboxesAnswers.Add(txtAnswerFive);
+            textboxesAnswers.Add(txtAnswerSix);
+            textboxesAnswers.Add(txtAnswerSeven);
+            textboxesAnswers.Add(txtAnswerEight);
+            textboxesAnswers.Add(txtAnswerNine);
+            textboxesAnswers.Add(txtAnswerTen);
 
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
@@ -99,6 +111,7 @@ namespace IrishLanguageApplicationDB
             {
                 textboxesIrish[n].Text = sortedVocabularyIrish[n];
                 textboxesEnglish[n].Text = sortedVocabularyEnglish[n];
+                textboxesAnswers[n].Enabled = true;
                 n = n + 1;
             } while (n < numberOfInstances);
         }
