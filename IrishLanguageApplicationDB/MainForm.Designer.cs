@@ -178,6 +178,7 @@
             this.btnFirst.Size = new System.Drawing.Size(30, 24);
             this.btnFirst.TabIndex = 1;
             this.btnFirst.Text = "|<";
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // btnPrevious
             // 
@@ -186,6 +187,7 @@
             this.btnPrevious.Size = new System.Drawing.Size(30, 24);
             this.btnPrevious.TabIndex = 1;
             this.btnPrevious.Text = "<";
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnNext
             // 
@@ -194,6 +196,7 @@
             this.btnNext.Size = new System.Drawing.Size(30, 24);
             this.btnNext.TabIndex = 1;
             this.btnNext.Text = ">";
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnLast
             // 
@@ -202,6 +205,7 @@
             this.btnLast.Size = new System.Drawing.Size(30, 24);
             this.btnLast.TabIndex = 1;
             this.btnLast.Text = ">|";
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // btnAddTopic
             // 
