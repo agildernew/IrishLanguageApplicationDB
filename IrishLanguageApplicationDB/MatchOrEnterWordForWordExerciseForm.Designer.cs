@@ -398,7 +398,8 @@
             this.Controls.Add(this.txtAnswerNine);
             this.Controls.Add(this.txtAnswerTen);
             this.Name = "MatchOrEnterWordForWordExerciseForm";
-            this.Text = "Form2";
+            this.Text = "Match Or Enter Word For Word Exercise Form";
+            this.Load += new System.EventHandler(this.MatchOrEnterWordForWordExerciseForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,5 +445,5 @@
 		private System.Windows.Forms.TextBox txtAnswerEight;
 		private System.Windows.Forms.TextBox txtAnswerNine;
 		private System.Windows.Forms.TextBox txtAnswerTen;
-	}
+    }
 }
