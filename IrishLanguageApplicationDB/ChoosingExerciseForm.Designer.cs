@@ -131,7 +131,6 @@
             this.Name = "ChoosingExerciseForm";
             this.Text = "ChoosingExerciseForm";
             this.Load += new System.EventHandler(this.ChoosingExerciseForm_Load);
-            //this.OnFormClosed += new System.EventHandler(this.ChoosingExerciseForm_Closing);
             this.ResumeLayout(false);
 
         }
