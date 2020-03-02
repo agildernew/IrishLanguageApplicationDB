@@ -12,9 +12,17 @@ namespace IrishLanguageApplicationDB
 {
     public partial class MatchWordToPictureExerciseForm : Form
     {
+        string exerciseTopic = "";
+
         public MatchWordToPictureExerciseForm()
         {
             InitializeComponent();
+        }
+
+        public MatchWordToPictureExerciseForm(string topic)
+        {
+            InitializeComponent();
+            exerciseTopic = topic;
         }
     }
 }
