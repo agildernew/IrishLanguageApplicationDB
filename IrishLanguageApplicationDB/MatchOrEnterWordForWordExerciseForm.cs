@@ -14,12 +14,11 @@ namespace IrishLanguageApplicationDB
     public partial class MatchOrEnterWordForWordExerciseForm : Form
     {
         string exerciseTopic = "";
-        List<string> vocabularyEnglish = new List<string>();
-        List<string> vocabularyIrish = new List<string>();
-        List<TextBox> textboxesIrish = new List<TextBox>();
-        List<TextBox> textboxesEnglish = new List<TextBox>();
-        List<TextBox> textboxesAnswers = new List<TextBox>();
-
+        List<string> vocabularyEnglish = new List<string>(),  vocabularyIrish = new List<string>();
+        List<TextBox> textboxesIrish = new List<TextBox>(), textboxesEnglish = new List<TextBox>(), textboxesAnswers = new List<TextBox>();
+        string[] sortedVocabularyIrish, sortedVocabularyEnglish;
+        int numberOfInstances;
+        bool displayIrish = true, displayEnglish = true;
 
         public MatchOrEnterWordForWordExerciseForm()
         {
@@ -29,6 +28,14 @@ namespace IrishLanguageApplicationDB
         public MatchOrEnterWordForWordExerciseForm(string topic)
         {
             exerciseTopic = topic;
+            InitializeComponent();
+        }
+
+        public MatchOrEnterWordForWordExerciseForm(string topic, bool displayIrishVocabulary, bool displayEnglishVocabulary)
+        {
+            exerciseTopic = topic;
+            displayEnglish = displayEnglishVocabulary;
+            displayIrish = displayIrishVocabulary;
             InitializeComponent();
         }
 
@@ -83,10 +90,10 @@ namespace IrishLanguageApplicationDB
             }
             connection.Close();
 
-            string[] sortedVocabularyEnglish = vocabularyEnglish.ToArray();
-            string[] sortedVocabularyIrish = vocabularyIrish.ToArray();
+            sortedVocabularyEnglish = vocabularyEnglish.ToArray();
+            sortedVocabularyIrish = vocabularyIrish.ToArray();
 
-            int numberOfInstances = vocabularyEnglish.Count();
+            numberOfInstances = vocabularyEnglish.Count();
             Random rand = new Random();
 
             // http://csharphelper.com/blog/2014/07/randomize-arrays-in-c/
@@ -106,12 +113,46 @@ namespace IrishLanguageApplicationDB
                 sortedVocabularyIrish[j] = temp;
             }
 
+            lblExerciseInstructions.Text = displayEnglish.ToString() + "  " + displayIrish.ToString();
+
+            if (displayEnglish == true & displayIrish == true)
+            {
+                DisplayVocabularyIrish();
+                DisplayVocabularyEnglish();
+            } 
+            else if (displayEnglish == true & displayIrish == false)
+            {
+                DisplayVocabularyEnglish();
+            } 
+            else if (displayEnglish == false & displayIrish == true)
+            {
+                DisplayVocabularyIrish();
+            }
+        }
+
+        public void DisplayVocabularyIrish()
+        {
             int n = 0;
             do
             {
                 textboxesIrish[n].Text = sortedVocabularyIrish[n];
+                textboxesIrish[n].Show();
+                textboxesEnglish[n].Show();
+                textboxesAnswers[n].Show(); 
+                n = n + 1;
+            } while (n < numberOfInstances);
+        }
+
+        public void DisplayVocabularyEnglish()
+        {
+            int n = 0;
+            do
+            {
                 textboxesEnglish[n].Text = sortedVocabularyEnglish[n];
-                textboxesAnswers[n].Enabled = true;
+                textboxesIrish[n].Show();
+                textboxesEnglish[n].Show();
+                textboxesAnswers[n].Show();
+                textboxesAnswers[n].Focus();
                 n = n + 1;
             } while (n < numberOfInstances);
         }
