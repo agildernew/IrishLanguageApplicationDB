@@ -56,5 +56,21 @@ namespace IrishLanguageApplicationDB
             Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(exerciseTopic);
             MatchOrEnterWordForWordExerciseForm.Show();
         }
+
+        private void btnEnterEnglishWordForIrishWord_Click(object sender, EventArgs e)
+        {
+            //this.Enabled = false;
+            //this.Hide();
+            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(exerciseTopic, true, false);
+            MatchOrEnterWordForWordExerciseForm.Show();
+        }
+
+        private void btnEnterIrishWordForEnglishWord_Click(object sender, EventArgs e)
+        {
+            //this.Enabled = false;
+            //this.Hide();
+            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(exerciseTopic, false, true);
+            MatchOrEnterWordForWordExerciseForm.Show();
+        }
     }
 }

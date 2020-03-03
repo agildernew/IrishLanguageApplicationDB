@@ -14,11 +14,11 @@ namespace IrishLanguageApplicationDB
     public partial class MatchOrEnterWordForWordExerciseForm : Form
     {
         string exerciseTopic = "";
-        List<string> vocabularyEnglish = new List<string>();
-        List<string> vocabularyIrish = new List<string>();
-        List<TextBox> textboxesIrish = new List<TextBox>();
-        List<TextBox> textboxesEnglish = new List<TextBox>();
-
+        List<string> vocabularyEnglish = new List<string>(),  vocabularyIrish = new List<string>();
+        List<TextBox> textboxesIrish = new List<TextBox>(), textboxesEnglish = new List<TextBox>();
+        string[] sortedVocabularyIrish, sortedVocabularyEnglish;
+        int numberOfInstances;
+        bool displayIrish = true, displayEnglish = true;
 
         public MatchOrEnterWordForWordExerciseForm()
         {
@@ -28,6 +28,14 @@ namespace IrishLanguageApplicationDB
         public MatchOrEnterWordForWordExerciseForm(string topic)
         {
             exerciseTopic = topic;
+            InitializeComponent();
+        }
+
+        public MatchOrEnterWordForWordExerciseForm(string topic, bool displayIrishVocabulary, bool displayEnglishVocabulary)
+        {
+            exerciseTopic = topic;
+            displayEnglishVocabulary = displayEnglish;
+            displayIrishVocabulary = displayIrish;
             InitializeComponent();
         }
 
@@ -71,10 +79,10 @@ namespace IrishLanguageApplicationDB
             }
             connection.Close();
 
-            string[] sortedVocabularyEnglish = vocabularyEnglish.ToArray();
-            string[] sortedVocabularyIrish = vocabularyIrish.ToArray();
+            sortedVocabularyEnglish = vocabularyEnglish.ToArray();
+            sortedVocabularyIrish = vocabularyIrish.ToArray();
 
-            int numberOfInstances = vocabularyEnglish.Count();
+            numberOfInstances = vocabularyEnglish.Count();
             Random rand = new Random();
 
             // http://csharphelper.com/blog/2014/07/randomize-arrays-in-c/
@@ -94,10 +102,45 @@ namespace IrishLanguageApplicationDB
                 sortedVocabularyIrish[j] = temp;
             }
 
+            if (displayEnglish == true & displayEnglish == true)
+            {
+                DisplayVocabulary();
+            } 
+            else if (displayEnglish == true & displayEnglish == false)
+            {
+                DisplayVocabularyEnglish();
+            } 
+            else if (displayEnglish == false & displayEnglish == true)
+            {
+                DisplayVocabularyIrish();
+            }
+        }
+
+        public void DisplayVocabulary()
+        {
             int n = 0;
             do
             {
                 textboxesIrish[n].Text = sortedVocabularyIrish[n];
+                textboxesEnglish[n].Text = sortedVocabularyEnglish[n];
+                n = n + 1;
+            } while (n < numberOfInstances);
+        }
+
+        public void DisplayVocabularyIrish()
+        {
+            int n = 0;
+            do
+            {
+                textboxesIrish[n].Text = sortedVocabularyIrish[n];
+                n = n + 1;
+            } while (n < numberOfInstances);
+        }
+        public void DisplayVocabularyEnglish()
+        {
+            int n = 0;
+            do
+            {
                 textboxesEnglish[n].Text = sortedVocabularyEnglish[n];
                 n = n + 1;
             } while (n < numberOfInstances);

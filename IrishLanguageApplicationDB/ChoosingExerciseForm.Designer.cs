@@ -81,6 +81,7 @@
             this.btnEnterEnglishWordForIrishWord.Size = new System.Drawing.Size(300, 24);
             this.btnEnterEnglishWordForIrishWord.TabIndex = 1;
             this.btnEnterEnglishWordForIrishWord.Text = "Enter the English Word for the given Irish Word";
+            this.btnEnterEnglishWordForIrishWord.Click += new System.EventHandler(this.btnEnterEnglishWordForIrishWord_Click);
             // 
             // btnEnterIrishWordForEnglishWord
             // 
@@ -89,6 +90,7 @@
             this.btnEnterIrishWordForEnglishWord.Size = new System.Drawing.Size(300, 24);
             this.btnEnterIrishWordForEnglishWord.TabIndex = 1;
             this.btnEnterIrishWordForEnglishWord.Text = "Enter the Irish Word for the given English Word";
+            this.btnEnterIrishWordForEnglishWord.Click += new System.EventHandler(this.btnEnterIrishWordForEnglishWord_Click);
             // 
             // btnFillInBlanks
             // 
