@@ -73,6 +73,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddTopicsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTopicsForm.Designer.cs">
+      <DependentUpon>AddTopicsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MatchOrEnterWordForWordExerciseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddTopicsForm.resx">
+      <DependentUpon>AddTopicsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChoosingExerciseForm.resx">
       <DependentUpon>ChoosingExerciseForm.cs</DependentUpon>
     </EmbeddedResource>
