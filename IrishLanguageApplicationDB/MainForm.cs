@@ -185,5 +185,25 @@ namespace IrishLanguageApplicationDB
             txtEnglishVocabulary.Text = selectedVocabularyEnglish;
             connection.Close();
         }
+
+        private void btnAddTopic_Click(object sender, EventArgs e)
+        {
+            //this.Enabled = false;
+            //this.Hide();
+            //Form ChoosingExerciseForm = new ChoosingExerciseForm();
+            Form AddTopicsForm = new AddTopicsForm();
+            AddTopicsForm.Show();
+        }
+
+        private void btnAddVocabulary_Click(object sender, EventArgs e)
+        {
+            int index = cbxTopicList.SelectedItem.ToString().IndexOf('-');
+            topic = cbxTopicList.SelectedItem.ToString().Substring(0, index);
+            //this.Enabled = false;
+            //this.Hide();
+            //Form ChoosingExerciseForm = new ChoosingExerciseForm();
+            Form AddVocabularyForm = new AddVocabularyForm(topic);
+            AddVocabularyForm.Show();
+        }
     }
 }

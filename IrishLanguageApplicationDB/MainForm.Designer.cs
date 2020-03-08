@@ -47,11 +47,6 @@
             this.btnLast = new System.Windows.Forms.Button();
             this.btnAddTopic = new System.Windows.Forms.Button();
             this.btnAddVocabulary = new System.Windows.Forms.Button();
-            this.btnCancelAddTopic = new System.Windows.Forms.Button();
-            this.btnCancelAddVocabulary = new System.Windows.Forms.Button();
-            this.btnAddImage = new System.Windows.Forms.Button();
-            this.btnDeleteImage = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnEditUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImages)).BeginInit();
@@ -209,59 +204,21 @@
             // 
             // btnAddTopic
             // 
-            this.btnAddTopic.Location = new System.Drawing.Point(240, 300);
+            this.btnAddTopic.Location = new System.Drawing.Point(320, 302);
             this.btnAddTopic.Name = "btnAddTopic";
             this.btnAddTopic.Size = new System.Drawing.Size(130, 24);
             this.btnAddTopic.TabIndex = 1;
             this.btnAddTopic.Text = "Add Topic";
+            this.btnAddTopic.Click += new System.EventHandler(this.btnAddTopic_Click);
             // 
             // btnAddVocabulary
             // 
-            this.btnAddVocabulary.Location = new System.Drawing.Point(380, 300);
+            this.btnAddVocabulary.Location = new System.Drawing.Point(320, 332);
             this.btnAddVocabulary.Name = "btnAddVocabulary";
             this.btnAddVocabulary.Size = new System.Drawing.Size(130, 24);
             this.btnAddVocabulary.TabIndex = 1;
             this.btnAddVocabulary.Text = "Add Vocabulary";
-            // 
-            // btnCancelAddTopic
-            // 
-            this.btnCancelAddTopic.Location = new System.Drawing.Point(240, 330);
-            this.btnCancelAddTopic.Name = "btnCancelAddTopic";
-            this.btnCancelAddTopic.Size = new System.Drawing.Size(130, 24);
-            this.btnCancelAddTopic.TabIndex = 1;
-            this.btnCancelAddTopic.Text = "Cancel Add Topic";
-            // 
-            // btnCancelAddVocabulary
-            // 
-            this.btnCancelAddVocabulary.Location = new System.Drawing.Point(380, 330);
-            this.btnCancelAddVocabulary.Name = "btnCancelAddVocabulary";
-            this.btnCancelAddVocabulary.Size = new System.Drawing.Size(130, 24);
-            this.btnCancelAddVocabulary.TabIndex = 1;
-            this.btnCancelAddVocabulary.Text = "Cancel Add Vocabulary";
-            // 
-            // btnAddImage
-            // 
-            this.btnAddImage.Location = new System.Drawing.Point(240, 360);
-            this.btnAddImage.Name = "btnAddImage";
-            this.btnAddImage.Size = new System.Drawing.Size(130, 24);
-            this.btnAddImage.TabIndex = 1;
-            this.btnAddImage.Text = "Add Image";
-            // 
-            // btnDeleteImage
-            // 
-            this.btnDeleteImage.Location = new System.Drawing.Point(380, 360);
-            this.btnDeleteImage.Name = "btnDeleteImage";
-            this.btnDeleteImage.Size = new System.Drawing.Size(130, 24);
-            this.btnDeleteImage.TabIndex = 1;
-            this.btnDeleteImage.Text = "Delete Image";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(300, 390);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(130, 24);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "Save";
+            this.btnAddVocabulary.Click += new System.EventHandler(this.btnAddVocabulary_Click);
             // 
             // btnChangePassword
             // 
@@ -283,7 +240,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(660, 398);
             this.Controls.Add(this.lblTopics);
             this.Controls.Add(this.cbxTopicList);
             this.Controls.Add(this.lbxVocabulary);
@@ -301,11 +258,6 @@
             this.Controls.Add(this.btnLast);
             this.Controls.Add(this.btnAddTopic);
             this.Controls.Add(this.btnAddVocabulary);
-            this.Controls.Add(this.btnCancelAddTopic);
-            this.Controls.Add(this.btnCancelAddVocabulary);
-            this.Controls.Add(this.btnAddImage);
-            this.Controls.Add(this.btnDeleteImage);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.btnEditUser);
@@ -345,11 +297,6 @@
         private System.Windows.Forms.Button btnLast;
         private System.Windows.Forms.Button btnAddTopic;
         private System.Windows.Forms.Button btnAddVocabulary;
-        private System.Windows.Forms.Button btnCancelAddVocabulary;
-        private System.Windows.Forms.Button btnCancelAddTopic;
-        private System.Windows.Forms.Button btnAddImage;
-        private System.Windows.Forms.Button btnDeleteImage;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Button btnEditUser;
     }

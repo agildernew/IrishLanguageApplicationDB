@@ -113,6 +113,9 @@
     <EmbeddedResource Include="AddTopicsForm.resx">
       <DependentUpon>AddTopicsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddVocabularyForm.resx">
+      <DependentUpon>AddVocabularyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChoosingExerciseForm.resx">
       <DependentUpon>ChoosingExerciseForm.cs</DependentUpon>
     </EmbeddedResource>

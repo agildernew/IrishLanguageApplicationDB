@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnAddNewTopic = new System.Windows.Forms.Button();
-            this.txtTopicNameEnglish = new System.Windows.Forms.TextBox();
+            this.cbxTopicList = new System.Windows.Forms.ComboBox();
             this.txtVocabularyEnglish = new System.Windows.Forms.TextBox();
             this.txtVocabularyIrish = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -49,37 +49,38 @@
             // 
             // btnAddNewTopic
             // 
-            this.btnAddNewTopic.Location = new System.Drawing.Point(176, 189);
+            this.btnAddNewTopic.Location = new System.Drawing.Point(177, 198);
             this.btnAddNewTopic.Name = "btnAddNewTopic";
             this.btnAddNewTopic.Size = new System.Drawing.Size(129, 23);
             this.btnAddNewTopic.TabIndex = 9;
             this.btnAddNewTopic.Text = "Add New Topic";
             this.btnAddNewTopic.UseVisualStyleBackColor = true;
             // 
-            // txtTopicNameEnglish
+            // cbxTopicList
             // 
-            this.txtTopicNameEnglish.Location = new System.Drawing.Point(136, 12);
-            this.txtTopicNameEnglish.Name = "txtTopicNameEnglish";
-            this.txtTopicNameEnglish.Size = new System.Drawing.Size(193, 20);
-            this.txtTopicNameEnglish.TabIndex = 7;
+            this.cbxTopicList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTopicList.Location = new System.Drawing.Point(136, 16);
+            this.cbxTopicList.Name = "cbxTopicList";
+            this.cbxTopicList.Size = new System.Drawing.Size(193, 21);
+            this.cbxTopicList.TabIndex = 6;
             // 
             // txtVocabularyEnglish
             // 
-            this.txtVocabularyEnglish.Location = new System.Drawing.Point(136, 41);
+            this.txtVocabularyEnglish.Location = new System.Drawing.Point(136, 45);
             this.txtVocabularyEnglish.Name = "txtVocabularyEnglish";
             this.txtVocabularyEnglish.Size = new System.Drawing.Size(193, 20);
             this.txtVocabularyEnglish.TabIndex = 8;
             // 
             // txtVocabularyIrish
             // 
-            this.txtVocabularyIrish.Location = new System.Drawing.Point(136, 96);
+            this.txtVocabularyIrish.Location = new System.Drawing.Point(136, 71);
             this.txtVocabularyIrish.Name = "txtVocabularyIrish";
             this.txtVocabularyIrish.Size = new System.Drawing.Size(193, 20);
             this.txtVocabularyIrish.TabIndex = 13;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(136, 67);
+            this.textBox2.Location = new System.Drawing.Point(136, 100);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(193, 20);
             this.textBox2.TabIndex = 12;
@@ -122,7 +123,7 @@
             // 
             // btnAddImage
             // 
-            this.btnAddImage.Location = new System.Drawing.Point(41, 160);
+            this.btnAddImage.Location = new System.Drawing.Point(42, 169);
             this.btnAddImage.Name = "btnAddImage";
             this.btnAddImage.Size = new System.Drawing.Size(129, 23);
             this.btnAddImage.TabIndex = 14;
@@ -131,7 +132,7 @@
             // 
             // btnRemoveImage
             // 
-            this.btnRemoveImage.Location = new System.Drawing.Point(176, 160);
+            this.btnRemoveImage.Location = new System.Drawing.Point(177, 169);
             this.btnRemoveImage.Name = "btnRemoveImage";
             this.btnRemoveImage.Size = new System.Drawing.Size(129, 23);
             this.btnRemoveImage.TabIndex = 15;
@@ -140,16 +141,17 @@
             // 
             // btnAddMoreVocabulary
             // 
-            this.btnAddMoreVocabulary.Location = new System.Drawing.Point(41, 189);
+            this.btnAddMoreVocabulary.Location = new System.Drawing.Point(42, 198);
             this.btnAddMoreVocabulary.Name = "btnAddMoreVocabulary";
             this.btnAddMoreVocabulary.Size = new System.Drawing.Size(129, 23);
             this.btnAddMoreVocabulary.TabIndex = 16;
             this.btnAddMoreVocabulary.Text = "Add More Vocabulary";
             this.btnAddMoreVocabulary.UseVisualStyleBackColor = true;
+            this.btnAddMoreVocabulary.Click += new System.EventHandler(this.btnAddMoreVocabulary_Click);
             // 
             // btnDone
             // 
-            this.btnDone.Location = new System.Drawing.Point(118, 218);
+            this.btnDone.Location = new System.Drawing.Point(119, 227);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(129, 23);
             this.btnDone.TabIndex = 17;
@@ -158,7 +160,7 @@
             // 
             // btnFirst
             // 
-            this.btnFirst.Location = new System.Drawing.Point(177, 122);
+            this.btnFirst.Location = new System.Drawing.Point(178, 131);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(30, 24);
             this.btnFirst.TabIndex = 18;
@@ -166,7 +168,7 @@
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(216, 122);
+            this.btnPrevious.Location = new System.Drawing.Point(217, 131);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(30, 24);
             this.btnPrevious.TabIndex = 19;
@@ -174,7 +176,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(256, 122);
+            this.btnNext.Location = new System.Drawing.Point(257, 131);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(30, 24);
             this.btnNext.TabIndex = 20;
@@ -182,7 +184,7 @@
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(296, 122);
+            this.btnLast.Location = new System.Drawing.Point(297, 131);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(30, 24);
             this.btnLast.TabIndex = 21;
@@ -192,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 257);
+            this.ClientSize = new System.Drawing.Size(352, 267);
             this.Controls.Add(this.btnFirst);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnNext);
@@ -203,7 +205,7 @@
             this.Controls.Add(this.btnAddImage);
             this.Controls.Add(this.btnAddNewTopic);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.txtTopicNameEnglish);
+            this.Controls.Add(this.cbxTopicList);
             this.Controls.Add(this.txtVocabularyEnglish);
             this.Controls.Add(this.txtVocabularyIrish);
             this.Controls.Add(this.lblTopicNameEnglish);
@@ -220,7 +222,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnAddNewTopic;
-        private System.Windows.Forms.TextBox txtTopicNameEnglish;
+        private System.Windows.Forms.ComboBox cbxTopicList;
         private System.Windows.Forms.TextBox txtVocabularyEnglish;
         private System.Windows.Forms.TextBox txtVocabularyIrish;
         private System.Windows.Forms.TextBox textBox2;
