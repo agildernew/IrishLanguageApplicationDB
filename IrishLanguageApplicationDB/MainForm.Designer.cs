@@ -49,6 +49,8 @@
             this.btnAddVocabulary = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnEditUser = new System.Windows.Forms.Button();
+            this.btnDeleteTopic = new System.Windows.Forms.Button();
+            this.btnDeleteVocabulary = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImages)).BeginInit();
             this.SuspendLayout();
             // 
@@ -204,7 +206,7 @@
             // 
             // btnAddTopic
             // 
-            this.btnAddTopic.Location = new System.Drawing.Point(320, 302);
+            this.btnAddTopic.Location = new System.Drawing.Point(253, 299);
             this.btnAddTopic.Name = "btnAddTopic";
             this.btnAddTopic.Size = new System.Drawing.Size(130, 24);
             this.btnAddTopic.TabIndex = 1;
@@ -213,7 +215,7 @@
             // 
             // btnAddVocabulary
             // 
-            this.btnAddVocabulary.Location = new System.Drawing.Point(320, 332);
+            this.btnAddVocabulary.Location = new System.Drawing.Point(253, 329);
             this.btnAddVocabulary.Name = "btnAddVocabulary";
             this.btnAddVocabulary.Size = new System.Drawing.Size(130, 24);
             this.btnAddVocabulary.TabIndex = 1;
@@ -236,11 +238,31 @@
             this.btnEditUser.TabIndex = 1;
             this.btnEditUser.Text = "Edit User";
             // 
+            // btnDeleteTopic
+            // 
+            this.btnDeleteTopic.Location = new System.Drawing.Point(389, 299);
+            this.btnDeleteTopic.Name = "btnDeleteTopic";
+            this.btnDeleteTopic.Size = new System.Drawing.Size(130, 24);
+            this.btnDeleteTopic.TabIndex = 15;
+            this.btnDeleteTopic.Text = "Delete Topic";
+            this.btnDeleteTopic.Click += new System.EventHandler(this.btnDeleteTopic_Click);
+            // 
+            // btnDeleteVocabulary
+            // 
+            this.btnDeleteVocabulary.Location = new System.Drawing.Point(389, 329);
+            this.btnDeleteVocabulary.Name = "btnDeleteVocabulary";
+            this.btnDeleteVocabulary.Size = new System.Drawing.Size(130, 24);
+            this.btnDeleteVocabulary.TabIndex = 16;
+            this.btnDeleteVocabulary.Text = "Delete Vocabulary";
+            this.btnDeleteVocabulary.Click += new System.EventHandler(this.btnDeleteVocabulary_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(660, 398);
+            this.Controls.Add(this.btnDeleteTopic);
+            this.Controls.Add(this.btnDeleteVocabulary);
             this.Controls.Add(this.lblTopics);
             this.Controls.Add(this.cbxTopicList);
             this.Controls.Add(this.lbxVocabulary);
@@ -299,6 +321,8 @@
         private System.Windows.Forms.Button btnAddVocabulary;
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Button btnEditUser;
+        private System.Windows.Forms.Button btnDeleteTopic;
+        private System.Windows.Forms.Button btnDeleteVocabulary;
     }
 }
 

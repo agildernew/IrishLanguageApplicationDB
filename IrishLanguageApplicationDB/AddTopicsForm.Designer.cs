@@ -75,6 +75,7 @@
             this.btnAddTopic.TabIndex = 4;
             this.btnAddTopic.Text = "Add Topic";
             this.btnAddTopic.UseVisualStyleBackColor = true;
+            this.btnAddTopic.Click += new System.EventHandler(this.btnAddTopic_Click);
             // 
             // AddTopicsForm
             // 
