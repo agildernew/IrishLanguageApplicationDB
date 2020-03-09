@@ -237,6 +237,7 @@
             this.btnEditUser.Size = new System.Drawing.Size(130, 24);
             this.btnEditUser.TabIndex = 1;
             this.btnEditUser.Text = "Edit User";
+            this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
             // 
             // btnDeleteTopic
             // 

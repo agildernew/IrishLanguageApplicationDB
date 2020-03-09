@@ -292,5 +292,14 @@ namespace IrishLanguageApplicationDB
             txtIrishVocabulary.Text = topic;
             connection.Close();
         }
+
+        private void btnEditUser_Click(object sender, EventArgs e)
+        {
+            //this.Enabled = false;
+            //this.Hide();
+            //Form ChoosingExerciseForm = new ChoosingExerciseForm();
+            Form EditUsersForm = new EditUsersForm();
+            EditUsersForm.Show();
+        }
     }
 }
