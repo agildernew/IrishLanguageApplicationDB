@@ -30,6 +30,7 @@ namespace IrishLanguageApplicationDB
         {
             string currentEnglish = "", currentIrish = "", currentAnswer = "";
             int currentIndex = 0, score = 0;
+            double scorePercentage = 0.00;
             for (int i = 0; i < numberOfInstances; i++)
             {
                 currentIndex = 0;
@@ -59,11 +60,13 @@ namespace IrishLanguageApplicationDB
                         }
                     }
                 }
-
-               
             }
 
-            lblExerciseInstructions.Text = "currentEnglish=" + currentEnglish + "   currentIrish=" + currentIrish + "   currentIndex=" + currentIndex + "   vocabularyEnglish[currentIndex]=" + vocabularyEnglish[currentIndex] +  "   score.ToString();=" + score.ToString();
+            scorePercentage = Math.Round(((double)score / (double)numberOfInstances) * 100, 2);
+
+            //lblExerciseInstructions.Text = "currentEnglish=" + currentEnglish + "   currentIrish=" + currentIrish + "   currentIndex=" + currentIndex + "   vocabularyEnglish[currentIndex]=" + vocabularyEnglish[currentIndex] +  "   score.ToString();=" + score.ToString();
+            lblExerciseInstructions.Text = score.ToString() + " - " + scorePercentage.ToString() + "%";
+     
         }
 
         public MatchOrEnterWordForWordExerciseForm(string topic)
