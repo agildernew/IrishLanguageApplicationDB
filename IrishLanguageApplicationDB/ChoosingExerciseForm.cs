@@ -12,7 +12,7 @@ namespace IrishLanguageApplicationDB
 {
     public partial class ChoosingExerciseForm : Form
     {
-        string exerciseTopic = "";
+        string exerciseTopic = "", exerciseType = "", exerciseDescription = "";
         public ChoosingExerciseForm()
         {
             InitializeComponent();
@@ -45,7 +45,9 @@ namespace IrishLanguageApplicationDB
         {
             //this.Enabled = false;
             //this.Hide();
-            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(exerciseTopic);
+            exerciseType = "MatchEnglishToIrish";
+            exerciseDescription = "Match the English word to the given Irish word e.g. if the Irish word is 'Gaeilge' enter the English word for this (i.e. English)";
+            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(exerciseTopic, exerciseType, exerciseDescription);
             MatchOrEnterWordForWordExerciseForm.Show();
         }
 
@@ -53,7 +55,9 @@ namespace IrishLanguageApplicationDB
         {
             //this.Enabled = false;
             //this.Hide();
-            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(exerciseTopic);
+            exerciseType = "MatchIrishToEnglish";
+            exerciseDescription = "Match the Irish word to the given English word e.g. if the English word is 'Irish' enter the Irish word for this (i.e. Gaeilge)";
+            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(exerciseTopic, exerciseType, exerciseDescription);
             MatchOrEnterWordForWordExerciseForm.Show();
         }
 
@@ -61,7 +65,9 @@ namespace IrishLanguageApplicationDB
         {
             //this.Enabled = false;
             //this.Hide();
-            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(exerciseTopic, true, false);
+            exerciseType = "EnterEnglishForIrish";
+            exerciseDescription = "Enter the English word for the given Irish word e.g. if the Irish word is 'Gaeilge' enter the English word for this (i.e. English)";
+            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(exerciseTopic, exerciseType, true, false, exerciseDescription);
             MatchOrEnterWordForWordExerciseForm.Show();
         }
 
@@ -69,7 +75,9 @@ namespace IrishLanguageApplicationDB
         {
             //this.Enabled = false;
             //this.Hide();
-            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(exerciseTopic, false, true);
+            exerciseType = "EnterIrishForEnglish";
+            exerciseDescription = "Enter the Irish word for the given English word e.g. if the English word is 'English' enter the Irish word for this (i.e. Gaeilge)";
+            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(exerciseTopic, exerciseType, false, true, exerciseDescription);
             MatchOrEnterWordForWordExerciseForm.Show();
         }
     }
