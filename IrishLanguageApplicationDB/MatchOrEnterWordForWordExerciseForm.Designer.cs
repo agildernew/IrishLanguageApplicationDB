@@ -422,13 +422,13 @@
 		private System.Windows.Forms.Label lblIrish;
 		private System.Windows.Forms.Label lblEnglish;
 		private System.Windows.Forms.Label lblAnswer;
-		// Declaring Buttons
-		// private System.Windows.Forms.Button btnBack;
-		// Declaring Text Boxes
-		private System.Windows.Forms.TextBox txtIrishWordOne;
-		private System.Windows.Forms.TextBox txtIrishWordTwo;
-		private System.Windows.Forms.TextBox txtIrishWordThree;
-		private System.Windows.Forms.TextBox txtIrishWordFour;
+        // Declaring Buttons
+        // private System.Windows.Forms.Button btnBack;
+        // Declaring Text Boxes
+        private System.Windows.Forms.TextBox txtIrishWordOne;
+        private System.Windows.Forms.TextBox txtIrishWordTwo;
+        private System.Windows.Forms.TextBox txtIrishWordThree;
+        private System.Windows.Forms.TextBox txtIrishWordFour;
 		private System.Windows.Forms.TextBox txtIrishWordFive;
 		private System.Windows.Forms.TextBox txtIrishWordSix;
 		private System.Windows.Forms.TextBox txtIrishWordSeven;
