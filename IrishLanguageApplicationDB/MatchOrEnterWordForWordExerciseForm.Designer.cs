@@ -64,6 +64,7 @@
             this.txtAnswerEight = new System.Windows.Forms.TextBox();
             this.txtAnswerNine = new System.Windows.Forms.TextBox();
             this.txtAnswerTen = new System.Windows.Forms.TextBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblExerciseInstructionsLabel
@@ -367,11 +368,22 @@
             this.txtAnswerTen.TabIndex = 1;
             this.txtAnswerTen.Hide();
             // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(415, 415);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 14;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
             // MatchOrEnterWordForWordExerciseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 450);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.lblExerciseInstructionsLabel);
             this.Controls.Add(this.lblExerciseInstructions);
             this.Controls.Add(this.lblIrish);
@@ -425,9 +437,9 @@
 		// Declaring Buttons
 		// private System.Windows.Forms.Button btnBack;
 		// Declaring Text Boxes
-		private System.Windows.Forms.TextBox txtIrishWordOne;
-		private System.Windows.Forms.TextBox txtIrishWordTwo;
-		private System.Windows.Forms.TextBox txtIrishWordThree;
+        private System.Windows.Forms.TextBox txtIrishWordOne;
+        private System.Windows.Forms.TextBox txtIrishWordTwo;
+        private System.Windows.Forms.TextBox txtIrishWordThree;
 		private System.Windows.Forms.TextBox txtIrishWordFour;
 		private System.Windows.Forms.TextBox txtIrishWordFive;
 		private System.Windows.Forms.TextBox txtIrishWordSix;
@@ -455,5 +467,6 @@
 		private System.Windows.Forms.TextBox txtAnswerEight;
 		private System.Windows.Forms.TextBox txtAnswerNine;
 		private System.Windows.Forms.TextBox txtAnswerTen;
+        private System.Windows.Forms.Button btnSubmit;
     }
 }

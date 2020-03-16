@@ -19,10 +19,51 @@ namespace IrishLanguageApplicationDB
         string[] sortedVocabularyIrish, sortedVocabularyEnglish;
         int numberOfInstances;
         bool displayIrish = true, displayEnglish = true;
+        SqlConnection connection = new SqlConnection();
 
         public MatchOrEnterWordForWordExerciseForm()
         {
             InitializeComponent();
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string currentEnglish = "", currentIrish = "", currentAnswer = "";
+            int currentIndex = 0, score = 0;
+            for (int i = 0; i < numberOfInstances; i++)
+            {
+                currentIndex = 0;
+                currentEnglish = "";
+                currentIrish = "";
+                currentAnswer = "";
+
+                //if Enter Word for Irish
+                
+                currentEnglish = textboxesEnglish[i].Text;
+                currentAnswer = textboxesAnswers[i].Text;
+
+                for (int j = 0; j < numberOfInstances; j++)
+                {
+                    if (currentEnglish == vocabularyEnglish[j])
+                    {
+                        currentIrish = vocabularyIrish[j];
+
+                        if (vocabularyIrish[j] == currentAnswer)
+                        {
+                            score = score + 1;
+                            textboxesAnswers[i].BackColor = Color.LightGreen;
+                        }
+                        else
+                        {
+                            textboxesAnswers[i].BackColor = Color.Red;
+                        }
+                    }
+                }
+
+               
+            }
+
+            lblExerciseInstructions.Text = "currentEnglish=" + currentEnglish + "   currentIrish=" + currentIrish + "   currentIndex=" + currentIndex + "   vocabularyEnglish[currentIndex]=" + vocabularyEnglish[currentIndex] +  "   score.ToString();=" + score.ToString();
         }
 
         public MatchOrEnterWordForWordExerciseForm(string topic)
@@ -75,7 +116,6 @@ namespace IrishLanguageApplicationDB
             textboxesAnswers.Add(txtAnswerNine);
             textboxesAnswers.Add(txtAnswerTen);
 
-            SqlConnection connection = new SqlConnection();
             connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
 
             connection.Open();
