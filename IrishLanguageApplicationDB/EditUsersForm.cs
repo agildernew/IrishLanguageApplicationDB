@@ -19,6 +19,7 @@ namespace IrishLanguageApplicationDB
         List<string> passwords = new List<string>();
         List<string> usertypes = new List<string>();
         List<string> formclass = new List<string>();
+        int numberOfUsers = 0;
 
         public EditUsersForm()
         {
@@ -42,6 +43,7 @@ namespace IrishLanguageApplicationDB
                 usertypes.Add(reader["form_class"].ToString());
 
                 usernames.ToArray();
+                numberOfUsers = numberOfUsers + 1;
             }
             connection.Close();
 
@@ -145,13 +147,27 @@ namespace IrishLanguageApplicationDB
         private void btnPrevious_Click(object sender, EventArgs e)
         {
             int index = usernames.IndexOf(txtUsername.Text);
-            loadUsers(index-1);
+            if (index != 0)
+            {
+                loadUsers(index - 1);
+            } 
+            else
+            {
+                loadUsers(index);
+            }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
             int index = usernames.IndexOf(txtUsername.Text);
-            loadUsers(index+1);
+            if (index != numberOfUsers-1)
+            {
+                loadUsers(index + 1);
+            }
+            else
+            {
+                loadUsers(index);
+            }
         }
 
         private void btnLast_Click(object sender, EventArgs e)
