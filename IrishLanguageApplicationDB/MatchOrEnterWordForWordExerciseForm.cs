@@ -44,11 +44,11 @@ namespace IrishLanguageApplicationDB
 
                     for (int j = 0; j < numberOfInstances; j++)
                     {
-                        if (currentEnglish == vocabularyEnglish[j])
+                        if (currentEnglish.ToLower() == vocabularyEnglish[j].ToLower())
                         {
                             currentIrish = vocabularyIrish[j];
 
-                            if (vocabularyIrish[j] == currentAnswer)
+                            if (vocabularyIrish[j].ToLower() == currentAnswer.ToLower())
                             {
                                 score = score + 1;
                                 textboxesAnswers[i].BackColor = Color.LightGreen;
@@ -67,11 +67,11 @@ namespace IrishLanguageApplicationDB
 
                     for (int j = 0; j < numberOfInstances; j++)
                     {
-                        if (currentIrish == vocabularyIrish[j])
+                        if (currentIrish.ToLower() == vocabularyIrish[j].ToLower())
                         {
                             currentEnglish = vocabularyEnglish[j];
 
-                            if (vocabularyEnglish[j] == currentAnswer)
+                            if (vocabularyEnglish[j].ToLower() == currentAnswer.ToLower())
                             {
                                 score = score + 1;
                                 textboxesAnswers[i].BackColor = Color.LightGreen;
