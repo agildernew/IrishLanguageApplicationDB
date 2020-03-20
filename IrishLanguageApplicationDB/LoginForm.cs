@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace IrishLanguageApplicationDB
 {
     public partial class LoginForm : Form
     {
+        string userPassword = "";
+
         public LoginForm()
         {
             InitializeComponent();
@@ -19,8 +22,34 @@ namespace IrishLanguageApplicationDB
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Form MainForm = new MainForm();
-            MainForm.Show();
+            if (txtUsername.Text != "" && txtPassowrd.Text != "")
+            {
+                SqlConnection connection = new SqlConnection();
+                connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
+                //connection.ConnectionString = Properties.Settings.Default.IrishAppDBConnectionString;
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Users;", connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (txtUsername.Text == reader["user_id"].ToString())
+                    {
+                        userPassword = reader["password"].ToString();
+                    }
+                }
+
+                if (txtPassowrd.Text == userPassword)
+                {
+                    Form MainForm = new MainForm();
+                    MainForm.Show();
+                }
+                else
+                {
+                    string message = "Username and Password do not match.";
+                    MessageBox.Show(message);
+                }
+                connection.Close();
+            }
         }
     }
 }
