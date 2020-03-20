@@ -67,6 +67,12 @@
     <Compile Include="AddVocabularyForm.Designer.cs">
       <DependentUpon>AddVocabularyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChoosingExerciseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddVocabularyForm.resx">
       <DependentUpon>AddVocabularyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChoosingExerciseForm.resx">
       <DependentUpon>ChoosingExerciseForm.cs</DependentUpon>
