@@ -22,7 +22,7 @@ namespace IrishLanguageApplicationDB
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text != "" && txtPassowrd.Text != "")
+            if (txtUsername.Text != "" && txtPassword.Text != "")
             {
                 SqlConnection connection = new SqlConnection();
                 connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
@@ -38,17 +38,24 @@ namespace IrishLanguageApplicationDB
                     }
                 }
 
-                if (txtPassowrd.Text == userPassword)
+                if (txtPassword.Text == userPassword)
                 {
-                    Form MainForm = new MainForm();
+                    this.Hide();
+                    Form MainForm = new MainForm(txtUsername.Text);
+                    MainForm.Closed += (s, args) => this.Close();
                     MainForm.Show();
                 }
                 else
                 {
-                    string message = "Username and Password do not match.";
+                    string message = "Please enter a valid username and password.";
                     MessageBox.Show(message);
                 }
                 connection.Close();
+            }
+            else
+            {
+                string message = "Please enter a valid username and password.";
+                MessageBox.Show(message);
             }
         }
     }
