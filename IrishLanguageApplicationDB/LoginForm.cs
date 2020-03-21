@@ -13,7 +13,8 @@ namespace IrishLanguageApplicationDB
 {
     public partial class LoginForm : Form
     {
-        string userPassword = "";
+        string userName = "", userPassword = "", userTypeIdStr = "", userType = "";
+        int userTypeId = 0;
 
         public LoginForm()
         {
@@ -34,14 +35,27 @@ namespace IrishLanguageApplicationDB
                 {
                     if (txtUsername.Text == reader["user_id"].ToString())
                     {
+                        userName = reader["user_id"].ToString();
                         userPassword = reader["password"].ToString();
+                        userTypeIdStr = reader["user_type_id"].ToString();
+                        userTypeId = Int16.Parse(userTypeIdStr);
                     }
                 }
+                connection.Close();
+
+                connection.Open();
+                cmd = new SqlCommand("SELECT * FROM UserTypes WHERE user_type_id = " + userTypeIdStr + ";", connection);
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    userType = reader["user_type"].ToString();
+                }
+                connection.Close();
 
                 if (txtPassword.Text == userPassword)
                 {
                     this.Hide();
-                    Form MainForm = new MainForm(txtUsername.Text);
+                    Form MainForm = new MainForm(userName, userType);
                     MainForm.Closed += (s, args) => this.Close();
                     MainForm.Show();
                 }
@@ -50,7 +64,6 @@ namespace IrishLanguageApplicationDB
                     string message = "Please enter a valid username and password.";
                     MessageBox.Show(message);
                 }
-                connection.Close();
             }
             else
             {

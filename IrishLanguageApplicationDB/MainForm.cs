@@ -13,13 +13,14 @@ namespace IrishLanguageApplicationDB
 {
     public partial class MainForm : Form
     {
-        public string topic = "", selectedVocabularyIrish = "", selectedVocabularyEnglish = "", user = "";
+        public string topic = "", selectedVocabularyIrish = "", selectedVocabularyEnglish = "", user = "", userType = "";
         //public SqlConnection connection = new SqlConnection();
 
-        public MainForm(string currentUser)
+        public MainForm(string currentUser, string currentUserType)
         {
             //connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
             user = currentUser;
+            userType = currentUserType;
             InitializeComponent();
         }
 
@@ -46,6 +47,18 @@ namespace IrishLanguageApplicationDB
                 selectedTopicNameEnglish = cbxTopicList.SelectedItem.ToString().Substring(0, index);
             };
             connection.Close();
+
+            if (userType != "Admin")
+            {
+                btnAddTopic.Hide();
+                btnDeleteTopic.Hide();
+                btnAddVocabulary.Hide();
+                btnDeleteVocabulary.Hide();
+                if (userType != "Teacher")
+                {
+                    btnEditUser.Hide();
+                }
+            }
         }
 
         private void loadListboxWithVocabulary(int currentIndex, int newIndex)
