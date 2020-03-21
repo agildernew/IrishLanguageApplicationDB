@@ -13,20 +13,21 @@ namespace IrishLanguageApplicationDB
 {
     public partial class MainForm : Form
     {
-        public string topic;
-        public string selectedVocabularyIrish = "";
-        public string selectedVocabularyEnglish = "";
+        public string topic = "", selectedVocabularyIrish = "", selectedVocabularyEnglish = "", user = "", userType = "";
         //public SqlConnection connection = new SqlConnection();
 
-        public MainForm()
+        public MainForm(string currentUser, string currentUserType)
         {
             //connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
+            user = currentUser;
+            userType = currentUserType;
             InitializeComponent();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             string selectedTopicNameEnglish = "";
+            lblUserName.Text = user;
 
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
@@ -46,6 +47,18 @@ namespace IrishLanguageApplicationDB
                 selectedTopicNameEnglish = cbxTopicList.SelectedItem.ToString().Substring(0, index);
             };
             connection.Close();
+
+            if (userType != "Admin")
+            {
+                btnAddTopic.Hide();
+                btnDeleteTopic.Hide();
+                btnAddVocabulary.Hide();
+                btnDeleteVocabulary.Hide();
+                if (userType != "Teacher")
+                {
+                    btnEditUser.Hide();
+                }
+            }
         }
 
         private void loadListboxWithVocabulary(int currentIndex, int newIndex)
@@ -300,6 +313,16 @@ namespace IrishLanguageApplicationDB
             //Form ChoosingExerciseForm = new ChoosingExerciseForm();
             Form EditUsersForm = new EditUsersForm();
             EditUsersForm.Show();
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            string currentUserName = user;
+            //this.Enabled = false;
+            //this.Hide();
+            Form ChangePasswordForm = new ChangePasswordForm(currentUserName);
+            ChangePasswordForm.Show();
+
         }
     }
 }

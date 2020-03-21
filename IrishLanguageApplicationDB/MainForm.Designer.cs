@@ -119,7 +119,7 @@
             // 
             this.lblUserName.Location = new System.Drawing.Point(500, 20);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(70, 16);
+            this.lblUserName.Size = new System.Drawing.Size(130, 16);
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "Username";
             this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -229,6 +229,7 @@
             this.btnChangePassword.Size = new System.Drawing.Size(130, 24);
             this.btnChangePassword.TabIndex = 1;
             this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // btnEditUser
             // 
