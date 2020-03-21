@@ -13,20 +13,20 @@ namespace IrishLanguageApplicationDB
 {
     public partial class MainForm : Form
     {
-        public string topic;
-        public string selectedVocabularyIrish = "";
-        public string selectedVocabularyEnglish = "";
+        public string topic = "", selectedVocabularyIrish = "", selectedVocabularyEnglish = "", user = "";
         //public SqlConnection connection = new SqlConnection();
 
-        public MainForm()
+        public MainForm(string currentUser)
         {
             //connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
+            user = currentUser;
             InitializeComponent();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             string selectedTopicNameEnglish = "";
+            lblUserName.Text = user;
 
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
