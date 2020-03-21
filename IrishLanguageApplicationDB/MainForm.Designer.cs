@@ -229,6 +229,7 @@
             this.btnChangePassword.Size = new System.Drawing.Size(130, 24);
             this.btnChangePassword.TabIndex = 1;
             this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // btnEditUser
             // 
