@@ -108,7 +108,7 @@
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.Size = new System.Drawing.Size(170, 20);
             this.txtNewPassword.TabIndex = 7;
-            //this.txtNewPassword.PasswordChar = '*';
+            this.txtNewPassword.PasswordChar = '*';
             // 
             // txtConfirmPassword
             // 
@@ -116,7 +116,7 @@
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(170, 20);
             this.txtConfirmPassword.TabIndex = 8;
-            //this.txtConfirmPassword.PasswordChar = '*';
+            this.txtConfirmPassword.PasswordChar = '*';
             // 
             // btnChangePassword
             // 

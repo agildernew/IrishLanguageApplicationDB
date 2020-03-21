@@ -295,7 +295,7 @@ namespace IrishLanguageApplicationDB
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
-            string currentUserName = "a.bloggs@school.com";
+            string currentUserName = user;
             //this.Enabled = false;
             //this.Hide();
             Form ChangePasswordForm = new ChangePasswordForm(currentUserName);
