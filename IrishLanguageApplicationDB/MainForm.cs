@@ -311,7 +311,7 @@ namespace IrishLanguageApplicationDB
             //this.Enabled = false;
             //this.Hide();
             //Form ChoosingExerciseForm = new ChoosingExerciseForm();
-            Form EditUsersForm = new EditUsersForm();
+            Form EditUsersForm = new EditUsersForm(user, userType);
             EditUsersForm.Show();
         }
 

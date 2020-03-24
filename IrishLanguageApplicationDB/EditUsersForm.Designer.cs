@@ -50,6 +50,7 @@
             this.btnSaveChanges = new System.Windows.Forms.Button();
             this.txtFormClass = new System.Windows.Forms.TextBox();
             this.lblFormClass = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -59,7 +60,7 @@
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(55, 13);
             this.lblUsername.TabIndex = 0;
-            this.lblUsername.Text = "Username";
+            this.lblUsername.Text = "Username *";
             // 
             // lblFirstName
             // 
@@ -68,7 +69,7 @@
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(57, 13);
             this.lblFirstName.TabIndex = 1;
-            this.lblFirstName.Text = "First Name";
+            this.lblFirstName.Text = "First Name *";
             // 
             // lblSurname
             // 
@@ -77,7 +78,7 @@
             this.lblSurname.Name = "lblSurname";
             this.lblSurname.Size = new System.Drawing.Size(49, 13);
             this.lblSurname.TabIndex = 2;
-            this.lblSurname.Text = "Surname";
+            this.lblSurname.Text = "Surname *";
             // 
             // lblPassword
             // 
@@ -86,7 +87,7 @@
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(53, 13);
             this.lblPassword.TabIndex = 3;
-            this.lblPassword.Text = "Password";
+            this.lblPassword.Text = "Password *";
             // 
             // lblConfirmPassword
             // 
@@ -95,7 +96,7 @@
             this.lblConfirmPassword.Name = "lblConfirmPassword";
             this.lblConfirmPassword.Size = new System.Drawing.Size(91, 13);
             this.lblConfirmPassword.TabIndex = 4;
-            this.lblConfirmPassword.Text = "Confirm Password";
+            this.lblConfirmPassword.Text = "Confirm Password *";
             // 
             // lblUserType
             // 
@@ -104,12 +105,13 @@
             this.lblUserType.Name = "lblUserType";
             this.lblUserType.Size = new System.Drawing.Size(56, 13);
             this.lblUserType.TabIndex = 5;
-            this.lblUserType.Text = "User Type";
+            this.lblUserType.Text = "User Type *";
             // 
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(113, 14);
             this.txtUsername.Name = "txtUsername";
+            this.txtUsername.ReadOnly = true;
             this.txtUsername.Size = new System.Drawing.Size(169, 20);
             this.txtUsername.TabIndex = 6;
             // 
@@ -131,15 +133,19 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(113, 123);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(169, 20);
             this.txtPassword.TabIndex = 9;
+            this.txtPassword.GotFocus += new System.EventHandler(this.txtPassword_GotFocus);
             // 
             // txtConfirmPassword
             // 
             this.txtConfirmPassword.Location = new System.Drawing.Point(113, 159);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(169, 20);
             this.txtConfirmPassword.TabIndex = 10;
+            this.txtConfirmPassword.GotFocus += new System.EventHandler(this.txtConfirmPassword_GotFocus);
             // 
             // cbxUserType
             // 
@@ -148,6 +154,7 @@
             this.cbxUserType.Name = "cbxUserType";
             this.cbxUserType.Size = new System.Drawing.Size(169, 21);
             this.cbxUserType.TabIndex = 12;
+            //this.cbxUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             // 
             // btnFirst
             // 
@@ -240,11 +247,22 @@
             this.lblFormClass.TabIndex = 21;
             this.lblFormClass.Text = "Form Class";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(12, 304);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(88, 23);
+            this.btnCancel.TabIndex = 23;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // EditUsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(297, 339);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtFormClass);
             this.Controls.Add(this.lblFormClass);
             this.Controls.Add(this.btnCloseForm);
@@ -299,5 +317,6 @@
         private System.Windows.Forms.Button btnSaveChanges;
         private System.Windows.Forms.TextBox txtFormClass;
         private System.Windows.Forms.Label lblFormClass;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
