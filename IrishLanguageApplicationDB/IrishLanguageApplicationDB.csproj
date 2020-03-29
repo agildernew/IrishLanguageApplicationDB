@@ -120,6 +120,12 @@
     <Compile Include="MatchWordToPictureExerciseForm.Designer.cs">
       <DependentUpon>MatchWordToPictureExerciseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MultipleChoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultipleChoiceForm.Designer.cs">
+      <DependentUpon>MultipleChoiceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddTopicsForm.resx">
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MatchWordToPictureExerciseForm.resx">
       <DependentUpon>MatchWordToPictureExerciseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultipleChoiceForm.resx">
+      <DependentUpon>MultipleChoiceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

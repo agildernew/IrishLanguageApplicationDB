@@ -12,11 +12,22 @@ using System.Data.SqlClient;
 namespace IrishLanguageApplicationDB
 {
     public partial class MultipleChoiceForm : Form
-    {
+    {                
         SqlConnection connection = new SqlConnection();
         string exerciseTopic = "";
-        List<string> vocabularyEnglish = new List<string>(), vocabularyIrish = new List<string>();
+        List<string> vocabularyEnglish = new List<string>(), vocabularyIrish = new List<string>(), vocabulayAnswers = new List<string>();
         string[] sortedVocabularyIrish, sortedVocabularyEnglish;
+        int currentIndex = 0;
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            currentIndex = currentIndex + 1;
+            this.Hide();
+            Form MultipleChoiceForm = new MultipleChoiceForm(exerciseTopic, currentIndex);
+            MultipleChoiceForm.Closed += (s, args) => this.Close();
+            MultipleChoiceForm.Show();
+        }
+
         int numberOfInstances = 0;
 
         public MultipleChoiceForm(string topic)
@@ -26,7 +37,25 @@ namespace IrishLanguageApplicationDB
             InitializeComponent();
         }
 
+        public MultipleChoiceForm(string topic, int newIndex)
+        {
+            exerciseTopic = topic;
+            currentIndex = newIndex;
+
+            InitializeComponent();
+        }
+
         private void MultipleChoiceForm_Load(object sender, EventArgs e)
+        {
+            if (currentIndex == 0)
+            {
+                InitialLoad();
+            }
+
+            LoadQuestion();
+        }
+
+        public void InitialLoad()
         {
             connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
 
@@ -44,6 +73,11 @@ namespace IrishLanguageApplicationDB
 
             sortedVocabularyEnglish = vocabularyEnglish.ToArray();
             sortedVocabularyIrish = vocabularyIrish.ToArray();
+        }
+
+        public void LoadQuestion()
+        {
+            string currentIrish = "",  currentEnglish = "", currentAnswer = "";
 
             numberOfInstances = vocabularyEnglish.Count();
             Random rand = new Random();
@@ -64,6 +98,45 @@ namespace IrishLanguageApplicationDB
                 sortedVocabularyIrish[i] = sortedVocabularyIrish[j];
                 sortedVocabularyIrish[j] = temp;
             }
+
+            currentIrish = sortedVocabularyIrish[currentIndex].ToString();
+            lblQuestion.Text = currentIrish;
+
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE vocabulary_irish='" + currentIrish + "';", connection);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                int index = 0;
+                currentAnswer = reader["vocabulary_english"].ToString();
+                vocabulayAnswers.Add(currentAnswer);
+                index = index + 1;
+            }
+            connection.Close();
+
+            //vocabulayAnswers.ToArray();
+
+            for (int i = 0; i == 3; i++)
+            {
+                currentEnglish = sortedVocabularyEnglish[i];
+                currentAnswer = vocabulayAnswers[i];
+
+                if (currentEnglish != currentAnswer)
+                {
+                    vocabulayAnswers.Add(sortedVocabularyEnglish[i]);
+                }
+                string message = currentEnglish + "  =  " + currentAnswer;
+                MessageBox.Show(message);
+
+            }
+
+            btnAnswer2.Text = currentEnglish;
+            btnAnswer3.Text = sortedVocabularyEnglish[0];
+
+            btnAnswer1.Text = vocabulayAnswers[0];
+            //btnAnswer2.Text = vocabulayAnswers[1];
+            //btnAnswer3.Text = vocabulayAnswers[2];
+            //btnAnswer4.Text = vocabulayAnswers[3];
         }
     }
 }
