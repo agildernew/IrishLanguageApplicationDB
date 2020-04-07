@@ -16,7 +16,7 @@ namespace IrishLanguageApplicationDB
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LeaderBoardForm());
+            Application.Run(new LeaderBoardForm("Colours", "8"));
             //Application.Run(new LoginForm());
         }
     }
