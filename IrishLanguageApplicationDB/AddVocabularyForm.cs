@@ -57,12 +57,34 @@ namespace IrishLanguageApplicationDB
                 SqlConnection connection = new SqlConnection();
                 connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Vocabulary (vocabulary_english, topic_name_english, vocabulary_irish, vocabulary_image) VALUES ('" + txtVocabularyEnglish.Text + "', '" + cbxTopicList.SelectedItem.ToString() + "', '" + txtVocabularyIrish.Text + "', NULL);", connection);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Vocabulary (vocabulary_english, topic_name_english, vocabulary_irish, vocabulary_image) VALUES ('" + txtVocabularyEnglish.Text + "', '" + cbxTopicList.SelectedItem.ToString() + "', '" + txtVocabularyIrish.Text + "', '" + txtImagePath.Text + "');", connection);
                 SqlDataReader reader = cmd.ExecuteReader();
                 connection.Close();
                 txtVocabularyEnglish.Text = "";
                 txtVocabularyIrish.Text = "";
+                txtImagePath.Text = "";
             }
+        }
+
+        private void btnAddImage_Click(object sender, EventArgs e)
+        {
+            string filePath = "";
+
+            OpenFileDialog selectImage = new OpenFileDialog();
+            selectImage.Filter = "All Files (*.*)|*.*";
+            selectImage.FilterIndex = 1;
+            selectImage.Multiselect = true;
+
+            if (selectImage.ShowDialog() == DialogResult.OK)
+            {
+                filePath = selectImage.FileName;
+                txtImagePath.Text = filePath;
+            }
+        }
+
+        private void btnRemoveImage_Click(object sender, EventArgs e)
+        {
+            txtImagePath.Text = "";
         }
     }
 }

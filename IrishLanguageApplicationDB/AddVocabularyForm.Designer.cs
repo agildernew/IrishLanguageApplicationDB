@@ -32,7 +32,7 @@
             this.cbxTopicList = new System.Windows.Forms.ComboBox();
             this.txtVocabularyEnglish = new System.Windows.Forms.TextBox();
             this.txtVocabularyIrish = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtImagePath = new System.Windows.Forms.TextBox();
             this.lblTopicNameEnglish = new System.Windows.Forms.Label();
             this.lblVocabularyEnglish = new System.Windows.Forms.Label();
             this.lblVocabularyIrish = new System.Windows.Forms.Label();
@@ -78,12 +78,12 @@
             this.txtVocabularyIrish.Size = new System.Drawing.Size(193, 20);
             this.txtVocabularyIrish.TabIndex = 13;
             // 
-            // textBox2
+            // txtImagePath
             // 
-            this.textBox2.Location = new System.Drawing.Point(136, 100);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(193, 20);
-            this.textBox2.TabIndex = 12;
+            this.txtImagePath.Location = new System.Drawing.Point(136, 100);
+            this.txtImagePath.Name = "txtImagePath";
+            this.txtImagePath.Size = new System.Drawing.Size(193, 20);
+            this.txtImagePath.TabIndex = 12;
             // 
             // lblTopicNameEnglish
             // 
@@ -129,6 +129,7 @@
             this.btnAddImage.TabIndex = 14;
             this.btnAddImage.Text = "Add Image";
             this.btnAddImage.UseVisualStyleBackColor = true;
+            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
             // 
             // btnRemoveImage
             // 
@@ -138,6 +139,7 @@
             this.btnRemoveImage.TabIndex = 15;
             this.btnRemoveImage.Text = "Remove Image";
             this.btnRemoveImage.UseVisualStyleBackColor = true;
+            this.btnRemoveImage.Click += new System.EventHandler(this.btnRemoveImage_Click);
             // 
             // btnAddMoreVocabulary
             // 
@@ -204,7 +206,7 @@
             this.Controls.Add(this.btnRemoveImage);
             this.Controls.Add(this.btnAddImage);
             this.Controls.Add(this.btnAddNewTopic);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtImagePath);
             this.Controls.Add(this.cbxTopicList);
             this.Controls.Add(this.txtVocabularyEnglish);
             this.Controls.Add(this.txtVocabularyIrish);
@@ -225,7 +227,7 @@
         private System.Windows.Forms.ComboBox cbxTopicList;
         private System.Windows.Forms.TextBox txtVocabularyEnglish;
         private System.Windows.Forms.TextBox txtVocabularyIrish;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtImagePath;
         private System.Windows.Forms.Label lblTopicNameEnglish;
         private System.Windows.Forms.Label lblVocabularyEnglish;
         private System.Windows.Forms.Label lblVocabularyIrish;
