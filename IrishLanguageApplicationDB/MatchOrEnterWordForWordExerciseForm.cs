@@ -13,35 +13,102 @@ namespace IrishLanguageApplicationDB
 {
     public partial class MatchOrEnterWordForWordExerciseForm : Form
     {
-        string exerciseTopic = "";
-        List<string> vocabularyEnglish = new List<string>(),  vocabularyIrish = new List<string>();
-        List<TextBox> textboxesIrish = new List<TextBox>(), textboxesEnglish = new List<TextBox>();
+        string exerciseTopic = "", exerciseType = "", exerciseDescription = "";
+        List<string> vocabularyEnglish = new List<string>(), vocabularyIrish = new List<string>();
+        List<TextBox> textboxesIrish = new List<TextBox>(), textboxesEnglish = new List<TextBox>(), textboxesAnswers = new List<TextBox>();
         string[] sortedVocabularyIrish, sortedVocabularyEnglish;
         int numberOfInstances;
         bool displayIrish = true, displayEnglish = true;
+        SqlConnection connection = new SqlConnection();
 
         public MatchOrEnterWordForWordExerciseForm()
         {
             InitializeComponent();
         }
 
-        public MatchOrEnterWordForWordExerciseForm(string topic)
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string currentEnglish = "", currentIrish = "", currentAnswer = "";
+            int score = 0;
+            double scorePercentage = 0.00;
+            for (int i = 0; i < numberOfInstances; i++)
+            {
+                currentEnglish = "";
+                currentIrish = "";
+                currentAnswer = "";
+
+                if (exerciseType == "MatchIrishToEnglish" || exerciseType == "EnterIrishForEnglish")
+                {
+                    currentEnglish = textboxesEnglish[i].Text;
+                    currentAnswer = textboxesAnswers[i].Text;
+
+                    for (int j = 0; j < numberOfInstances; j++)
+                    {
+                        if (currentEnglish.ToLower() == vocabularyEnglish[j].ToLower())
+                        {
+                            currentIrish = vocabularyIrish[j];
+
+                            if (vocabularyIrish[j].ToLower() == currentAnswer.ToLower())
+                            {
+                                score = score + 1;
+                                textboxesAnswers[i].BackColor = Color.LightGreen;
+                            }
+                            else
+                            {
+                                textboxesAnswers[i].BackColor = Color.Red;
+                            }
+                        }
+                    }
+                }
+                else if (exerciseType == "MatchEnglishToIrish" || exerciseType == "EnterEnglishForIrish")
+                {
+                    currentIrish = textboxesIrish[i].Text;
+                    currentAnswer = textboxesAnswers[i].Text;
+
+                    for (int j = 0; j < numberOfInstances; j++)
+                    {
+                        if (currentIrish.ToLower() == vocabularyIrish[j].ToLower())
+                        {
+                            currentEnglish = vocabularyEnglish[j];
+
+                            if (vocabularyEnglish[j].ToLower() == currentAnswer.ToLower())
+                            {
+                                score = score + 1;
+                                textboxesAnswers[i].BackColor = Color.LightGreen;
+                            }
+                            else
+                            {
+                                textboxesAnswers[i].BackColor = Color.Red;
+                            }
+                        }
+                    }
+                }
+            }
+            scorePercentage = Math.Round(((double)score / (double)numberOfInstances) * 100, 2);
+            lblScore.Text = score.ToString() + " - " + scorePercentage.ToString() + "%";
+        }
+
+        public MatchOrEnterWordForWordExerciseForm(string topic, string extype, string description)
         {
             exerciseTopic = topic;
+            exerciseType = extype;
+            exerciseDescription = description;
             InitializeComponent();
         }
 
-        public MatchOrEnterWordForWordExerciseForm(string topic, bool displayIrishVocabulary, bool displayEnglishVocabulary)
+        public MatchOrEnterWordForWordExerciseForm(string topic, string extype, bool displayIrishVocabulary, bool displayEnglishVocabulary, string description)
         {
             exerciseTopic = topic;
-            displayEnglishVocabulary = displayEnglish;
-            displayIrishVocabulary = displayIrish;
+            exerciseType = extype;
+            displayEnglish = displayEnglishVocabulary;
+            displayIrish = displayIrishVocabulary;
+            exerciseDescription = description;
             InitializeComponent();
         }
 
         private void MatchOrEnterWordForWordExerciseForm_Load(object sender, EventArgs e)
         {
-            lblExerciseInstructions.Text = exerciseTopic;
+            lblExerciseInstructions.Text = exerciseDescription;
             textboxesEnglish.Add(txtEnglishWordOne);
             textboxesEnglish.Add(txtEnglishWordTwo);
             textboxesEnglish.Add(txtEnglishWordThree);
@@ -64,7 +131,17 @@ namespace IrishLanguageApplicationDB
             textboxesIrish.Add(txtIrishWordNine);
             textboxesIrish.Add(txtIrishWordTen);
 
-            SqlConnection connection = new SqlConnection();
+            textboxesAnswers.Add(txtAnswerOne);
+            textboxesAnswers.Add(txtAnswerTwo);
+            textboxesAnswers.Add(txtAnswerThree);
+            textboxesAnswers.Add(txtAnswerFour);
+            textboxesAnswers.Add(txtAnswerFive);
+            textboxesAnswers.Add(txtAnswerSix);
+            textboxesAnswers.Add(txtAnswerSeven);
+            textboxesAnswers.Add(txtAnswerEight);
+            textboxesAnswers.Add(txtAnswerNine);
+            textboxesAnswers.Add(txtAnswerTen);
+
             connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
 
             connection.Open();
@@ -102,29 +179,21 @@ namespace IrishLanguageApplicationDB
                 sortedVocabularyIrish[j] = temp;
             }
 
-            if (displayEnglish == true & displayEnglish == true)
+            //lblExerciseInstructions.Text = displayEnglish.ToString() + "  " + displayIrish.ToString();
+
+            if (displayEnglish == true & displayIrish == true)
             {
-                DisplayVocabulary();
-            } 
-            else if (displayEnglish == true & displayEnglish == false)
+                DisplayVocabularyIrish();
+                DisplayVocabularyEnglish();
+            }
+            else if (displayEnglish == true & displayIrish == false)
             {
                 DisplayVocabularyEnglish();
-            } 
-            else if (displayEnglish == false & displayEnglish == true)
+            }
+            else if (displayEnglish == false & displayIrish == true)
             {
                 DisplayVocabularyIrish();
             }
-        }
-
-        public void DisplayVocabulary()
-        {
-            int n = 0;
-            do
-            {
-                textboxesIrish[n].Text = sortedVocabularyIrish[n];
-                textboxesEnglish[n].Text = sortedVocabularyEnglish[n];
-                n = n + 1;
-            } while (n < numberOfInstances);
         }
 
         public void DisplayVocabularyIrish()
@@ -133,15 +202,23 @@ namespace IrishLanguageApplicationDB
             do
             {
                 textboxesIrish[n].Text = sortedVocabularyIrish[n];
+                textboxesIrish[n].Show();
+                textboxesEnglish[n].Show();
+                textboxesAnswers[n].Show();
                 n = n + 1;
             } while (n < numberOfInstances);
         }
+
         public void DisplayVocabularyEnglish()
         {
             int n = 0;
             do
             {
                 textboxesEnglish[n].Text = sortedVocabularyEnglish[n];
+                textboxesIrish[n].Show();
+                textboxesEnglish[n].Show();
+                textboxesAnswers[n].Show();
+                textboxesAnswers[n].Focus();
                 n = n + 1;
             } while (n < numberOfInstances);
         }

@@ -16,8 +16,8 @@ namespace IrishLanguageApplicationDB
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
-            //Application.Run(new ChoosingExerciseForm());
+            //Application.Run(new MainForm());
+            Application.Run(new LoginForm());
         }
     }
 }

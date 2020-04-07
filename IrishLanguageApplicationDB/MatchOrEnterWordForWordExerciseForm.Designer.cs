@@ -64,6 +64,8 @@
             this.txtAnswerEight = new System.Windows.Forms.TextBox();
             this.txtAnswerNine = new System.Windows.Forms.TextBox();
             this.txtAnswerTen = new System.Windows.Forms.TextBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.lblScore = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblExerciseInstructionsLabel
@@ -114,7 +116,6 @@
             this.txtIrishWordOne.ReadOnly = true;
             this.txtIrishWordOne.Size = new System.Drawing.Size(150, 20);
             this.txtIrishWordOne.TabIndex = 1;
-            this.txtIrishWordOne.Text = "IRISH WORD ONE";
             // 
             // txtIrishWordTwo
             // 
@@ -123,7 +124,6 @@
             this.txtIrishWordTwo.ReadOnly = true;
             this.txtIrishWordTwo.Size = new System.Drawing.Size(150, 20);
             this.txtIrishWordTwo.TabIndex = 1;
-            this.txtIrishWordTwo.Text = "IRISH WORD TWO";
             // 
             // txtIrishWordThree
             // 
@@ -132,7 +132,6 @@
             this.txtIrishWordThree.ReadOnly = true;
             this.txtIrishWordThree.Size = new System.Drawing.Size(150, 20);
             this.txtIrishWordThree.TabIndex = 1;
-            this.txtIrishWordThree.Text = "IRISH WORD THREE";
             // 
             // txtIrishWordFour
             // 
@@ -141,7 +140,6 @@
             this.txtIrishWordFour.ReadOnly = true;
             this.txtIrishWordFour.Size = new System.Drawing.Size(150, 20);
             this.txtIrishWordFour.TabIndex = 1;
-            this.txtIrishWordFour.Text = "IRISH WORD FOUR";
             // 
             // txtIrishWordFive
             // 
@@ -150,7 +148,6 @@
             this.txtIrishWordFive.ReadOnly = true;
             this.txtIrishWordFive.Size = new System.Drawing.Size(150, 20);
             this.txtIrishWordFive.TabIndex = 1;
-            this.txtIrishWordFive.Text = "IRISH WORD FIVE";
             // 
             // txtIrishWordSix
             // 
@@ -159,7 +156,6 @@
             this.txtIrishWordSix.ReadOnly = true;
             this.txtIrishWordSix.Size = new System.Drawing.Size(150, 20);
             this.txtIrishWordSix.TabIndex = 1;
-            this.txtIrishWordSix.Text = "IRISH WORD SIX";
             // 
             // txtIrishWordSeven
             // 
@@ -168,7 +164,6 @@
             this.txtIrishWordSeven.ReadOnly = true;
             this.txtIrishWordSeven.Size = new System.Drawing.Size(150, 20);
             this.txtIrishWordSeven.TabIndex = 1;
-            this.txtIrishWordSeven.Text = "IRISH WORD SEVEN";
             // 
             // txtIrishWordEight
             // 
@@ -177,7 +172,6 @@
             this.txtIrishWordEight.ReadOnly = true;
             this.txtIrishWordEight.Size = new System.Drawing.Size(150, 20);
             this.txtIrishWordEight.TabIndex = 1;
-            this.txtIrishWordEight.Text = "IRISH WORD EIGHT";
             // 
             // txtIrishWordNine
             // 
@@ -186,7 +180,6 @@
             this.txtIrishWordNine.ReadOnly = true;
             this.txtIrishWordNine.Size = new System.Drawing.Size(150, 20);
             this.txtIrishWordNine.TabIndex = 1;
-            this.txtIrishWordNine.Text = "IRISH WORD NINE";
             // 
             // txtIrishWordTen
             // 
@@ -195,7 +188,6 @@
             this.txtIrishWordTen.ReadOnly = true;
             this.txtIrishWordTen.Size = new System.Drawing.Size(150, 20);
             this.txtIrishWordTen.TabIndex = 1;
-            this.txtIrishWordTen.Text = "IRISH WORD TEN";
             // 
             // txtEnglishWordOne
             // 
@@ -204,7 +196,6 @@
             this.txtEnglishWordOne.ReadOnly = true;
             this.txtEnglishWordOne.Size = new System.Drawing.Size(150, 20);
             this.txtEnglishWordOne.TabIndex = 1;
-            this.txtEnglishWordOne.Text = "ENGLISH WORD ONE";
             // 
             // txtEnglishWordTwo
             // 
@@ -213,7 +204,6 @@
             this.txtEnglishWordTwo.ReadOnly = true;
             this.txtEnglishWordTwo.Size = new System.Drawing.Size(150, 20);
             this.txtEnglishWordTwo.TabIndex = 1;
-            this.txtEnglishWordTwo.Text = "ENGLISH WORD TWO";
             // 
             // txtEnglishWordThree
             // 
@@ -222,7 +212,6 @@
             this.txtEnglishWordThree.ReadOnly = true;
             this.txtEnglishWordThree.Size = new System.Drawing.Size(150, 20);
             this.txtEnglishWordThree.TabIndex = 1;
-            this.txtEnglishWordThree.Text = "ENGLISH WORD THREE";
             // 
             // txtEnglishWordFour
             // 
@@ -231,7 +220,6 @@
             this.txtEnglishWordFour.ReadOnly = true;
             this.txtEnglishWordFour.Size = new System.Drawing.Size(150, 20);
             this.txtEnglishWordFour.TabIndex = 1;
-            this.txtEnglishWordFour.Text = "ENGLISH WORD FOUR";
             // 
             // txtEnglishWordFive
             // 
@@ -240,7 +228,6 @@
             this.txtEnglishWordFive.ReadOnly = true;
             this.txtEnglishWordFive.Size = new System.Drawing.Size(150, 20);
             this.txtEnglishWordFive.TabIndex = 1;
-            this.txtEnglishWordFive.Text = "ENGLISH WORD FIVE";
             // 
             // txtEnglishWordSix
             // 
@@ -249,7 +236,6 @@
             this.txtEnglishWordSix.ReadOnly = true;
             this.txtEnglishWordSix.Size = new System.Drawing.Size(150, 20);
             this.txtEnglishWordSix.TabIndex = 1;
-            this.txtEnglishWordSix.Text = "ENGLISH WORD SIX";
             // 
             // txtEnglishWordSeven
             // 
@@ -258,7 +244,6 @@
             this.txtEnglishWordSeven.ReadOnly = true;
             this.txtEnglishWordSeven.Size = new System.Drawing.Size(150, 20);
             this.txtEnglishWordSeven.TabIndex = 1;
-            this.txtEnglishWordSeven.Text = "ENGLISH WORD SEVEN";
             // 
             // txtEnglishWordEight
             // 
@@ -267,7 +252,6 @@
             this.txtEnglishWordEight.ReadOnly = true;
             this.txtEnglishWordEight.Size = new System.Drawing.Size(150, 20);
             this.txtEnglishWordEight.TabIndex = 1;
-            this.txtEnglishWordEight.Text = "ENGLISH WORD EIGHT";
             // 
             // txtEnglishWordNine
             // 
@@ -276,7 +260,6 @@
             this.txtEnglishWordNine.ReadOnly = true;
             this.txtEnglishWordNine.Size = new System.Drawing.Size(150, 20);
             this.txtEnglishWordNine.TabIndex = 1;
-            this.txtEnglishWordNine.Text = "ENGLISH WORD NINE";
             // 
             // txtEnglishWordTen
             // 
@@ -285,7 +268,6 @@
             this.txtEnglishWordTen.ReadOnly = true;
             this.txtEnglishWordTen.Size = new System.Drawing.Size(150, 20);
             this.txtEnglishWordTen.TabIndex = 1;
-            this.txtEnglishWordTen.Text = "ENGLISH WORD TEN";
             // 
             // txtAnswerOne
             // 
@@ -357,11 +339,31 @@
             this.txtAnswerTen.Size = new System.Drawing.Size(150, 20);
             this.txtAnswerTen.TabIndex = 1;
             // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(415, 415);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 14;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // lblScore
+            // 
+            this.lblScore.AutoSize = true;
+            this.lblScore.Location = new System.Drawing.Point(13, 424);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(0, 13);
+            this.lblScore.TabIndex = 15;
+            // 
             // MatchOrEnterWordForWordExerciseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 450);
+            this.Controls.Add(this.lblScore);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.lblExerciseInstructionsLabel);
             this.Controls.Add(this.lblExerciseInstructions);
             this.Controls.Add(this.lblIrish);
@@ -415,9 +417,9 @@
 		// Declaring Buttons
 		// private System.Windows.Forms.Button btnBack;
 		// Declaring Text Boxes
-		private System.Windows.Forms.TextBox txtIrishWordOne;
-		private System.Windows.Forms.TextBox txtIrishWordTwo;
-		private System.Windows.Forms.TextBox txtIrishWordThree;
+        private System.Windows.Forms.TextBox txtIrishWordOne;
+        private System.Windows.Forms.TextBox txtIrishWordTwo;
+        private System.Windows.Forms.TextBox txtIrishWordThree;
 		private System.Windows.Forms.TextBox txtIrishWordFour;
 		private System.Windows.Forms.TextBox txtIrishWordFive;
 		private System.Windows.Forms.TextBox txtIrishWordSix;
@@ -445,5 +447,7 @@
 		private System.Windows.Forms.TextBox txtAnswerEight;
 		private System.Windows.Forms.TextBox txtAnswerNine;
 		private System.Windows.Forms.TextBox txtAnswerTen;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Label lblScore;
     }
 }
