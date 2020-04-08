@@ -150,6 +150,8 @@
             this.pbxImages.Size = new System.Drawing.Size(150, 150);
             this.pbxImages.TabIndex = 14;
             this.pbxImages.TabStop = false;
+            //this.pbxImages.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxImages_Paint);
+               // (this.pbxImages_Paint);
             // 
             // lbxVocabulary
             // 
@@ -157,7 +159,6 @@
             this.lbxVocabulary.Name = "lbxVocabulary";
             this.lbxVocabulary.Size = new System.Drawing.Size(200, 290);
             this.lbxVocabulary.TabIndex = 0;
-            this.lbxVocabulary.SelectedIndexChanged += new System.EventHandler(this.lbxVocabulary_SelectedIndexChanged);
             // 
             // btnPlayGame
             // 
