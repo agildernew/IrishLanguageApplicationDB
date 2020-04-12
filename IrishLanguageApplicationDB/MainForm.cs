@@ -348,14 +348,21 @@ namespace IrishLanguageApplicationDB
             if (numberOfVocabulary > 0)
             {
                 btnPlayGame.Enabled = true;
-                lbxVocabulary.SelectedIndex = currentIndex;
+                if (currentIndex != 0)
+                { 
+                lbxVocabulary.SelectedIndex = currentIndex - 1;
+                } 
+                else
+                {
+                    lbxVocabulary.SelectedIndex = currentIndex;
+                }
                 int index = lbxVocabulary.SelectedItem.ToString().IndexOf('-');
                 if (index > 0)
                 {
                     selectedVocabularyIrish = lbxVocabulary.SelectedItem.ToString().Substring(index + 2).Trim();
                     selectedVocabularyEnglish = lbxVocabulary.SelectedItem.ToString().Substring(0, index).Trim();
                 };
-                txtIrishVocabulary.Text = "uifneiuf";
+                txtIrishVocabulary.Text = selectedVocabularyIrish;
                 txtEnglishVocabulary.Text = selectedVocabularyEnglish;
             }
             else
@@ -364,7 +371,6 @@ namespace IrishLanguageApplicationDB
                 txtEnglishVocabulary.Text = "";
                 txtIrishVocabulary.Text = "";
             }
-            txtIrishVocabulary.Text = topic;
             connection.Close();
         }
 
