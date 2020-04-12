@@ -26,7 +26,7 @@ namespace IrishLanguageApplicationDB
 
         private void ChoosingExerciseForm_Load(object sender, EventArgs e)
         {
-            lblChooseExercise.Text = exerciseTopic;
+            lblChooseExercise.Text = "Choose an exercise for the topic " + exerciseTopic;
         }
         private void ChoosingExerciseForm_Closing(object sender, EventArgs e)
         {
