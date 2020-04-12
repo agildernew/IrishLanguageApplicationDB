@@ -13,7 +13,7 @@ namespace IrishLanguageApplicationDB
 {
     public partial class MatchOrEnterWordForWordExerciseForm : Form
     {
-        string exerciseTopic = "", exerciseType = "", exerciseDescription = "";
+        string currentUser = "", exerciseTopic = "", exerciseType = "", exerciseDescription = "";
         List<string> vocabularyEnglish = new List<string>(), vocabularyIrish = new List<string>();
         List<TextBox> textboxesIrish = new List<TextBox>(), textboxesEnglish = new List<TextBox>(), textboxesAnswers = new List<TextBox>();
         string[] sortedVocabularyIrish, sortedVocabularyEnglish;
@@ -88,16 +88,18 @@ namespace IrishLanguageApplicationDB
             lblScore.Text = score.ToString() + " - " + scorePercentage.ToString() + "%";
         }
 
-        public MatchOrEnterWordForWordExerciseForm(string topic, string extype, string description)
+        public MatchOrEnterWordForWordExerciseForm(string user, string topic, string extype, string description)
         {
+            currentUser = user;
             exerciseTopic = topic;
             exerciseType = extype;
             exerciseDescription = description;
             InitializeComponent();
         }
 
-        public MatchOrEnterWordForWordExerciseForm(string topic, string extype, bool displayIrishVocabulary, bool displayEnglishVocabulary, string description)
+        public MatchOrEnterWordForWordExerciseForm(string user, string topic, string extype, bool displayIrishVocabulary, bool displayEnglishVocabulary, string description)
         {
+            currentUser = user;
             exerciseTopic = topic;
             exerciseType = extype;
             displayEnglish = displayEnglishVocabulary;
