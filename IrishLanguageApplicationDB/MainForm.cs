@@ -111,8 +111,16 @@ namespace IrishLanguageApplicationDB
             //this.Enabled = false;
             //this.Hide();
             //Form ChoosingExerciseForm = new ChoosingExerciseForm();
-            Form ChoosingExerciseForm = new ChoosingExerciseForm(topic);
-            ChoosingExerciseForm.Show();
+            if (userType == "Student")
+            {
+                Form ChoosingExerciseForm = new ChoosingExerciseForm(user, topic);
+                ChoosingExerciseForm.Show();
+            }
+            else
+            {
+                Form ChoosingExerciseForm = new ChoosingExerciseForm(topic);
+                ChoosingExerciseForm.Show();
+            }
         }
 
         private void cbxTopicList_SelectedIndexChanged(object sender, EventArgs e)

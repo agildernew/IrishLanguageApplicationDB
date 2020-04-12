@@ -85,7 +85,7 @@
             // 
             // lblIrish
             // 
-            this.lblIrish.Location = new System.Drawing.Point(12, 114);
+            this.lblIrish.Location = new System.Drawing.Point(10, 114);
             this.lblIrish.Name = "lblIrish";
             this.lblIrish.Size = new System.Drawing.Size(143, 21);
             this.lblIrish.TabIndex = 0;
@@ -93,7 +93,7 @@
             // 
             // lblEnglish
             // 
-            this.lblEnglish.Location = new System.Drawing.Point(228, 114);
+            this.lblEnglish.Location = new System.Drawing.Point(225, 114);
             this.lblEnglish.Name = "lblEnglish";
             this.lblEnglish.Size = new System.Drawing.Size(143, 21);
             this.lblEnglish.TabIndex = 0;
@@ -101,7 +101,7 @@
             // 
             // lblAnswer
             // 
-            this.lblAnswer.Location = new System.Drawing.Point(437, 114);
+            this.lblAnswer.Location = new System.Drawing.Point(434, 115);
             this.lblAnswer.Name = "lblAnswer";
             this.lblAnswer.Size = new System.Drawing.Size(143, 21);
             this.lblAnswer.TabIndex = 0;
@@ -381,9 +381,9 @@
             // lblScore
             // 
             this.lblScore.AutoSize = true;
-            this.lblScore.Location = new System.Drawing.Point(13, 424);
+            this.lblScore.Location = new System.Drawing.Point(12, 454);
             this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(0, 18);
+            this.lblScore.Size = new System.Drawing.Size(61, 18);
             this.lblScore.TabIndex = 15;
             // 
             // MatchOrEnterWordForWordExerciseForm
@@ -391,7 +391,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(663, 536);
+            this.ClientSize = new System.Drawing.Size(663, 502);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.lblExerciseInstructionsLabel);

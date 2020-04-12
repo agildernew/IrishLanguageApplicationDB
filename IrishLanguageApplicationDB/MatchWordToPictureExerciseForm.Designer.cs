@@ -30,16 +30,6 @@
         {
             this.lblExerciseInstructionsLabel = new System.Windows.Forms.Label();
             this.lblExerciseInstructions = new System.Windows.Forms.Label();
-            this.txtImageOneIMG = new System.Windows.Forms.TextBox();
-            this.txtImageTwoIMG = new System.Windows.Forms.TextBox();
-            this.txtImageThreeIMG = new System.Windows.Forms.TextBox();
-            this.txtImageFourIMG = new System.Windows.Forms.TextBox();
-            this.txtImageFiveIMG = new System.Windows.Forms.TextBox();
-            this.txtImageSixIMG = new System.Windows.Forms.TextBox();
-            this.txtImageSevenIMG = new System.Windows.Forms.TextBox();
-            this.txtImageEightIMG = new System.Windows.Forms.TextBox();
-            this.txtImageNineIMG = new System.Windows.Forms.TextBox();
-            this.txtImageTenIMG = new System.Windows.Forms.TextBox();
             this.btnOne = new System.Windows.Forms.Button();
             this.btnTwo = new System.Windows.Forms.Button();
             this.btnThree = new System.Windows.Forms.Button();
@@ -50,18 +40,39 @@
             this.btnEight = new System.Windows.Forms.Button();
             this.btnNine = new System.Windows.Forms.Button();
             this.btnTen = new System.Windows.Forms.Button();
-            this.btnFinish = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnImageOne = new System.Windows.Forms.Button();
-            this.btnImageTwo = new System.Windows.Forms.Button();
-            this.btnImageThree = new System.Windows.Forms.Button();
-            this.btnImageFour = new System.Windows.Forms.Button();
-            this.btnImageFive = new System.Windows.Forms.Button();
-            this.btnImageSix = new System.Windows.Forms.Button();
-            this.btnImageSeven = new System.Windows.Forms.Button();
-            this.btnImageEight = new System.Windows.Forms.Button();
-            this.btnImageNine = new System.Windows.Forms.Button();
-            this.btnImageTen = new System.Windows.Forms.Button();
+            this.pbxImageOne = new System.Windows.Forms.PictureBox();
+            this.pbxImageTwo = new System.Windows.Forms.PictureBox();
+            this.pbxImageThree = new System.Windows.Forms.PictureBox();
+            this.pbxImageFour = new System.Windows.Forms.PictureBox();
+            this.pbxImageFive = new System.Windows.Forms.PictureBox();
+            this.pbxImageSix = new System.Windows.Forms.PictureBox();
+            this.pbxImageSeven = new System.Windows.Forms.PictureBox();
+            this.pbxImageEight = new System.Windows.Forms.PictureBox();
+            this.pbxImageNine = new System.Windows.Forms.PictureBox();
+            this.pbxImageTen = new System.Windows.Forms.PictureBox();
+            this.txtImageOne = new System.Windows.Forms.TextBox();
+            this.txtImageTwo = new System.Windows.Forms.TextBox();
+            this.txtImageThree = new System.Windows.Forms.TextBox();
+            this.txtImageFour = new System.Windows.Forms.TextBox();
+            this.txtImageFive = new System.Windows.Forms.TextBox();
+            this.txtImageSix = new System.Windows.Forms.TextBox();
+            this.txtImageSeven = new System.Windows.Forms.TextBox();
+            this.txtImageEight = new System.Windows.Forms.TextBox();
+            this.txtImageNine = new System.Windows.Forms.TextBox();
+            this.txtImageTen = new System.Windows.Forms.TextBox();
+            this.lblScore = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageOne)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageTwo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageThree)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageFour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageFive)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageSix)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageSeven)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageEight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageNine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageTen)).BeginInit();
             this.SuspendLayout();
             // 
             // lblExerciseInstructionsLabel
@@ -76,129 +87,9 @@
             // 
             this.lblExerciseInstructions.Location = new System.Drawing.Point(10, 40);
             this.lblExerciseInstructions.Name = "lblExerciseInstructions";
-            this.lblExerciseInstructions.Size = new System.Drawing.Size(1027, 57);
+            this.lblExerciseInstructions.Size = new System.Drawing.Size(1038, 57);
             this.lblExerciseInstructions.TabIndex = 13;
             this.lblExerciseInstructions.Text = "Exercise text";
-            // 
-            // txtImageOneIMG
-            // 
-            this.txtImageOneIMG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            this.txtImageOneIMG.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtImageOneIMG.Location = new System.Drawing.Point(203, 100);
-            this.txtImageOneIMG.Multiline = true;
-            this.txtImageOneIMG.Name = "txtImageOneIMG";
-            this.txtImageOneIMG.ReadOnly = true;
-            this.txtImageOneIMG.Size = new System.Drawing.Size(162, 150);
-            this.txtImageOneIMG.TabIndex = 13;
-            this.txtImageOneIMG.Text = "PICTURE ONE";
-            // 
-            // txtImageTwoIMG
-            // 
-            this.txtImageTwoIMG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            this.txtImageTwoIMG.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtImageTwoIMG.Location = new System.Drawing.Point(371, 100);
-            this.txtImageTwoIMG.Multiline = true;
-            this.txtImageTwoIMG.Name = "txtImageTwoIMG";
-            this.txtImageTwoIMG.ReadOnly = true;
-            this.txtImageTwoIMG.Size = new System.Drawing.Size(162, 150);
-            this.txtImageTwoIMG.TabIndex = 13;
-            this.txtImageTwoIMG.Text = "PICTURE TWO";
-            // 
-            // txtImageThreeIMG
-            // 
-            this.txtImageThreeIMG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            this.txtImageThreeIMG.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtImageThreeIMG.Location = new System.Drawing.Point(539, 100);
-            this.txtImageThreeIMG.Multiline = true;
-            this.txtImageThreeIMG.Name = "txtImageThreeIMG";
-            this.txtImageThreeIMG.ReadOnly = true;
-            this.txtImageThreeIMG.Size = new System.Drawing.Size(162, 150);
-            this.txtImageThreeIMG.TabIndex = 13;
-            this.txtImageThreeIMG.Text = "PICTURE THREE";
-            // 
-            // txtImageFourIMG
-            // 
-            this.txtImageFourIMG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            this.txtImageFourIMG.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtImageFourIMG.Location = new System.Drawing.Point(707, 100);
-            this.txtImageFourIMG.Multiline = true;
-            this.txtImageFourIMG.Name = "txtImageFourIMG";
-            this.txtImageFourIMG.ReadOnly = true;
-            this.txtImageFourIMG.Size = new System.Drawing.Size(162, 150);
-            this.txtImageFourIMG.TabIndex = 13;
-            this.txtImageFourIMG.Text = "PICTURE FOUR";
-            // 
-            // txtImageFiveIMG
-            // 
-            this.txtImageFiveIMG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            this.txtImageFiveIMG.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtImageFiveIMG.Location = new System.Drawing.Point(875, 100);
-            this.txtImageFiveIMG.Multiline = true;
-            this.txtImageFiveIMG.Name = "txtImageFiveIMG";
-            this.txtImageFiveIMG.ReadOnly = true;
-            this.txtImageFiveIMG.Size = new System.Drawing.Size(162, 150);
-            this.txtImageFiveIMG.TabIndex = 13;
-            this.txtImageFiveIMG.Text = "PICTURE FIVE";
-            // 
-            // txtImageSixIMG
-            // 
-            this.txtImageSixIMG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            this.txtImageSixIMG.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtImageSixIMG.Location = new System.Drawing.Point(203, 310);
-            this.txtImageSixIMG.Multiline = true;
-            this.txtImageSixIMG.Name = "txtImageSixIMG";
-            this.txtImageSixIMG.ReadOnly = true;
-            this.txtImageSixIMG.Size = new System.Drawing.Size(162, 150);
-            this.txtImageSixIMG.TabIndex = 13;
-            this.txtImageSixIMG.Text = "PICTURE SIX";
-            // 
-            // txtImageSevenIMG
-            // 
-            this.txtImageSevenIMG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            this.txtImageSevenIMG.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtImageSevenIMG.Location = new System.Drawing.Point(371, 310);
-            this.txtImageSevenIMG.Multiline = true;
-            this.txtImageSevenIMG.Name = "txtImageSevenIMG";
-            this.txtImageSevenIMG.ReadOnly = true;
-            this.txtImageSevenIMG.Size = new System.Drawing.Size(162, 150);
-            this.txtImageSevenIMG.TabIndex = 13;
-            this.txtImageSevenIMG.Text = "PICTURE SEVEN";
-            // 
-            // txtImageEightIMG
-            // 
-            this.txtImageEightIMG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            this.txtImageEightIMG.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtImageEightIMG.Location = new System.Drawing.Point(539, 310);
-            this.txtImageEightIMG.Multiline = true;
-            this.txtImageEightIMG.Name = "txtImageEightIMG";
-            this.txtImageEightIMG.ReadOnly = true;
-            this.txtImageEightIMG.Size = new System.Drawing.Size(162, 150);
-            this.txtImageEightIMG.TabIndex = 13;
-            this.txtImageEightIMG.Text = "PICTURE EIGHT";
-            // 
-            // txtImageNineIMG
-            // 
-            this.txtImageNineIMG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            this.txtImageNineIMG.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtImageNineIMG.Location = new System.Drawing.Point(707, 310);
-            this.txtImageNineIMG.Multiline = true;
-            this.txtImageNineIMG.Name = "txtImageNineIMG";
-            this.txtImageNineIMG.ReadOnly = true;
-            this.txtImageNineIMG.Size = new System.Drawing.Size(162, 150);
-            this.txtImageNineIMG.TabIndex = 13;
-            this.txtImageNineIMG.Text = "PICTURE NINE";
-            // 
-            // txtImageTenIMG
-            // 
-            this.txtImageTenIMG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            this.txtImageTenIMG.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtImageTenIMG.Location = new System.Drawing.Point(875, 310);
-            this.txtImageTenIMG.Multiline = true;
-            this.txtImageTenIMG.Name = "txtImageTenIMG";
-            this.txtImageTenIMG.ReadOnly = true;
-            this.txtImageTenIMG.Size = new System.Drawing.Size(162, 150);
-            this.txtImageTenIMG.TabIndex = 13;
-            this.txtImageTenIMG.Text = "PICTURE TEN";
             // 
             // btnOne
             // 
@@ -209,6 +100,7 @@
             this.btnOne.TabIndex = 1;
             this.btnOne.Text = "BUTTON ONE";
             this.btnOne.UseVisualStyleBackColor = false;
+            this.btnOne.Click += new System.EventHandler(this.btnOne_Click);
             // 
             // btnTwo
             // 
@@ -219,6 +111,7 @@
             this.btnTwo.TabIndex = 1;
             this.btnTwo.Text = "BUTTON TWO";
             this.btnTwo.UseVisualStyleBackColor = false;
+            this.btnTwo.Click += new System.EventHandler(this.btnTwo_Click);
             // 
             // btnThree
             // 
@@ -229,6 +122,7 @@
             this.btnThree.TabIndex = 1;
             this.btnThree.Text = "BUTTON THREE";
             this.btnThree.UseVisualStyleBackColor = false;
+            this.btnThree.Click += new System.EventHandler(this.btnThree_Click);
             // 
             // btnFour
             // 
@@ -239,6 +133,7 @@
             this.btnFour.TabIndex = 1;
             this.btnFour.Text = "BUTTON FOUR";
             this.btnFour.UseVisualStyleBackColor = false;
+            this.btnFour.Click += new System.EventHandler(this.btnFour_Click);
             // 
             // btnFive
             // 
@@ -249,6 +144,7 @@
             this.btnFive.TabIndex = 1;
             this.btnFive.Text = "BUTTON FIVE";
             this.btnFive.UseVisualStyleBackColor = false;
+            this.btnFive.Click += new System.EventHandler(this.btnFive_Click);
             // 
             // btnSix
             // 
@@ -259,6 +155,7 @@
             this.btnSix.TabIndex = 1;
             this.btnSix.Text = "BUTTON SIX";
             this.btnSix.UseVisualStyleBackColor = false;
+            this.btnSix.Click += new System.EventHandler(this.btnSix_Click);
             // 
             // btnSeven
             // 
@@ -269,6 +166,7 @@
             this.btnSeven.TabIndex = 1;
             this.btnSeven.Text = "BUTTON SEVEN";
             this.btnSeven.UseVisualStyleBackColor = false;
+            this.btnSeven.Click += new System.EventHandler(this.btnSeven_Click);
             // 
             // btnEight
             // 
@@ -279,6 +177,7 @@
             this.btnEight.TabIndex = 1;
             this.btnEight.Text = "BUTTON EIGHT";
             this.btnEight.UseVisualStyleBackColor = false;
+            this.btnEight.Click += new System.EventHandler(this.btnEight_Click);
             // 
             // btnNine
             // 
@@ -289,6 +188,7 @@
             this.btnNine.TabIndex = 1;
             this.btnNine.Text = "BUTTON NINE";
             this.btnNine.UseVisualStyleBackColor = false;
+            this.btnNine.Click += new System.EventHandler(this.btnNine_Click);
             // 
             // btnTen
             // 
@@ -299,16 +199,18 @@
             this.btnTen.TabIndex = 1;
             this.btnTen.Text = "BUTTON TEN";
             this.btnTen.UseVisualStyleBackColor = false;
+            this.btnTen.Click += new System.EventHandler(this.btnTen_Click);
             // 
-            // btnFinish
+            // btnSubmit
             // 
-            this.btnFinish.BackColor = System.Drawing.Color.White;
-            this.btnFinish.Location = new System.Drawing.Point(12, 504);
-            this.btnFinish.Name = "btnFinish";
-            this.btnFinish.Size = new System.Drawing.Size(162, 33);
-            this.btnFinish.TabIndex = 1;
-            this.btnFinish.Text = "Finish";
-            this.btnFinish.UseVisualStyleBackColor = false;
+            this.btnSubmit.BackColor = System.Drawing.Color.White;
+            this.btnSubmit.Location = new System.Drawing.Point(12, 504);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(162, 33);
+            this.btnSubmit.TabIndex = 1;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnFinish_Click);
             // 
             // btnClose
             // 
@@ -320,112 +222,211 @@
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
             // 
-            // btnImageOne
+            // pbxImageOne
             // 
-            this.btnImageOne.BackColor = System.Drawing.Color.White;
-            this.btnImageOne.Location = new System.Drawing.Point(203, 259);
-            this.btnImageOne.Name = "btnImageOne";
-            this.btnImageOne.Size = new System.Drawing.Size(162, 33);
-            this.btnImageOne.TabIndex = 1;
-            this.btnImageOne.Text = "BUTTON ONE";
-            this.btnImageOne.UseVisualStyleBackColor = false;
+            this.pbxImageOne.Location = new System.Drawing.Point(214, 100);
+            this.pbxImageOne.Name = "pbxImageOne";
+            this.pbxImageOne.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageOne.TabIndex = 14;
+            this.pbxImageOne.TabStop = false;
+            this.pbxImageOne.Click += new System.EventHandler(this.pbxImageOne_Click);
             // 
-            // btnImageTwo
+            // pbxImageTwo
             // 
-            this.btnImageTwo.BackColor = System.Drawing.Color.White;
-            this.btnImageTwo.Location = new System.Drawing.Point(371, 259);
-            this.btnImageTwo.Name = "btnImageTwo";
-            this.btnImageTwo.Size = new System.Drawing.Size(162, 33);
-            this.btnImageTwo.TabIndex = 1;
-            this.btnImageTwo.Text = "BUTTON TWO";
-            this.btnImageTwo.UseVisualStyleBackColor = false;
+            this.pbxImageTwo.Location = new System.Drawing.Point(382, 100);
+            this.pbxImageTwo.Name = "pbxImageTwo";
+            this.pbxImageTwo.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageTwo.TabIndex = 15;
+            this.pbxImageTwo.TabStop = false;
+            this.pbxImageTwo.Click += new System.EventHandler(this.pbxImageTwo_Click);
             // 
-            // btnImageThree
+            // pbxImageThree
             // 
-            this.btnImageThree.BackColor = System.Drawing.Color.White;
-            this.btnImageThree.Location = new System.Drawing.Point(539, 259);
-            this.btnImageThree.Name = "btnImageThree";
-            this.btnImageThree.Size = new System.Drawing.Size(162, 33);
-            this.btnImageThree.TabIndex = 1;
-            this.btnImageThree.Text = "BUTTON THREE";
-            this.btnImageThree.UseVisualStyleBackColor = false;
+            this.pbxImageThree.Location = new System.Drawing.Point(550, 100);
+            this.pbxImageThree.Name = "pbxImageThree";
+            this.pbxImageThree.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageThree.TabIndex = 16;
+            this.pbxImageThree.TabStop = false;
+            this.pbxImageThree.Click += new System.EventHandler(this.pbxImageThree_Click);
             // 
-            // btnImageFour
+            // pbxImageFour
             // 
-            this.btnImageFour.BackColor = System.Drawing.Color.White;
-            this.btnImageFour.Location = new System.Drawing.Point(707, 259);
-            this.btnImageFour.Name = "btnImageFour";
-            this.btnImageFour.Size = new System.Drawing.Size(162, 33);
-            this.btnImageFour.TabIndex = 1;
-            this.btnImageFour.Text = "BUTTON FOUR";
-            this.btnImageFour.UseVisualStyleBackColor = false;
+            this.pbxImageFour.Location = new System.Drawing.Point(718, 100);
+            this.pbxImageFour.Name = "pbxImageFour";
+            this.pbxImageFour.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageFour.TabIndex = 17;
+            this.pbxImageFour.TabStop = false;
+            this.pbxImageFour.Click += new System.EventHandler(this.pbxImageFour_Click);
             // 
-            // btnImageFive
+            // pbxImageFive
             // 
-            this.btnImageFive.BackColor = System.Drawing.Color.White;
-            this.btnImageFive.Location = new System.Drawing.Point(875, 259);
-            this.btnImageFive.Name = "btnImageFive";
-            this.btnImageFive.Size = new System.Drawing.Size(162, 33);
-            this.btnImageFive.TabIndex = 1;
-            this.btnImageFive.Text = "BUTTON FIVE";
-            this.btnImageFive.UseVisualStyleBackColor = false;
+            this.pbxImageFive.Location = new System.Drawing.Point(886, 100);
+            this.pbxImageFive.Name = "pbxImageFive";
+            this.pbxImageFive.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageFive.TabIndex = 18;
+            this.pbxImageFive.TabStop = false;
+            this.pbxImageFive.Click += new System.EventHandler(this.pbxImageFive_Click);
             // 
-            // btnImageSix
+            // pbxImageSix
             // 
-            this.btnImageSix.BackColor = System.Drawing.Color.White;
-            this.btnImageSix.Location = new System.Drawing.Point(203, 469);
-            this.btnImageSix.Name = "btnImageSix";
-            this.btnImageSix.Size = new System.Drawing.Size(162, 33);
-            this.btnImageSix.TabIndex = 1;
-            this.btnImageSix.Text = "BUTTON SIX";
-            this.btnImageSix.UseVisualStyleBackColor = false;
+            this.pbxImageSix.Location = new System.Drawing.Point(214, 314);
+            this.pbxImageSix.Name = "pbxImageSix";
+            this.pbxImageSix.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageSix.TabIndex = 19;
+            this.pbxImageSix.TabStop = false;
+            this.pbxImageSix.Click += new System.EventHandler(this.pbxImageSix_Click);
             // 
-            // btnImageSeven
+            // pbxImageSeven
             // 
-            this.btnImageSeven.BackColor = System.Drawing.Color.White;
-            this.btnImageSeven.Location = new System.Drawing.Point(371, 469);
-            this.btnImageSeven.Name = "btnImageSeven";
-            this.btnImageSeven.Size = new System.Drawing.Size(162, 33);
-            this.btnImageSeven.TabIndex = 1;
-            this.btnImageSeven.Text = "BUTTON SEVEN";
-            this.btnImageSeven.UseVisualStyleBackColor = false;
+            this.pbxImageSeven.Location = new System.Drawing.Point(382, 314);
+            this.pbxImageSeven.Name = "pbxImageSeven";
+            this.pbxImageSeven.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageSeven.TabIndex = 20;
+            this.pbxImageSeven.TabStop = false;
+            this.pbxImageSeven.Click += new System.EventHandler(this.pbxImageSeven_Click);
             // 
-            // btnImageEight
+            // pbxImageEight
             // 
-            this.btnImageEight.BackColor = System.Drawing.Color.White;
-            this.btnImageEight.Location = new System.Drawing.Point(539, 469);
-            this.btnImageEight.Name = "btnImageEight";
-            this.btnImageEight.Size = new System.Drawing.Size(162, 33);
-            this.btnImageEight.TabIndex = 1;
-            this.btnImageEight.Text = "BUTTON EIGHT";
-            this.btnImageEight.UseVisualStyleBackColor = false;
+            this.pbxImageEight.Location = new System.Drawing.Point(550, 314);
+            this.pbxImageEight.Name = "pbxImageEight";
+            this.pbxImageEight.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageEight.TabIndex = 21;
+            this.pbxImageEight.TabStop = false;
+            this.pbxImageEight.Click += new System.EventHandler(this.pbxImageEight_Click);
             // 
-            // btnImageNine
+            // pbxImageNine
             // 
-            this.btnImageNine.BackColor = System.Drawing.Color.White;
-            this.btnImageNine.Location = new System.Drawing.Point(707, 469);
-            this.btnImageNine.Name = "btnImageNine";
-            this.btnImageNine.Size = new System.Drawing.Size(162, 33);
-            this.btnImageNine.TabIndex = 1;
-            this.btnImageNine.Text = "BUTTON NINE";
-            this.btnImageNine.UseVisualStyleBackColor = false;
+            this.pbxImageNine.Location = new System.Drawing.Point(718, 314);
+            this.pbxImageNine.Name = "pbxImageNine";
+            this.pbxImageNine.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageNine.TabIndex = 22;
+            this.pbxImageNine.TabStop = false;
+            this.pbxImageNine.Click += new System.EventHandler(this.pbxImageNine_Click);
             // 
-            // btnImageTen
+            // pbxImageTen
             // 
-            this.btnImageTen.BackColor = System.Drawing.Color.White;
-            this.btnImageTen.Location = new System.Drawing.Point(875, 469);
-            this.btnImageTen.Name = "btnImageTen";
-            this.btnImageTen.Size = new System.Drawing.Size(162, 33);
-            this.btnImageTen.TabIndex = 1;
-            this.btnImageTen.Text = "BUTTON TEN";
-            this.btnImageTen.UseVisualStyleBackColor = false;
+            this.pbxImageTen.Location = new System.Drawing.Point(886, 314);
+            this.pbxImageTen.Name = "pbxImageTen";
+            this.pbxImageTen.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageTen.TabIndex = 23;
+            this.pbxImageTen.TabStop = false;
+            this.pbxImageTen.Click += new System.EventHandler(this.pbxImageTen_Click);
+            // 
+            // txtImageOne
+            // 
+            this.txtImageOne.BackColor = System.Drawing.Color.White;
+            this.txtImageOne.Location = new System.Drawing.Point(214, 269);
+            this.txtImageOne.Name = "txtImageOne";
+            this.txtImageOne.Size = new System.Drawing.Size(162, 27);
+            this.txtImageOne.TabIndex = 24;
+            this.txtImageOne.Click += new System.EventHandler(this.txtImageOne_Click);
+            // 
+            // txtImageTwo
+            // 
+            this.txtImageTwo.BackColor = System.Drawing.Color.White;
+            this.txtImageTwo.Location = new System.Drawing.Point(382, 269);
+            this.txtImageTwo.Name = "txtImageTwo";
+            this.txtImageTwo.Size = new System.Drawing.Size(162, 27);
+            this.txtImageTwo.TabIndex = 25;
+            this.txtImageTwo.Click += new System.EventHandler(this.txtImageTwo_Click);
+            // 
+            // txtImageThree
+            // 
+            this.txtImageThree.BackColor = System.Drawing.Color.White;
+            this.txtImageThree.Location = new System.Drawing.Point(550, 269);
+            this.txtImageThree.Name = "txtImageThree";
+            this.txtImageThree.Size = new System.Drawing.Size(162, 27);
+            this.txtImageThree.TabIndex = 26;
+            this.txtImageThree.Click += new System.EventHandler(this.txtImageThree_Click);
+            // 
+            // txtImageFour
+            // 
+            this.txtImageFour.BackColor = System.Drawing.Color.White;
+            this.txtImageFour.Location = new System.Drawing.Point(718, 269);
+            this.txtImageFour.Name = "txtImageFour";
+            this.txtImageFour.Size = new System.Drawing.Size(162, 27);
+            this.txtImageFour.TabIndex = 27;
+            this.txtImageFour.Click += new System.EventHandler(this.txtImageFour_Click);
+            // 
+            // txtImageFive
+            // 
+            this.txtImageFive.BackColor = System.Drawing.Color.White;
+            this.txtImageFive.Location = new System.Drawing.Point(886, 269);
+            this.txtImageFive.Name = "txtImageFive";
+            this.txtImageFive.Size = new System.Drawing.Size(162, 27);
+            this.txtImageFive.TabIndex = 28;
+            this.txtImageFive.Click += new System.EventHandler(this.txtImageFive_Click);
+            // 
+            // txtImageSix
+            // 
+            this.txtImageSix.BackColor = System.Drawing.Color.White;
+            this.txtImageSix.Location = new System.Drawing.Point(214, 483);
+            this.txtImageSix.Name = "txtImageSix";
+            this.txtImageSix.Size = new System.Drawing.Size(162, 27);
+            this.txtImageSix.TabIndex = 29;
+            this.txtImageSix.Click += new System.EventHandler(this.txtImageSix_Click);
+            // 
+            // txtImageSeven
+            // 
+            this.txtImageSeven.BackColor = System.Drawing.Color.White;
+            this.txtImageSeven.Location = new System.Drawing.Point(382, 483);
+            this.txtImageSeven.Name = "txtImageSeven";
+            this.txtImageSeven.Size = new System.Drawing.Size(162, 27);
+            this.txtImageSeven.TabIndex = 30;
+            this.txtImageSeven.Click += new System.EventHandler(this.txtImageSeven_Click);
+            // 
+            // txtImageEight
+            // 
+            this.txtImageEight.BackColor = System.Drawing.Color.White;
+            this.txtImageEight.Location = new System.Drawing.Point(550, 483);
+            this.txtImageEight.Name = "txtImageEight";
+            this.txtImageEight.Size = new System.Drawing.Size(162, 27);
+            this.txtImageEight.TabIndex = 31;
+            this.txtImageEight.Click += new System.EventHandler(this.txtImageEight_Click);
+            // 
+            // txtImageNine
+            // 
+            this.txtImageNine.BackColor = System.Drawing.Color.White;
+            this.txtImageNine.Location = new System.Drawing.Point(718, 483);
+            this.txtImageNine.Name = "txtImageNine";
+            this.txtImageNine.Size = new System.Drawing.Size(162, 27);
+            this.txtImageNine.TabIndex = 32;
+            this.txtImageNine.Click += new System.EventHandler(this.txtImageNine_Click);
+            // 
+            // txtImageTen
+            // 
+            this.txtImageTen.BackColor = System.Drawing.Color.White;
+            this.txtImageTen.Location = new System.Drawing.Point(886, 483);
+            this.txtImageTen.Name = "txtImageTen";
+            this.txtImageTen.Size = new System.Drawing.Size(162, 27);
+            this.txtImageTen.TabIndex = 33;
+            this.txtImageTen.Click += new System.EventHandler(this.txtImageTen_Click);
+            // 
+            // lblScore
+            // 
+            this.lblScore.AutoSize = true;
+            this.lblScore.Location = new System.Drawing.Point(211, 543);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(0, 18);
+            this.lblScore.TabIndex = 34;
             // 
             // MatchWordToPictureExerciseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1058, 591);
+            this.ClientSize = new System.Drawing.Size(1090, 591);
+            this.Controls.Add(this.lblScore);
+            this.Controls.Add(this.txtImageTen);
+            this.Controls.Add(this.txtImageNine);
+            this.Controls.Add(this.txtImageEight);
+            this.Controls.Add(this.txtImageSeven);
+            this.Controls.Add(this.txtImageSix);
+            this.Controls.Add(this.txtImageFive);
+            this.Controls.Add(this.txtImageFour);
+            this.Controls.Add(this.txtImageThree);
+            this.Controls.Add(this.txtImageTwo);
+            this.Controls.Add(this.txtImageOne);
             this.Controls.Add(this.lblExerciseInstructionsLabel);
             this.Controls.Add(this.lblExerciseInstructions);
             this.Controls.Add(this.btnOne);
@@ -438,31 +439,32 @@
             this.Controls.Add(this.btnEight);
             this.Controls.Add(this.btnNine);
             this.Controls.Add(this.btnTen);
-            this.Controls.Add(this.btnFinish);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.txtImageOneIMG);
-            this.Controls.Add(this.txtImageTwoIMG);
-            this.Controls.Add(this.txtImageThreeIMG);
-            this.Controls.Add(this.txtImageFourIMG);
-            this.Controls.Add(this.txtImageFiveIMG);
-            this.Controls.Add(this.txtImageSixIMG);
-            this.Controls.Add(this.txtImageSevenIMG);
-            this.Controls.Add(this.txtImageEightIMG);
-            this.Controls.Add(this.txtImageNineIMG);
-            this.Controls.Add(this.txtImageTenIMG);
-            this.Controls.Add(this.btnImageOne);
-            this.Controls.Add(this.btnImageTwo);
-            this.Controls.Add(this.btnImageThree);
-            this.Controls.Add(this.btnImageFour);
-            this.Controls.Add(this.btnImageFive);
-            this.Controls.Add(this.btnImageSix);
-            this.Controls.Add(this.btnImageSeven);
-            this.Controls.Add(this.btnImageEight);
-            this.Controls.Add(this.btnImageNine);
-            this.Controls.Add(this.btnImageTen);
+            this.Controls.Add(this.pbxImageTen);
+            this.Controls.Add(this.pbxImageNine);
+            this.Controls.Add(this.pbxImageEight);
+            this.Controls.Add(this.pbxImageSeven);
+            this.Controls.Add(this.pbxImageSix);
+            this.Controls.Add(this.pbxImageFive);
+            this.Controls.Add(this.pbxImageFour);
+            this.Controls.Add(this.pbxImageThree);
+            this.Controls.Add(this.pbxImageTwo);
+            this.Controls.Add(this.pbxImageOne);
             this.Font = new System.Drawing.Font("Verdana", 12F);
             this.Name = "MatchWordToPictureExerciseForm";
             this.Text = "MatchWordToPictureExerciseForm";
+            this.Load += new System.EventHandler(this.MatchWordToPictureExerciseForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageOne)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageTwo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageThree)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageFour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageFive)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageSix)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageSeven)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageEight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageNine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImageTen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -473,17 +475,6 @@
         // Declaring Labels
         private System.Windows.Forms.Label lblExerciseInstructionsLabel;
         private System.Windows.Forms.Label lblExerciseInstructions;
-        //Declaring Images
-        private System.Windows.Forms.TextBox txtImageOneIMG;
-        private System.Windows.Forms.TextBox txtImageTwoIMG;
-        private System.Windows.Forms.TextBox txtImageThreeIMG;
-        private System.Windows.Forms.TextBox txtImageFourIMG;
-        private System.Windows.Forms.TextBox txtImageFiveIMG;
-        private System.Windows.Forms.TextBox txtImageSixIMG;
-        private System.Windows.Forms.TextBox txtImageSevenIMG;
-        private System.Windows.Forms.TextBox txtImageEightIMG;
-        private System.Windows.Forms.TextBox txtImageNineIMG;
-        private System.Windows.Forms.TextBox txtImageTenIMG;
         // Declaring Buttons
         private System.Windows.Forms.Button btnOne;
         private System.Windows.Forms.Button btnTwo;
@@ -495,17 +486,28 @@
         private System.Windows.Forms.Button btnEight;
         private System.Windows.Forms.Button btnNine;
         private System.Windows.Forms.Button btnTen;
-        private System.Windows.Forms.Button btnFinish;
+        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnImageOne;
-        private System.Windows.Forms.Button btnImageTwo;
-        private System.Windows.Forms.Button btnImageThree;
-        private System.Windows.Forms.Button btnImageFour;
-        private System.Windows.Forms.Button btnImageFive;
-        private System.Windows.Forms.Button btnImageSix;
-        private System.Windows.Forms.Button btnImageSeven;
-        private System.Windows.Forms.Button btnImageEight;
-        private System.Windows.Forms.Button btnImageNine;
-        private System.Windows.Forms.Button btnImageTen;
+        private System.Windows.Forms.PictureBox pbxImageOne;
+        private System.Windows.Forms.PictureBox pbxImageTwo;
+        private System.Windows.Forms.PictureBox pbxImageThree;
+        private System.Windows.Forms.PictureBox pbxImageFour;
+        private System.Windows.Forms.PictureBox pbxImageFive;
+        private System.Windows.Forms.PictureBox pbxImageSix;
+        private System.Windows.Forms.PictureBox pbxImageSeven;
+        private System.Windows.Forms.PictureBox pbxImageEight;
+        private System.Windows.Forms.PictureBox pbxImageNine;
+        private System.Windows.Forms.PictureBox pbxImageTen;
+        private System.Windows.Forms.TextBox txtImageOne;
+        private System.Windows.Forms.TextBox txtImageTwo;
+        private System.Windows.Forms.TextBox txtImageThree;
+        private System.Windows.Forms.TextBox txtImageFour;
+        private System.Windows.Forms.TextBox txtImageFive;
+        private System.Windows.Forms.TextBox txtImageSix;
+        private System.Windows.Forms.TextBox txtImageSeven;
+        private System.Windows.Forms.TextBox txtImageEight;
+        private System.Windows.Forms.TextBox txtImageNine;
+        private System.Windows.Forms.TextBox txtImageTen;
+        private System.Windows.Forms.Label lblScore;
     }
 }
