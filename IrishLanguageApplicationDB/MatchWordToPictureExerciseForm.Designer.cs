@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatchWordToPictureExerciseForm));
             this.lblExerciseInstructionsLabel = new System.Windows.Forms.Label();
             this.lblExerciseInstructions = new System.Windows.Forms.Label();
             this.btnOne = new System.Windows.Forms.Button();
@@ -85,284 +84,318 @@
             // 
             // lblExerciseInstructions
             // 
-            this.lblExerciseInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.lblExerciseInstructions.Location = new System.Drawing.Point(10, 40);
             this.lblExerciseInstructions.Name = "lblExerciseInstructions";
-            this.lblExerciseInstructions.Size = new System.Drawing.Size(900, 45);
+            this.lblExerciseInstructions.Size = new System.Drawing.Size(1027, 57);
             this.lblExerciseInstructions.TabIndex = 13;
-            this.lblExerciseInstructions.Text = resources.GetString("lblExerciseInstructions.Text");
+            this.lblExerciseInstructions.Text = "Exercise text";
             // 
             // btnOne
             // 
-            this.btnOne.Location = new System.Drawing.Point(10, 90);
+            this.btnOne.BackColor = System.Drawing.Color.White;
+            this.btnOne.Location = new System.Drawing.Point(12, 100);
             this.btnOne.Name = "btnOne";
-            this.btnOne.Size = new System.Drawing.Size(130, 24);
+            this.btnOne.Size = new System.Drawing.Size(162, 33);
             this.btnOne.TabIndex = 1;
             this.btnOne.Text = "BUTTON ONE";
+            this.btnOne.UseVisualStyleBackColor = false;
             // 
             // btnTwo
             // 
-            this.btnTwo.Location = new System.Drawing.Point(10, 120);
+            this.btnTwo.BackColor = System.Drawing.Color.White;
+            this.btnTwo.Location = new System.Drawing.Point(12, 139);
             this.btnTwo.Name = "btnTwo";
-            this.btnTwo.Size = new System.Drawing.Size(130, 24);
+            this.btnTwo.Size = new System.Drawing.Size(162, 33);
             this.btnTwo.TabIndex = 1;
             this.btnTwo.Text = "BUTTON TWO";
+            this.btnTwo.UseVisualStyleBackColor = false;
             // 
             // btnThree
             // 
-            this.btnThree.Location = new System.Drawing.Point(10, 150);
+            this.btnThree.BackColor = System.Drawing.Color.White;
+            this.btnThree.Location = new System.Drawing.Point(12, 178);
             this.btnThree.Name = "btnThree";
-            this.btnThree.Size = new System.Drawing.Size(130, 24);
+            this.btnThree.Size = new System.Drawing.Size(162, 33);
             this.btnThree.TabIndex = 1;
             this.btnThree.Text = "BUTTON THREE";
+            this.btnThree.UseVisualStyleBackColor = false;
             // 
             // btnFour
             // 
-            this.btnFour.Location = new System.Drawing.Point(10, 180);
+            this.btnFour.BackColor = System.Drawing.Color.White;
+            this.btnFour.Location = new System.Drawing.Point(12, 217);
             this.btnFour.Name = "btnFour";
-            this.btnFour.Size = new System.Drawing.Size(130, 24);
+            this.btnFour.Size = new System.Drawing.Size(162, 33);
             this.btnFour.TabIndex = 1;
             this.btnFour.Text = "BUTTON FOUR";
+            this.btnFour.UseVisualStyleBackColor = false;
             // 
             // btnFive
             // 
-            this.btnFive.Location = new System.Drawing.Point(10, 210);
+            this.btnFive.BackColor = System.Drawing.Color.White;
+            this.btnFive.Location = new System.Drawing.Point(12, 256);
             this.btnFive.Name = "btnFive";
-            this.btnFive.Size = new System.Drawing.Size(130, 24);
+            this.btnFive.Size = new System.Drawing.Size(162, 33);
             this.btnFive.TabIndex = 1;
             this.btnFive.Text = "BUTTON FIVE";
+            this.btnFive.UseVisualStyleBackColor = false;
             // 
             // btnSix
             // 
-            this.btnSix.Location = new System.Drawing.Point(10, 240);
+            this.btnSix.BackColor = System.Drawing.Color.White;
+            this.btnSix.Location = new System.Drawing.Point(12, 295);
             this.btnSix.Name = "btnSix";
-            this.btnSix.Size = new System.Drawing.Size(130, 24);
+            this.btnSix.Size = new System.Drawing.Size(162, 33);
             this.btnSix.TabIndex = 1;
             this.btnSix.Text = "BUTTON SIX";
+            this.btnSix.UseVisualStyleBackColor = false;
             // 
             // btnSeven
             // 
-            this.btnSeven.Location = new System.Drawing.Point(10, 270);
+            this.btnSeven.BackColor = System.Drawing.Color.White;
+            this.btnSeven.Location = new System.Drawing.Point(12, 334);
             this.btnSeven.Name = "btnSeven";
-            this.btnSeven.Size = new System.Drawing.Size(130, 24);
+            this.btnSeven.Size = new System.Drawing.Size(162, 33);
             this.btnSeven.TabIndex = 1;
             this.btnSeven.Text = "BUTTON SEVEN";
+            this.btnSeven.UseVisualStyleBackColor = false;
             // 
             // btnEight
             // 
-            this.btnEight.Location = new System.Drawing.Point(10, 300);
+            this.btnEight.BackColor = System.Drawing.Color.White;
+            this.btnEight.Location = new System.Drawing.Point(12, 373);
             this.btnEight.Name = "btnEight";
-            this.btnEight.Size = new System.Drawing.Size(130, 24);
+            this.btnEight.Size = new System.Drawing.Size(162, 33);
             this.btnEight.TabIndex = 1;
             this.btnEight.Text = "BUTTON EIGHT";
+            this.btnEight.UseVisualStyleBackColor = false;
             // 
             // btnNine
             // 
-            this.btnNine.Location = new System.Drawing.Point(10, 330);
+            this.btnNine.BackColor = System.Drawing.Color.White;
+            this.btnNine.Location = new System.Drawing.Point(12, 412);
             this.btnNine.Name = "btnNine";
-            this.btnNine.Size = new System.Drawing.Size(130, 24);
+            this.btnNine.Size = new System.Drawing.Size(162, 33);
             this.btnNine.TabIndex = 1;
             this.btnNine.Text = "BUTTON NINE";
+            this.btnNine.UseVisualStyleBackColor = false;
             // 
             // btnTen
             // 
-            this.btnTen.Location = new System.Drawing.Point(10, 360);
+            this.btnTen.BackColor = System.Drawing.Color.White;
+            this.btnTen.Location = new System.Drawing.Point(12, 451);
             this.btnTen.Name = "btnTen";
-            this.btnTen.Size = new System.Drawing.Size(130, 24);
+            this.btnTen.Size = new System.Drawing.Size(162, 33);
             this.btnTen.TabIndex = 1;
             this.btnTen.Text = "BUTTON TEN";
+            this.btnTen.UseVisualStyleBackColor = false;
             // 
             // btnFinish
             // 
-            this.btnFinish.Location = new System.Drawing.Point(10, 420);
+            this.btnFinish.BackColor = System.Drawing.Color.White;
+            this.btnFinish.Location = new System.Drawing.Point(12, 504);
             this.btnFinish.Name = "btnFinish";
-            this.btnFinish.Size = new System.Drawing.Size(130, 24);
+            this.btnFinish.Size = new System.Drawing.Size(162, 33);
             this.btnFinish.TabIndex = 1;
             this.btnFinish.Text = "Finish";
+            this.btnFinish.UseVisualStyleBackColor = false;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(10, 450);
+            this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(12, 543);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(130, 24);
+            this.btnClose.Size = new System.Drawing.Size(162, 33);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
             // 
             // btnImageOne
             // 
-            this.btnImageOne.Location = new System.Drawing.Point(160, 230);
+            this.btnImageOne.BackColor = System.Drawing.Color.White;
+            this.btnImageOne.Location = new System.Drawing.Point(214, 272);
             this.btnImageOne.Name = "btnImageOne";
-            this.btnImageOne.Size = new System.Drawing.Size(130, 24);
+            this.btnImageOne.Size = new System.Drawing.Size(162, 33);
             this.btnImageOne.TabIndex = 1;
             this.btnImageOne.Text = "BUTTON ONE";
+            this.btnImageOne.UseVisualStyleBackColor = false;
             // 
             // btnImageTwo
             // 
-            this.btnImageTwo.Location = new System.Drawing.Point(310, 230);
+            this.btnImageTwo.BackColor = System.Drawing.Color.White;
+            this.btnImageTwo.Location = new System.Drawing.Point(382, 272);
             this.btnImageTwo.Name = "btnImageTwo";
-            this.btnImageTwo.Size = new System.Drawing.Size(130, 24);
+            this.btnImageTwo.Size = new System.Drawing.Size(162, 33);
             this.btnImageTwo.TabIndex = 1;
             this.btnImageTwo.Text = "BUTTON TWO";
+            this.btnImageTwo.UseVisualStyleBackColor = false;
             // 
             // btnImageThree
             // 
-            this.btnImageThree.Location = new System.Drawing.Point(460, 230);
+            this.btnImageThree.BackColor = System.Drawing.Color.White;
+            this.btnImageThree.Location = new System.Drawing.Point(550, 272);
             this.btnImageThree.Name = "btnImageThree";
-            this.btnImageThree.Size = new System.Drawing.Size(130, 24);
+            this.btnImageThree.Size = new System.Drawing.Size(162, 33);
             this.btnImageThree.TabIndex = 1;
             this.btnImageThree.Text = "BUTTON THREE";
+            this.btnImageThree.UseVisualStyleBackColor = false;
             // 
             // btnImageFour
             // 
-            this.btnImageFour.Location = new System.Drawing.Point(610, 230);
+            this.btnImageFour.BackColor = System.Drawing.Color.White;
+            this.btnImageFour.Location = new System.Drawing.Point(718, 272);
             this.btnImageFour.Name = "btnImageFour";
-            this.btnImageFour.Size = new System.Drawing.Size(130, 24);
+            this.btnImageFour.Size = new System.Drawing.Size(162, 33);
             this.btnImageFour.TabIndex = 1;
             this.btnImageFour.Text = "BUTTON FOUR";
+            this.btnImageFour.UseVisualStyleBackColor = false;
             // 
             // btnImageFive
             // 
-            this.btnImageFive.Location = new System.Drawing.Point(760, 230);
+            this.btnImageFive.BackColor = System.Drawing.Color.White;
+            this.btnImageFive.Location = new System.Drawing.Point(886, 272);
             this.btnImageFive.Name = "btnImageFive";
-            this.btnImageFive.Size = new System.Drawing.Size(130, 24);
+            this.btnImageFive.Size = new System.Drawing.Size(162, 33);
             this.btnImageFive.TabIndex = 1;
             this.btnImageFive.Text = "BUTTON FIVE";
+            this.btnImageFive.UseVisualStyleBackColor = false;
             // 
             // btnImageSix
             // 
-            this.btnImageSix.Location = new System.Drawing.Point(160, 440);
+            this.btnImageSix.BackColor = System.Drawing.Color.White;
+            this.btnImageSix.Location = new System.Drawing.Point(214, 482);
             this.btnImageSix.Name = "btnImageSix";
-            this.btnImageSix.Size = new System.Drawing.Size(130, 24);
+            this.btnImageSix.Size = new System.Drawing.Size(162, 33);
             this.btnImageSix.TabIndex = 1;
             this.btnImageSix.Text = "BUTTON SIX";
+            this.btnImageSix.UseVisualStyleBackColor = false;
             // 
             // btnImageSeven
             // 
-            this.btnImageSeven.Location = new System.Drawing.Point(310, 440);
+            this.btnImageSeven.BackColor = System.Drawing.Color.White;
+            this.btnImageSeven.Location = new System.Drawing.Point(382, 482);
             this.btnImageSeven.Name = "btnImageSeven";
-            this.btnImageSeven.Size = new System.Drawing.Size(130, 24);
+            this.btnImageSeven.Size = new System.Drawing.Size(162, 33);
             this.btnImageSeven.TabIndex = 1;
             this.btnImageSeven.Text = "BUTTON SEVEN";
+            this.btnImageSeven.UseVisualStyleBackColor = false;
             // 
             // btnImageEight
             // 
-            this.btnImageEight.Location = new System.Drawing.Point(460, 440);
+            this.btnImageEight.BackColor = System.Drawing.Color.White;
+            this.btnImageEight.Location = new System.Drawing.Point(550, 482);
             this.btnImageEight.Name = "btnImageEight";
-            this.btnImageEight.Size = new System.Drawing.Size(130, 24);
+            this.btnImageEight.Size = new System.Drawing.Size(162, 33);
             this.btnImageEight.TabIndex = 1;
             this.btnImageEight.Text = "BUTTON EIGHT";
+            this.btnImageEight.UseVisualStyleBackColor = false;
             // 
             // btnImageNine
             // 
-            this.btnImageNine.Location = new System.Drawing.Point(610, 440);
+            this.btnImageNine.BackColor = System.Drawing.Color.White;
+            this.btnImageNine.Location = new System.Drawing.Point(718, 482);
             this.btnImageNine.Name = "btnImageNine";
-            this.btnImageNine.Size = new System.Drawing.Size(130, 24);
+            this.btnImageNine.Size = new System.Drawing.Size(162, 33);
             this.btnImageNine.TabIndex = 1;
             this.btnImageNine.Text = "BUTTON NINE";
+            this.btnImageNine.UseVisualStyleBackColor = false;
             // 
             // btnImageTen
             // 
-            this.btnImageTen.Location = new System.Drawing.Point(760, 440);
+            this.btnImageTen.BackColor = System.Drawing.Color.White;
+            this.btnImageTen.Location = new System.Drawing.Point(886, 482);
             this.btnImageTen.Name = "btnImageTen";
-            this.btnImageTen.Size = new System.Drawing.Size(130, 24);
+            this.btnImageTen.Size = new System.Drawing.Size(162, 33);
             this.btnImageTen.TabIndex = 1;
             this.btnImageTen.Text = "BUTTON TEN";
+            this.btnImageTen.UseVisualStyleBackColor = false;
             // 
             // pbxImageOne
             // 
-            this.pbxImageOne.Location = new System.Drawing.Point(160, 85);
+            this.pbxImageOne.Location = new System.Drawing.Point(214, 100);
             this.pbxImageOne.Name = "pbxImageOne";
-            this.pbxImageOne.Size = new System.Drawing.Size(130, 135);
+            this.pbxImageOne.Size = new System.Drawing.Size(162, 163);
             this.pbxImageOne.TabIndex = 14;
             this.pbxImageOne.TabStop = false;
             // 
             // pbxImageTwo
             // 
-            this.pbxImageTwo.Location = new System.Drawing.Point(310, 85);
+            this.pbxImageTwo.Location = new System.Drawing.Point(382, 100);
             this.pbxImageTwo.Name = "pbxImageTwo";
-            this.pbxImageTwo.Size = new System.Drawing.Size(130, 135);
+            this.pbxImageTwo.Size = new System.Drawing.Size(162, 163);
             this.pbxImageTwo.TabIndex = 15;
             this.pbxImageTwo.TabStop = false;
             // 
             // pbxImageThree
             // 
-            this.pbxImageThree.Location = new System.Drawing.Point(460, 85);
+            this.pbxImageThree.Location = new System.Drawing.Point(550, 100);
             this.pbxImageThree.Name = "pbxImageThree";
-            this.pbxImageThree.Size = new System.Drawing.Size(130, 135);
+            this.pbxImageThree.Size = new System.Drawing.Size(162, 163);
             this.pbxImageThree.TabIndex = 16;
             this.pbxImageThree.TabStop = false;
             // 
             // pbxImageFour
             // 
-            this.pbxImageFour.Location = new System.Drawing.Point(610, 85);
+            this.pbxImageFour.Location = new System.Drawing.Point(718, 100);
             this.pbxImageFour.Name = "pbxImageFour";
-            this.pbxImageFour.Size = new System.Drawing.Size(130, 135);
+            this.pbxImageFour.Size = new System.Drawing.Size(162, 163);
             this.pbxImageFour.TabIndex = 17;
             this.pbxImageFour.TabStop = false;
             // 
             // pbxImageFive
             // 
-            this.pbxImageFive.Location = new System.Drawing.Point(760, 85);
+            this.pbxImageFive.Location = new System.Drawing.Point(886, 100);
             this.pbxImageFive.Name = "pbxImageFive";
-            this.pbxImageFive.Size = new System.Drawing.Size(130, 135);
+            this.pbxImageFive.Size = new System.Drawing.Size(162, 163);
             this.pbxImageFive.TabIndex = 18;
             this.pbxImageFive.TabStop = false;
             // 
             // pbxImageSix
             // 
-            this.pbxImageSix.Location = new System.Drawing.Point(160, 299);
+            this.pbxImageSix.Location = new System.Drawing.Point(214, 314);
             this.pbxImageSix.Name = "pbxImageSix";
-            this.pbxImageSix.Size = new System.Drawing.Size(130, 135);
+            this.pbxImageSix.Size = new System.Drawing.Size(162, 163);
             this.pbxImageSix.TabIndex = 19;
             this.pbxImageSix.TabStop = false;
             // 
             // pbxImageSeven
             // 
-            this.pbxImageSeven.Location = new System.Drawing.Point(310, 299);
+            this.pbxImageSeven.Location = new System.Drawing.Point(382, 314);
             this.pbxImageSeven.Name = "pbxImageSeven";
-            this.pbxImageSeven.Size = new System.Drawing.Size(130, 135);
+            this.pbxImageSeven.Size = new System.Drawing.Size(162, 163);
             this.pbxImageSeven.TabIndex = 20;
             this.pbxImageSeven.TabStop = false;
             // 
             // pbxImageEight
             // 
-            this.pbxImageEight.Location = new System.Drawing.Point(460, 299);
+            this.pbxImageEight.Location = new System.Drawing.Point(550, 314);
             this.pbxImageEight.Name = "pbxImageEight";
-            this.pbxImageEight.Size = new System.Drawing.Size(130, 135);
+            this.pbxImageEight.Size = new System.Drawing.Size(162, 163);
             this.pbxImageEight.TabIndex = 21;
             this.pbxImageEight.TabStop = false;
             // 
             // pbxImageNine
             // 
-            this.pbxImageNine.Location = new System.Drawing.Point(610, 299);
+            this.pbxImageNine.Location = new System.Drawing.Point(718, 314);
             this.pbxImageNine.Name = "pbxImageNine";
-            this.pbxImageNine.Size = new System.Drawing.Size(130, 135);
+            this.pbxImageNine.Size = new System.Drawing.Size(162, 163);
             this.pbxImageNine.TabIndex = 22;
             this.pbxImageNine.TabStop = false;
             // 
             // pbxImageTen
             // 
-            this.pbxImageTen.Location = new System.Drawing.Point(760, 299);
+            this.pbxImageTen.Location = new System.Drawing.Point(886, 314);
             this.pbxImageTen.Name = "pbxImageTen";
-            this.pbxImageTen.Size = new System.Drawing.Size(130, 135);
+            this.pbxImageTen.Size = new System.Drawing.Size(162, 163);
             this.pbxImageTen.TabIndex = 23;
             this.pbxImageTen.TabStop = false;
             // 
             // MatchWordToPictureExerciseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 500);
-            this.Controls.Add(this.pbxImageTen);
-            this.Controls.Add(this.pbxImageNine);
-            this.Controls.Add(this.pbxImageEight);
-            this.Controls.Add(this.pbxImageSeven);
-            this.Controls.Add(this.pbxImageSix);
-            this.Controls.Add(this.pbxImageFive);
-            this.Controls.Add(this.pbxImageFour);
-            this.Controls.Add(this.pbxImageThree);
-            this.Controls.Add(this.pbxImageTwo);
-            this.Controls.Add(this.pbxImageOne);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(1090, 591);
             this.Controls.Add(this.lblExerciseInstructionsLabel);
             this.Controls.Add(this.lblExerciseInstructions);
             this.Controls.Add(this.btnOne);
@@ -387,6 +420,17 @@
             this.Controls.Add(this.btnImageEight);
             this.Controls.Add(this.btnImageNine);
             this.Controls.Add(this.btnImageTen);
+            this.Controls.Add(this.pbxImageTen);
+            this.Controls.Add(this.pbxImageNine);
+            this.Controls.Add(this.pbxImageEight);
+            this.Controls.Add(this.pbxImageSeven);
+            this.Controls.Add(this.pbxImageSix);
+            this.Controls.Add(this.pbxImageFive);
+            this.Controls.Add(this.pbxImageFour);
+            this.Controls.Add(this.pbxImageThree);
+            this.Controls.Add(this.pbxImageTwo);
+            this.Controls.Add(this.pbxImageOne);
+            this.Font = new System.Drawing.Font("Verdana", 12F);
             this.Name = "MatchWordToPictureExerciseForm";
             this.Text = "MatchWordToPictureExerciseForm";
             this.Load += new System.EventHandler(this.MatchWordToPictureExerciseForm_Load);
