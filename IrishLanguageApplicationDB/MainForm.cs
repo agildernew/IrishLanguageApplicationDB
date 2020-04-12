@@ -28,7 +28,7 @@ namespace IrishLanguageApplicationDB
         private void MainForm_Load(object sender, EventArgs e)
         {
             string selectedTopicNameEnglish = "";
-            //lblUserName.Text = user;
+            lblUserName.Text = user;
 
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
@@ -111,8 +111,16 @@ namespace IrishLanguageApplicationDB
             //this.Enabled = false;
             //this.Hide();
             //Form ChoosingExerciseForm = new ChoosingExerciseForm();
-            Form ChoosingExerciseForm = new ChoosingExerciseForm(topic);
-            ChoosingExerciseForm.Show();
+            if (userType == "Student")
+            {
+                Form ChoosingExerciseForm = new ChoosingExerciseForm(user, topic);
+                ChoosingExerciseForm.Show();
+            }
+            else
+            {
+                Form ChoosingExerciseForm = new ChoosingExerciseForm(topic);
+                ChoosingExerciseForm.Show();
+            }
         }
 
         private void cbxTopicList_SelectedIndexChanged(object sender, EventArgs e)
@@ -348,14 +356,21 @@ namespace IrishLanguageApplicationDB
             if (numberOfVocabulary > 0)
             {
                 btnPlayGame.Enabled = true;
-                lbxVocabulary.SelectedIndex = currentIndex;
+                if (currentIndex != 0)
+                { 
+                lbxVocabulary.SelectedIndex = currentIndex - 1;
+                } 
+                else
+                {
+                    lbxVocabulary.SelectedIndex = currentIndex;
+                }
                 int index = lbxVocabulary.SelectedItem.ToString().IndexOf('-');
                 if (index > 0)
                 {
                     selectedVocabularyIrish = lbxVocabulary.SelectedItem.ToString().Substring(index + 2).Trim();
                     selectedVocabularyEnglish = lbxVocabulary.SelectedItem.ToString().Substring(0, index).Trim();
                 };
-                txtIrishVocabulary.Text = "uifneiuf";
+                txtIrishVocabulary.Text = selectedVocabularyIrish;
                 txtEnglishVocabulary.Text = selectedVocabularyEnglish;
             }
             else
@@ -364,7 +379,6 @@ namespace IrishLanguageApplicationDB
                 txtEnglishVocabulary.Text = "";
                 txtIrishVocabulary.Text = "";
             }
-            txtIrishVocabulary.Text = topic;
             connection.Close();
         }
 
