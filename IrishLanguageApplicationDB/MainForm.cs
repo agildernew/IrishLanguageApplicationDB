@@ -28,7 +28,7 @@ namespace IrishLanguageApplicationDB
         private void MainForm_Load(object sender, EventArgs e)
         {
             string selectedTopicNameEnglish = "";
-            //lblUserName.Text = user;
+            lblUserName.Text = user;
 
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
