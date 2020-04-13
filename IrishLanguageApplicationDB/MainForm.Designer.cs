@@ -52,6 +52,7 @@
             this.btnDeleteTopic = new System.Windows.Forms.Button();
             this.btnDeleteVocabulary = new System.Windows.Forms.Button();
             this.btnViewLeaderboard = new System.Windows.Forms.Button();
+            this.btnAmhranNabhFiann = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImages)).BeginInit();
             this.SuspendLayout();
             // 
@@ -293,12 +294,24 @@
             this.btnViewLeaderboard.UseVisualStyleBackColor = false;
             this.btnViewLeaderboard.Click += new System.EventHandler(this.btnViewLeaderboard_Click);
             // 
+            // btnAmhranNabhFiann
+            // 
+            this.btnAmhranNabhFiann.BackColor = System.Drawing.Color.White;
+            this.btnAmhranNabhFiann.Location = new System.Drawing.Point(585, 160);
+            this.btnAmhranNabhFiann.Name = "btnAmhranNabhFiann";
+            this.btnAmhranNabhFiann.Size = new System.Drawing.Size(182, 33);
+            this.btnAmhranNabhFiann.TabIndex = 18;
+            this.btnAmhranNabhFiann.Text = "Amhrán na bhFiann";
+            this.btnAmhranNabhFiann.UseVisualStyleBackColor = false;
+            this.btnAmhranNabhFiann.Click += new System.EventHandler(this.btnAmhranNabhFiann_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(788, 398);
+            this.Controls.Add(this.btnAmhranNabhFiann);
             this.Controls.Add(this.btnViewLeaderboard);
             this.Controls.Add(this.btnDeleteTopic);
             this.Controls.Add(this.btnDeleteVocabulary);
@@ -364,6 +377,7 @@
         private System.Windows.Forms.Button btnDeleteTopic;
         private System.Windows.Forms.Button btnDeleteVocabulary;
         private System.Windows.Forms.Button btnViewLeaderboard;
+        private System.Windows.Forms.Button btnAmhranNabhFiann;
     }
 }
 
