@@ -294,6 +294,12 @@ namespace IrishLanguageApplicationDB
             }
         }
 
+        private void btnAmhranNabhFiann_Click(object sender, EventArgs e)
+        {
+            Form AmhranNabfFiannForm = new AmhranNabfFiannForm();
+            AmhranNabfFiannForm.Show();
+        }
+
         private void btnAddTopic_Click(object sender, EventArgs e)
         {
             //this.Enabled = false;

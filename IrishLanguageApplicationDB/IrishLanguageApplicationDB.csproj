@@ -67,6 +67,12 @@
     <Compile Include="AddVocabularyForm.Designer.cs">
       <DependentUpon>AddVocabularyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AmhranNabfFiannForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AmhranNabfFiannForm.Designer.cs">
+      <DependentUpon>AmhranNabfFiannForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddVocabularyForm.resx">
       <DependentUpon>AddVocabularyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AmhranNabfFiannForm.resx">
+      <DependentUpon>AmhranNabfFiannForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
