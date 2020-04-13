@@ -15,11 +15,9 @@ namespace IrishLanguageApplicationDB
     {
         public string topic = "", selectedVocabularyIrish = "", selectedVocabularyEnglish = "", selectedVocabularyImagePath = "", user = "", userType = "";
         Image currentImage;
-        //public SqlConnection connection = new SqlConnection();
 
         public MainForm(string currentUser, string currentUserType)
         {
-            //connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
             user = currentUser;
             userType = currentUserType;
             InitializeComponent();
@@ -284,8 +282,16 @@ namespace IrishLanguageApplicationDB
         {
             int index = cbxTopicList.SelectedItem.ToString().IndexOf('-');
             topic = cbxTopicList.SelectedItem.ToString().Substring(0, index).Trim();
-            Form LeaderBoardForm = new LeaderBoardForm(topic, "All");
-            LeaderBoardForm.Show();
+            if (userType == "Parent")
+            {
+                Form LeaderBoardForm = new LeaderBoardForm(topic, "All", user);
+                LeaderBoardForm.Show();
+            }
+            else
+            {
+                Form LeaderBoardForm = new LeaderBoardForm(topic, "All");
+                LeaderBoardForm.Show();
+            }
         }
 
         private void btnAddTopic_Click(object sender, EventArgs e)

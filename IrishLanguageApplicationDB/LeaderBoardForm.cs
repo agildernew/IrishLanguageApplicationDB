@@ -14,8 +14,8 @@ namespace IrishLanguageApplicationDB
     public partial class LeaderBoardForm : Form
     {
         SqlConnection connection = new SqlConnection();
-        string currentTopic = "", currentYearGroup = "", currentExerciseType = "";
-        List<string> userId = new List<string>(), score = new List<string>(), formClass = new List<string>(), exerciseType = new List<string>();
+        string currentTopic = "", currentYearGroup = "", currentExerciseType = "", parentUsername = "";
+        List<string> userId = new List<string>(), score = new List<string>(), formClass = new List<string>(), exerciseType = new List<string>(), children = new List<string>();
         List<Label> labelsUserIds = new List<Label>(), labelsScores = new List<Label>(), labelsFormClasses = new List<Label>(), labelsExerciseType = new List<Label>();
 
         private void btnYear8_Click(object sender, EventArgs e)
@@ -55,6 +55,14 @@ namespace IrishLanguageApplicationDB
         {
             currentTopic = topic;
             currentYearGroup = yearGroup;
+            InitializeComponent();
+        }
+
+        public LeaderBoardForm(string topic, string yearGroup, string user)
+        {
+            currentTopic = topic;
+            currentYearGroup = yearGroup;
+            parentUsername = user;
             InitializeComponent();
         }
 
@@ -131,22 +139,60 @@ namespace IrishLanguageApplicationDB
                 score.Clear();
                 formClass.Clear();
                 exerciseType.Clear();
+                children.Clear();
             }
 
             connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
 
-            connection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM LeaderBoard WHERE topic = '" + currentTopic + "' ORDER BY score DESC;", connection);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader reader;
+
+            if (parentUsername != "")
             {
-                int index = 0;
-                userId.Add(reader["user_id"].ToString());
-                score.Add(reader["score"].ToString());
-                exerciseType.Add(reader["exerciseType"].ToString());
-                index = index + 1;
+                connection.Open();
+                cmd = new SqlCommand("SELECT * FROM ParentStudent WHERE user_id = '" + parentUsername + "';", connection);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int index = 0;
+                    children.Add(reader["student_user_id"].ToString());
+                    index = index + 1;
+                }
+                connection.Close();
+
+                for (int i = 0; i < children.Count; i++)
+                {
+
+                    connection.Open();
+                    cmd = new SqlCommand("SELECT * FROM LeaderBoard WHERE topic = '" + currentTopic + "' AND user_id = '" + children[i] + "' ORDER BY score DESC;", connection);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        int index = 0;
+                        userId.Add(reader["user_id"].ToString());
+                        score.Add(reader["score"].ToString());
+                        exerciseType.Add(reader["exerciseType"].ToString());
+                        index = index + 1;
+                    }
+                    connection.Close();
+                }
             }
-            connection.Close();
+            else
+            {
+                connection.Open();
+                cmd = new SqlCommand("SELECT * FROM LeaderBoard WHERE topic = '" + currentTopic + "' ORDER BY score DESC;", connection);
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int index = 0;
+                    userId.Add(reader["user_id"].ToString());
+                    score.Add(reader["score"].ToString());
+                    exerciseType.Add(reader["exerciseType"].ToString());
+                    index = index + 1;
+                }
+                connection.Close();
+            }
 
             numberOfInstances = userId.Count();
 
@@ -164,6 +210,9 @@ namespace IrishLanguageApplicationDB
 
                 connection.Close();
             }
+
+
+
 
             for (int i = numberOfInstances - 1; i >= 0; i--)
             {
