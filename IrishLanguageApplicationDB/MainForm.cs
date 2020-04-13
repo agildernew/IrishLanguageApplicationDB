@@ -280,6 +280,14 @@ namespace IrishLanguageApplicationDB
             connection.Close();
         }
 
+        private void btnViewLeaderboard_Click(object sender, EventArgs e)
+        {
+            int index = cbxTopicList.SelectedItem.ToString().IndexOf('-');
+            topic = cbxTopicList.SelectedItem.ToString().Substring(0, index).Trim();
+            Form LeaderBoardForm = new LeaderBoardForm(topic, "All");
+            LeaderBoardForm.Show();
+        }
+
         private void btnAddTopic_Click(object sender, EventArgs e)
         {
             //this.Enabled = false;
