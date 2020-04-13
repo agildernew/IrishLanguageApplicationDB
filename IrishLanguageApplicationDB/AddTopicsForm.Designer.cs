@@ -38,9 +38,9 @@
             // lblTopicNameIrish
             // 
             this.lblTopicNameIrish.AutoSize = true;
-            this.lblTopicNameIrish.Location = new System.Drawing.Point(12, 57);
+            this.lblTopicNameIrish.Location = new System.Drawing.Point(12, 61);
             this.lblTopicNameIrish.Name = "lblTopicNameIrish";
-            this.lblTopicNameIrish.Size = new System.Drawing.Size(87, 13);
+            this.lblTopicNameIrish.Size = new System.Drawing.Size(145, 18);
             this.lblTopicNameIrish.TabIndex = 0;
             this.lblTopicNameIrish.Text = "Topic Name Irish";
             // 
@@ -49,44 +49,49 @@
             this.lblTopicNameEnglish.AutoSize = true;
             this.lblTopicNameEnglish.Location = new System.Drawing.Point(12, 28);
             this.lblTopicNameEnglish.Name = "lblTopicNameEnglish";
-            this.lblTopicNameEnglish.Size = new System.Drawing.Size(102, 13);
+            this.lblTopicNameEnglish.Size = new System.Drawing.Size(167, 18);
             this.lblTopicNameEnglish.TabIndex = 1;
             this.lblTopicNameEnglish.Text = "Topic Name English";
             // 
             // txtTopicNameEnglish
             // 
-            this.txtTopicNameEnglish.Location = new System.Drawing.Point(134, 21);
+            this.txtTopicNameEnglish.BackColor = System.Drawing.Color.White;
+            this.txtTopicNameEnglish.Location = new System.Drawing.Point(185, 25);
             this.txtTopicNameEnglish.Name = "txtTopicNameEnglish";
-            this.txtTopicNameEnglish.Size = new System.Drawing.Size(193, 20);
+            this.txtTopicNameEnglish.Size = new System.Drawing.Size(229, 27);
             this.txtTopicNameEnglish.TabIndex = 2;
             // 
             // txtTopicNameIrish
             // 
-            this.txtTopicNameIrish.Location = new System.Drawing.Point(134, 50);
+            this.txtTopicNameIrish.BackColor = System.Drawing.Color.White;
+            this.txtTopicNameIrish.Location = new System.Drawing.Point(185, 58);
             this.txtTopicNameIrish.Name = "txtTopicNameIrish";
-            this.txtTopicNameIrish.Size = new System.Drawing.Size(193, 20);
+            this.txtTopicNameIrish.Size = new System.Drawing.Size(229, 27);
             this.txtTopicNameIrish.TabIndex = 3;
             // 
             // btnAddTopic
             // 
-            this.btnAddTopic.Location = new System.Drawing.Point(252, 87);
+            this.btnAddTopic.BackColor = System.Drawing.Color.White;
+            this.btnAddTopic.Location = new System.Drawing.Point(334, 91);
             this.btnAddTopic.Name = "btnAddTopic";
-            this.btnAddTopic.Size = new System.Drawing.Size(75, 23);
+            this.btnAddTopic.Size = new System.Drawing.Size(80, 28);
             this.btnAddTopic.TabIndex = 4;
             this.btnAddTopic.Text = "Add Topic";
-            this.btnAddTopic.UseVisualStyleBackColor = true;
+            this.btnAddTopic.UseVisualStyleBackColor = false;
             this.btnAddTopic.Click += new System.EventHandler(this.btnAddTopic_Click);
             // 
             // AddTopicsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 122);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(432, 133);
             this.Controls.Add(this.btnAddTopic);
             this.Controls.Add(this.txtTopicNameIrish);
             this.Controls.Add(this.txtTopicNameEnglish);
             this.Controls.Add(this.lblTopicNameEnglish);
             this.Controls.Add(this.lblTopicNameIrish);
+            this.Font = new System.Drawing.Font("Verdana", 12F);
             this.Name = "AddTopicsForm";
             this.Text = "AddTopicsForm";
             this.ResumeLayout(false);

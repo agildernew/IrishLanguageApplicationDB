@@ -56,30 +56,31 @@
             // 
             // cbxTopicList
             // 
+            this.cbxTopicList.BackColor = System.Drawing.Color.White;
             this.cbxTopicList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTopicList.Location = new System.Drawing.Point(60, 20);
+            this.cbxTopicList.Location = new System.Drawing.Point(80, 20);
             this.cbxTopicList.Name = "cbxTopicList";
-            this.cbxTopicList.Size = new System.Drawing.Size(150, 21);
+            this.cbxTopicList.Size = new System.Drawing.Size(194, 26);
             this.cbxTopicList.TabIndex = 6;
             this.cbxTopicList.SelectedIndexChanged += new System.EventHandler(this.cbxTopicList_SelectedIndexChanged);
             // 
             // txtIrishVocabulary
             // 
-            this.txtIrishVocabulary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.txtIrishVocabulary.Location = new System.Drawing.Point(300, 40);
+            this.txtIrishVocabulary.BackColor = System.Drawing.Color.White;
+            this.txtIrishVocabulary.Location = new System.Drawing.Point(375, 40);
             this.txtIrishVocabulary.Name = "txtIrishVocabulary";
             this.txtIrishVocabulary.ReadOnly = true;
-            this.txtIrishVocabulary.Size = new System.Drawing.Size(150, 20);
+            this.txtIrishVocabulary.Size = new System.Drawing.Size(178, 27);
             this.txtIrishVocabulary.TabIndex = 13;
             this.txtIrishVocabulary.Text = "txtIrishVocabulary";
             // 
             // txtEnglishVocabulary
             // 
-            this.txtEnglishVocabulary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.txtEnglishVocabulary.Location = new System.Drawing.Point(300, 70);
+            this.txtEnglishVocabulary.BackColor = System.Drawing.Color.White;
+            this.txtEnglishVocabulary.Location = new System.Drawing.Point(375, 73);
             this.txtEnglishVocabulary.Name = "txtEnglishVocabulary";
             this.txtEnglishVocabulary.ReadOnly = true;
-            this.txtEnglishVocabulary.Size = new System.Drawing.Size(150, 20);
+            this.txtEnglishVocabulary.Size = new System.Drawing.Size(178, 27);
             this.txtEnglishVocabulary.TabIndex = 13;
             this.txtEnglishVocabulary.Text = "txtEnglishVocabulary";
             // 
@@ -87,54 +88,53 @@
             // 
             this.lblTopics.Location = new System.Drawing.Point(10, 20);
             this.lblTopics.Name = "lblTopics";
-            this.lblTopics.Size = new System.Drawing.Size(50, 16);
+            this.lblTopics.Size = new System.Drawing.Size(70, 26);
             this.lblTopics.TabIndex = 0;
             this.lblTopics.Text = "Topics";
             // 
             // lblVocabulary
             // 
-            this.lblVocabulary.Location = new System.Drawing.Point(20, 320);
+            this.lblVocabulary.Location = new System.Drawing.Point(10, 337);
             this.lblVocabulary.Name = "lblVocabulary";
-            this.lblVocabulary.Size = new System.Drawing.Size(60, 16);
+            this.lblVocabulary.Size = new System.Drawing.Size(108, 34);
             this.lblVocabulary.TabIndex = 0;
             this.lblVocabulary.Text = "Vocabulary";
             // 
             // lblIrish
             // 
-            this.lblIrish.Location = new System.Drawing.Point(250, 40);
+            this.lblIrish.Location = new System.Drawing.Point(297, 40);
             this.lblIrish.Name = "lblIrish";
-            this.lblIrish.Size = new System.Drawing.Size(50, 16);
+            this.lblIrish.Size = new System.Drawing.Size(78, 24);
             this.lblIrish.TabIndex = 0;
             this.lblIrish.Text = "Irish";
             // 
             // lblEnglish
             // 
-            this.lblEnglish.Location = new System.Drawing.Point(250, 70);
+            this.lblEnglish.Location = new System.Drawing.Point(297, 73);
             this.lblEnglish.Name = "lblEnglish";
-            this.lblEnglish.Size = new System.Drawing.Size(50, 16);
+            this.lblEnglish.Size = new System.Drawing.Size(78, 24);
             this.lblEnglish.TabIndex = 0;
             this.lblEnglish.Text = "English";
             // 
             // lblUserName
             // 
-            this.lblUserName.Location = new System.Drawing.Point(500, 20);
+            this.lblUserName.Location = new System.Drawing.Point(598, 9);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(130, 16);
+            this.lblUserName.Size = new System.Drawing.Size(169, 28);
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "Username";
             this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblImage
             // 
-            this.lblImage.Location = new System.Drawing.Point(250, 100);
+            this.lblImage.Location = new System.Drawing.Point(297, 106);
             this.lblImage.Name = "lblImage";
-            this.lblImage.Size = new System.Drawing.Size(50, 16);
+            this.lblImage.Size = new System.Drawing.Size(78, 24);
             this.lblImage.TabIndex = 0;
             this.lblImage.Text = "Image";
             // 
             // txtImageIMG
             // 
-            this.txtImageIMG.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.txtImageIMG.Location = new System.Drawing.Point(300, 100);
             this.txtImageIMG.Multiline = true;
             this.txtImageIMG.Name = "txtImageIMG";
@@ -145,123 +145,148 @@
             // 
             // pbxImages
             // 
-            this.pbxImages.Location = new System.Drawing.Point(300, 100);
+            this.pbxImages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbxImages.Location = new System.Drawing.Point(375, 106);
             this.pbxImages.Name = "pbxImages";
-            this.pbxImages.Size = new System.Drawing.Size(150, 150);
+            this.pbxImages.Size = new System.Drawing.Size(178, 164);
             this.pbxImages.TabIndex = 14;
             this.pbxImages.TabStop = false;
             // 
             // lbxVocabulary
             // 
+            this.lbxVocabulary.BackColor = System.Drawing.Color.White;
+            this.lbxVocabulary.ItemHeight = 18;
             this.lbxVocabulary.Location = new System.Drawing.Point(10, 50);
             this.lbxVocabulary.Name = "lbxVocabulary";
-            this.lbxVocabulary.Size = new System.Drawing.Size(200, 290);
+            this.lbxVocabulary.Size = new System.Drawing.Size(264, 274);
             this.lbxVocabulary.TabIndex = 0;
-            this.lbxVocabulary.SelectedIndexChanged += new System.EventHandler(this.lbxVocabulary_SelectedIndexChanged);
             // 
             // btnPlayGame
             // 
-            this.btnPlayGame.Location = new System.Drawing.Point(80, 350);
+            this.btnPlayGame.BackColor = System.Drawing.Color.White;
+            this.btnPlayGame.Location = new System.Drawing.Point(142, 337);
             this.btnPlayGame.Name = "btnPlayGame";
-            this.btnPlayGame.Size = new System.Drawing.Size(130, 24);
+            this.btnPlayGame.Size = new System.Drawing.Size(132, 34);
             this.btnPlayGame.TabIndex = 1;
             this.btnPlayGame.Text = "Play a Game";
+            this.btnPlayGame.UseVisualStyleBackColor = false;
             this.btnPlayGame.Click += new System.EventHandler(this.btnPlayGame_Click);
             // 
             // btnFirst
             // 
-            this.btnFirst.Location = new System.Drawing.Point(300, 260);
+            this.btnFirst.BackColor = System.Drawing.Color.White;
+            this.btnFirst.Location = new System.Drawing.Point(367, 276);
             this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(30, 24);
+            this.btnFirst.Size = new System.Drawing.Size(41, 31);
             this.btnFirst.TabIndex = 1;
             this.btnFirst.Text = "|<";
+            this.btnFirst.UseVisualStyleBackColor = false;
             this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(340, 260);
+            this.btnPrevious.BackColor = System.Drawing.Color.White;
+            this.btnPrevious.Location = new System.Drawing.Point(414, 276);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(30, 24);
+            this.btnPrevious.Size = new System.Drawing.Size(41, 31);
             this.btnPrevious.TabIndex = 1;
             this.btnPrevious.Text = "<";
+            this.btnPrevious.UseVisualStyleBackColor = false;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(380, 260);
+            this.btnNext.BackColor = System.Drawing.Color.White;
+            this.btnNext.Location = new System.Drawing.Point(461, 276);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(30, 24);
+            this.btnNext.Size = new System.Drawing.Size(41, 31);
             this.btnNext.TabIndex = 1;
             this.btnNext.Text = ">";
+            this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(420, 260);
+            this.btnLast.BackColor = System.Drawing.Color.White;
+            this.btnLast.Location = new System.Drawing.Point(512, 276);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(30, 24);
+            this.btnLast.Size = new System.Drawing.Size(41, 31);
             this.btnLast.TabIndex = 1;
             this.btnLast.Text = ">|";
+            this.btnLast.UseVisualStyleBackColor = false;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // btnAddTopic
             // 
-            this.btnAddTopic.Location = new System.Drawing.Point(253, 299);
+            this.btnAddTopic.BackColor = System.Drawing.Color.White;
+            this.btnAddTopic.Location = new System.Drawing.Point(296, 313);
             this.btnAddTopic.Name = "btnAddTopic";
-            this.btnAddTopic.Size = new System.Drawing.Size(130, 24);
+            this.btnAddTopic.Size = new System.Drawing.Size(169, 33);
             this.btnAddTopic.TabIndex = 1;
             this.btnAddTopic.Text = "Add Topic";
+            this.btnAddTopic.UseVisualStyleBackColor = false;
             this.btnAddTopic.Click += new System.EventHandler(this.btnAddTopic_Click);
             // 
             // btnAddVocabulary
             // 
-            this.btnAddVocabulary.Location = new System.Drawing.Point(253, 329);
+            this.btnAddVocabulary.BackColor = System.Drawing.Color.White;
+            this.btnAddVocabulary.Location = new System.Drawing.Point(471, 313);
             this.btnAddVocabulary.Name = "btnAddVocabulary";
-            this.btnAddVocabulary.Size = new System.Drawing.Size(130, 24);
+            this.btnAddVocabulary.Size = new System.Drawing.Size(169, 33);
             this.btnAddVocabulary.TabIndex = 1;
             this.btnAddVocabulary.Text = "Add Vocabulary";
+            this.btnAddVocabulary.UseVisualStyleBackColor = false;
             this.btnAddVocabulary.Click += new System.EventHandler(this.btnAddVocabulary_Click);
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.Location = new System.Drawing.Point(500, 40);
+            this.btnChangePassword.BackColor = System.Drawing.Color.White;
+            this.btnChangePassword.Location = new System.Drawing.Point(598, 41);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(130, 24);
+            this.btnChangePassword.Size = new System.Drawing.Size(169, 35);
             this.btnChangePassword.TabIndex = 1;
             this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.UseVisualStyleBackColor = false;
             this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // btnEditUser
             // 
-            this.btnEditUser.Location = new System.Drawing.Point(500, 70);
+            this.btnEditUser.BackColor = System.Drawing.Color.White;
+            this.btnEditUser.Location = new System.Drawing.Point(598, 82);
             this.btnEditUser.Name = "btnEditUser";
-            this.btnEditUser.Size = new System.Drawing.Size(130, 24);
+            this.btnEditUser.Size = new System.Drawing.Size(169, 33);
             this.btnEditUser.TabIndex = 1;
             this.btnEditUser.Text = "Edit User";
+            this.btnEditUser.UseVisualStyleBackColor = false;
             // 
             // btnDeleteTopic
             // 
-            this.btnDeleteTopic.Location = new System.Drawing.Point(389, 299);
+            this.btnDeleteTopic.BackColor = System.Drawing.Color.White;
+            this.btnDeleteTopic.Location = new System.Drawing.Point(296, 352);
             this.btnDeleteTopic.Name = "btnDeleteTopic";
-            this.btnDeleteTopic.Size = new System.Drawing.Size(130, 24);
+            this.btnDeleteTopic.Size = new System.Drawing.Size(169, 33);
             this.btnDeleteTopic.TabIndex = 15;
             this.btnDeleteTopic.Text = "Delete Topic";
+            this.btnDeleteTopic.UseVisualStyleBackColor = false;
             this.btnDeleteTopic.Click += new System.EventHandler(this.btnDeleteTopic_Click);
             // 
             // btnDeleteVocabulary
             // 
-            this.btnDeleteVocabulary.Location = new System.Drawing.Point(389, 329);
+            this.btnDeleteVocabulary.BackColor = System.Drawing.Color.White;
+            this.btnDeleteVocabulary.Location = new System.Drawing.Point(471, 352);
             this.btnDeleteVocabulary.Name = "btnDeleteVocabulary";
-            this.btnDeleteVocabulary.Size = new System.Drawing.Size(130, 24);
+            this.btnDeleteVocabulary.Size = new System.Drawing.Size(169, 33);
             this.btnDeleteVocabulary.TabIndex = 16;
             this.btnDeleteVocabulary.Text = "Delete Vocabulary";
+            this.btnDeleteVocabulary.UseVisualStyleBackColor = false;
             this.btnDeleteVocabulary.Click += new System.EventHandler(this.btnDeleteVocabulary_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 398);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(788, 398);
             this.Controls.Add(this.btnDeleteTopic);
             this.Controls.Add(this.btnDeleteVocabulary);
             this.Controls.Add(this.lblTopics);
@@ -284,6 +309,7 @@
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.btnEditUser);
+            this.Font = new System.Drawing.Font("Verdana", 12F);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);

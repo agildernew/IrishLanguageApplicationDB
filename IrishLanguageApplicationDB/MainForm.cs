@@ -13,7 +13,8 @@ namespace IrishLanguageApplicationDB
 {
     public partial class MainForm : Form
     {
-        public string topic = "", selectedVocabularyIrish = "", selectedVocabularyEnglish = "", user = "", userType = "";
+        public string topic = "", selectedVocabularyIrish = "", selectedVocabularyEnglish = "", selectedVocabularyImagePath = "", user = "", userType = "";
+        Image currentImage;
         //public SqlConnection connection = new SqlConnection();
 
         public MainForm(string currentUser, string currentUserType)
@@ -64,9 +65,10 @@ namespace IrishLanguageApplicationDB
         private void loadListboxWithVocabulary(int currentIndex, int newIndex)
         {
             int newPosition = currentIndex + newIndex;
-
-            string selectedVocabularyIrish = "";
-            string selectedVocabularyEnglish = "";
+            selectedVocabularyIrish = "";
+            selectedVocabularyEnglish = "";
+            selectedVocabularyImagePath = "";
+            pbxImages.Image = null;
 
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
@@ -82,9 +84,23 @@ namespace IrishLanguageApplicationDB
             {
                 selectedVocabularyIrish = lbxVocabulary.SelectedItem.ToString().Substring(index + 2);
                 selectedVocabularyEnglish = lbxVocabulary.SelectedItem.ToString().Substring(0, index);
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE vocabulary_english='" + selectedVocabularyEnglish + "';", connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    selectedVocabularyImagePath = reader["vocabulary_image"].ToString();
+                }
             };
             txtIrishVocabulary.Text = selectedVocabularyIrish;
             txtEnglishVocabulary.Text = selectedVocabularyEnglish;
+
+            if (selectedVocabularyImagePath != "") 
+            {
+                currentImage = Image.FromFile(selectedVocabularyImagePath);
+                pbxImages.Image = currentImage;
+            }
+            
             connection.Close();
         }
 
@@ -95,16 +111,25 @@ namespace IrishLanguageApplicationDB
             //this.Enabled = false;
             //this.Hide();
             //Form ChoosingExerciseForm = new ChoosingExerciseForm();
-            Form ChoosingExerciseForm = new ChoosingExerciseForm(topic);
-            ChoosingExerciseForm.Show();
+            if (userType == "Student")
+            {
+                Form ChoosingExerciseForm = new ChoosingExerciseForm(user, topic);
+                ChoosingExerciseForm.Show();
+            }
+            else
+            {
+                Form ChoosingExerciseForm = new ChoosingExerciseForm(topic);
+                ChoosingExerciseForm.Show();
+            }
         }
 
         private void cbxTopicList_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedTopicNameEnglish = "";
-            string selectedVocabularyIrish = "";
-            string selectedVocabularyEnglish = "";
-
+            selectedVocabularyIrish = "";
+            selectedVocabularyEnglish = "";
+            selectedVocabularyImagePath = "";
+            pbxImages.Image = null;
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
             int index = cbxTopicList.SelectedItem.ToString().IndexOf('-');
@@ -124,19 +149,36 @@ namespace IrishLanguageApplicationDB
                 lbxVocabulary.Items.Add(reader["vocabulary_english"].ToString() + " - " + reader["vocabulary_irish"].ToString());
                 numberOfVocabulary = numberOfVocabulary + 1;
             }
+            connection.Close();
             if (numberOfVocabulary > 0)
             {
                 btnPlayGame.Enabled = true;
                 lbxVocabulary.SelectedIndex = 0;
                 index = lbxVocabulary.SelectedItem.ToString().IndexOf('-');
+                connection.Open();
+
                 if (index > 0)
                 {
                     selectedVocabularyIrish = lbxVocabulary.SelectedItem.ToString().Substring(index + 2).Trim();
                     selectedVocabularyEnglish = lbxVocabulary.SelectedItem.ToString().Substring(0, index).Trim();
+
+                    cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE vocabulary_english='" + selectedVocabularyEnglish + "';", connection);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        selectedVocabularyImagePath = reader["vocabulary_image"].ToString();
+                    };
                 };
+                connection.Close();
                 txtIrishVocabulary.Text = selectedVocabularyIrish;
                 txtEnglishVocabulary.Text = selectedVocabularyEnglish;
-            } 
+
+                if (selectedVocabularyImagePath != "")
+                {
+                    currentImage = Image.FromFile(selectedVocabularyImagePath);
+                    pbxImages.Image = currentImage;
+                }
+            }
             else
             {
                 btnPlayGame.Enabled = false;
@@ -150,7 +192,8 @@ namespace IrishLanguageApplicationDB
         {
             string selectedVocabularyIrish = "";
             string selectedVocabularyEnglish = "";
-
+            pbxImages.Image = null;
+            
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
 
@@ -160,10 +203,23 @@ namespace IrishLanguageApplicationDB
             {
                 selectedVocabularyIrish = lbxVocabulary.SelectedItem.ToString().Substring(index + 2);
                 selectedVocabularyEnglish = lbxVocabulary.SelectedItem.ToString().Substring(0, index);
+                
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE vocabulary_english='" + selectedVocabularyEnglish + "';", connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    selectedVocabularyImagePath = reader["vocabulary_image"].ToString();
+                };
             };
+            connection.Close();
             txtIrishVocabulary.Text = selectedVocabularyIrish;
             txtEnglishVocabulary.Text = selectedVocabularyEnglish;
-            connection.Close();
+
+            if (selectedVocabularyImagePath != "")
+            {
+                currentImage = Image.FromFile(selectedVocabularyImagePath);
+                pbxImages.Image = currentImage;
+            }
         }
 
         private void btnFirst_Click(object sender, EventArgs e)
@@ -204,9 +260,23 @@ namespace IrishLanguageApplicationDB
             {
                 selectedVocabularyIrish = lbxVocabulary.SelectedItem.ToString().Substring(index + 2);
                 selectedVocabularyEnglish = lbxVocabulary.SelectedItem.ToString().Substring(0, index);
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE vocabulary_english='" + selectedVocabularyEnglish + "';", connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    selectedVocabularyImagePath = reader["vocabulary_image"].ToString();
+                }
             };
+
             txtIrishVocabulary.Text = selectedVocabularyIrish;
             txtEnglishVocabulary.Text = selectedVocabularyEnglish;
+
+            if (selectedVocabularyImagePath != "")
+            {
+                currentImage = Image.FromFile(selectedVocabularyImagePath);
+                pbxImages.Image = currentImage;
+            }
             connection.Close();
         }
 
@@ -286,7 +356,14 @@ namespace IrishLanguageApplicationDB
             if (numberOfVocabulary > 0)
             {
                 btnPlayGame.Enabled = true;
-                lbxVocabulary.SelectedIndex = currentIndex;
+                if (currentIndex != 0)
+                { 
+                lbxVocabulary.SelectedIndex = currentIndex - 1;
+                } 
+                else
+                {
+                    lbxVocabulary.SelectedIndex = currentIndex;
+                }
                 int index = lbxVocabulary.SelectedItem.ToString().IndexOf('-');
                 if (index > 0)
                 {
@@ -302,7 +379,6 @@ namespace IrishLanguageApplicationDB
                 txtEnglishVocabulary.Text = "";
                 txtIrishVocabulary.Text = "";
             }
-            txtIrishVocabulary.Text = topic;
             connection.Close();
         }
 
