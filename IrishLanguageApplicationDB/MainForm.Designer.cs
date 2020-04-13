@@ -51,6 +51,7 @@
             this.btnEditUser = new System.Windows.Forms.Button();
             this.btnDeleteTopic = new System.Windows.Forms.Button();
             this.btnDeleteVocabulary = new System.Windows.Forms.Button();
+            this.btnViewLeaderboard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImages)).BeginInit();
             this.SuspendLayout();
             // 
@@ -241,9 +242,9 @@
             // btnChangePassword
             // 
             this.btnChangePassword.BackColor = System.Drawing.Color.White;
-            this.btnChangePassword.Location = new System.Drawing.Point(598, 41);
+            this.btnChangePassword.Location = new System.Drawing.Point(585, 41);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(169, 35);
+            this.btnChangePassword.Size = new System.Drawing.Size(182, 35);
             this.btnChangePassword.TabIndex = 1;
             this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.UseVisualStyleBackColor = false;
@@ -252,9 +253,9 @@
             // btnEditUser
             // 
             this.btnEditUser.BackColor = System.Drawing.Color.White;
-            this.btnEditUser.Location = new System.Drawing.Point(598, 82);
+            this.btnEditUser.Location = new System.Drawing.Point(585, 121);
             this.btnEditUser.Name = "btnEditUser";
-            this.btnEditUser.Size = new System.Drawing.Size(169, 33);
+            this.btnEditUser.Size = new System.Drawing.Size(182, 33);
             this.btnEditUser.TabIndex = 1;
             this.btnEditUser.Text = "Edit User";
             this.btnEditUser.UseVisualStyleBackColor = false;
@@ -281,12 +282,24 @@
             this.btnDeleteVocabulary.UseVisualStyleBackColor = false;
             this.btnDeleteVocabulary.Click += new System.EventHandler(this.btnDeleteVocabulary_Click);
             // 
+            // btnViewLeaderboard
+            // 
+            this.btnViewLeaderboard.BackColor = System.Drawing.Color.White;
+            this.btnViewLeaderboard.Location = new System.Drawing.Point(585, 82);
+            this.btnViewLeaderboard.Name = "btnViewLeaderboard";
+            this.btnViewLeaderboard.Size = new System.Drawing.Size(182, 33);
+            this.btnViewLeaderboard.TabIndex = 17;
+            this.btnViewLeaderboard.Text = "View Leaderboard";
+            this.btnViewLeaderboard.UseVisualStyleBackColor = false;
+            this.btnViewLeaderboard.Click += new System.EventHandler(this.btnViewLeaderboard_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(788, 398);
+            this.Controls.Add(this.btnViewLeaderboard);
             this.Controls.Add(this.btnDeleteTopic);
             this.Controls.Add(this.btnDeleteVocabulary);
             this.Controls.Add(this.lblTopics);
@@ -350,6 +363,7 @@
         private System.Windows.Forms.Button btnEditUser;
         private System.Windows.Forms.Button btnDeleteTopic;
         private System.Windows.Forms.Button btnDeleteVocabulary;
+        private System.Windows.Forms.Button btnViewLeaderboard;
     }
 }
 
