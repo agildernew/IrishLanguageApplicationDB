@@ -290,7 +290,7 @@ namespace IrishLanguageApplicationDB
                     {
                         currentExerciseType = "Enter English for Irish";
                     }
-                    else if (exerciseType[n] == "EnterIrishForEnglish")
+                    else if (exerciseType[n] == "Enter Irish For English")
                     {
                         currentExerciseType = "Enter Irish for English";
                     }
