@@ -117,4 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblLyrics.Text" xml:space="preserve">
+    <value>Sinne Laochra Fáil, atá faoi gheall ag Éirinn,
+
+Buíon dár slua thar toinn do ráinig chugainn,
+
+Faoi mhóid bheith saor,
+
+Seantír ár sinsear feasta,
+
+Ní fhágfar faoin tíorán ná faoin tráill.
+
+Anocht a théam sa bhearna bhaoil,
+
+Le gean ar Ghaeil, chun báis nó saoil,
+
+Le gunna - scréach faoi lámhach na bpiléar,
+
+Seo libh canaig' amhrán na bhFiann.</value>
+  </data>
 </root>
