@@ -16,5 +16,11 @@ namespace IrishLanguageApplicationDB
         {
             InitializeComponent();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            this.Hide();
+        }
     }
 }

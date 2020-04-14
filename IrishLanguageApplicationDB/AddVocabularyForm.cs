@@ -52,18 +52,9 @@ namespace IrishLanguageApplicationDB
 
         private void btnAddMoreVocabulary_Click(object sender, EventArgs e)
         {
-           if (txtVocabularyEnglish.Text.Length > 0 && txtVocabularyIrish.Text.Length > 0)
+            if (txtVocabularyEnglish.Text.Length > 0 && txtVocabularyIrish.Text.Length > 0)
             {
-                SqlConnection connection = new SqlConnection();
-                connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
-                connection.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Vocabulary (vocabulary_english, topic_name_english, vocabulary_irish, vocabulary_image) VALUES ('" + txtVocabularyEnglish.Text + "', '" + cbxTopicList.SelectedItem.ToString() + "', '" + txtVocabularyIrish.Text + "', '" + txtImagePath.Text + "');", connection);
-                //Add catch to catch duplicated vocabulary
-                SqlDataReader reader = cmd.ExecuteReader();
-                connection.Close();
-                txtVocabularyEnglish.Text = "";
-                txtVocabularyIrish.Text = "";
-                txtImagePath.Text = "";
+                addVocabularyToDatabase();
             }
         }
 
@@ -86,6 +77,33 @@ namespace IrishLanguageApplicationDB
         private void btnRemoveImage_Click(object sender, EventArgs e)
         {
             txtImagePath.Text = "";
+        }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            if (txtVocabularyEnglish.Text.Length > 0 && txtVocabularyIrish.Text.Length > 0)
+            {
+                addVocabularyToDatabase();
+            }
+
+            this.Enabled = false;
+            this.Hide();
+        }
+
+        private void addVocabularyToDatabase()
+        {
+            if (txtVocabularyEnglish.Text.Length > 0 && txtVocabularyIrish.Text.Length > 0)
+            {
+                SqlConnection connection = new SqlConnection();
+                connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO Vocabulary (vocabulary_english, topic_name_english, vocabulary_irish, vocabulary_image) VALUES ('" + txtVocabularyEnglish.Text + "', '" + cbxTopicList.SelectedItem.ToString() + "', '" + txtVocabularyIrish.Text + "', '" + txtImagePath.Text + "');", connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                connection.Close();
+                txtVocabularyEnglish.Text = "";
+                txtVocabularyIrish.Text = "";
+                txtImagePath.Text = "";
+            }
         }
     }
 }

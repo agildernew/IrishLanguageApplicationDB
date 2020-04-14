@@ -340,6 +340,14 @@ namespace IrishLanguageApplicationDB
             }
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Form MainForm = new ChoosingExerciseForm(currentUser, exerciseTopic);
+            MainForm.Show();
+            this.Enabled = false;
+            this.Hide();
+        }
+
         private void pbxImageThree_Click(object sender, EventArgs e)
         {
             if (currentIrishAnswer != "")

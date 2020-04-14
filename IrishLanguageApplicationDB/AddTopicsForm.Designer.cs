@@ -33,6 +33,7 @@
             this.txtTopicNameEnglish = new System.Windows.Forms.TextBox();
             this.txtTopicNameIrish = new System.Windows.Forms.TextBox();
             this.btnAddTopic = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTopicNameIrish
@@ -72,13 +73,24 @@
             // btnAddTopic
             // 
             this.btnAddTopic.BackColor = System.Drawing.Color.White;
-            this.btnAddTopic.Location = new System.Drawing.Point(334, 91);
+            this.btnAddTopic.Location = new System.Drawing.Point(210, 91);
             this.btnAddTopic.Name = "btnAddTopic";
-            this.btnAddTopic.Size = new System.Drawing.Size(80, 28);
+            this.btnAddTopic.Size = new System.Drawing.Size(99, 28);
             this.btnAddTopic.TabIndex = 4;
             this.btnAddTopic.Text = "Add Topic";
             this.btnAddTopic.UseVisualStyleBackColor = false;
             this.btnAddTopic.Click += new System.EventHandler(this.btnAddTopic_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(315, 91);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(99, 28);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // AddTopicsForm
             // 
@@ -86,6 +98,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(432, 133);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAddTopic);
             this.Controls.Add(this.txtTopicNameIrish);
             this.Controls.Add(this.txtTopicNameEnglish);
@@ -106,5 +119,6 @@
         private System.Windows.Forms.TextBox txtTopicNameEnglish;
         private System.Windows.Forms.TextBox txtTopicNameIrish;
         private System.Windows.Forms.Button btnAddTopic;
+        private System.Windows.Forms.Button btnClose;
     }
 }

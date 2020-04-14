@@ -13,8 +13,36 @@ namespace IrishLanguageApplicationDB
 {
     public partial class MainForm : Form
     {
-        public string topic = "", selectedVocabularyIrish = "", selectedVocabularyEnglish = "", selectedVocabularyImagePath = "", user = "", userType = "";
+        SqlConnection connection = new SqlConnection();
+        public string topic = "", vocabulary = "", selectedVocabularyIrish = "", selectedVocabularyEnglish = "", selectedVocabularyImagePath = "", user = "", userType = "", userTypeIdStr;
         Image currentImage;
+        int userTypeId = 0;
+
+        public MainForm(string currentUser)
+        {
+            user = currentUser;
+
+            connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE user_id = '" + user + "';", connection);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                userTypeIdStr = reader["user_type_id"].ToString();
+                userTypeId = Int16.Parse(userTypeIdStr);
+            }
+            connection.Close();
+
+            connection.Open();
+            cmd = new SqlCommand("SELECT * FROM UserTypes WHERE user_type_id = " + userTypeIdStr + ";", connection);
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                userType = reader["user_type"].ToString();
+            }
+            connection.Close();
+            InitializeComponent();
+        }
 
         public MainForm(string currentUser, string currentUserType)
         {
@@ -28,7 +56,6 @@ namespace IrishLanguageApplicationDB
             string selectedTopicNameEnglish = "";
             lblUserName.Text = user;
 
-            SqlConnection connection = new SqlConnection();
             connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
             //sconnection.ConnectionString = Properties.Settings.Default.IrishAppDBConnectionString;
             connection.Open();
@@ -106,21 +133,19 @@ namespace IrishLanguageApplicationDB
         {
             int index = cbxTopicList.SelectedItem.ToString().IndexOf('-');
             topic = cbxTopicList.SelectedItem.ToString().Substring(0, index);
-            //this.Enabled = false;
-            //this.Hide();
-            //Form ChoosingExerciseForm = new ChoosingExerciseForm();
+            this.Enabled = false;
+            this.Hide();
             if (userType == "Student")
             {
-                Form ChoosingExerciseForm = new ChoosingExerciseForm(user, topic);
+                Form ChoosingExerciseForm = new ChoosingExerciseForm(user, topic, true);
                 ChoosingExerciseForm.Show();
             }
             else
             {
-                Form ChoosingExerciseForm = new ChoosingExerciseForm(topic);
+                Form ChoosingExerciseForm = new ChoosingExerciseForm(user, topic, false);
                 ChoosingExerciseForm.Show();
             }
         }
-
         private void cbxTopicList_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedTopicNameEnglish = "";
@@ -324,11 +349,29 @@ namespace IrishLanguageApplicationDB
         {
             int index = cbxTopicList.SelectedItem.ToString().IndexOf('-');
             topic = cbxTopicList.SelectedItem.ToString().Substring(0, index).Trim();
+
+            string message = "Are you sure you want to delete the topic '" + topic + "'?";
+            switch (MessageBox.Show(message, "Delete Topic?", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.Yes:
+                    deleteTopic();
+                    break;
+            }
+        }
+
+        private void deleteTopic()
+        {
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
+
             connection.Open();
-            SqlCommand cmd = new SqlCommand("DELETE FROM Vocabulary WHERE topic_name_english = '" + topic + "'", connection);
+            SqlCommand cmd = new SqlCommand("DELETE FROM LeaderBoard WHERE topic = '" + topic + "'", connection);
             SqlDataReader reader = cmd.ExecuteReader();
+            connection.Close();
+
+            connection.Open();
+            cmd = new SqlCommand("DELETE FROM Vocabulary WHERE topic_name_english = '" + topic + "'", connection);
+            reader = cmd.ExecuteReader();
             connection.Close();
 
             connection.Open();
@@ -352,9 +395,21 @@ namespace IrishLanguageApplicationDB
         {
             int vocabularyIndex = lbxVocabulary.SelectedItem.ToString().IndexOf('-');
             int topicIndex = cbxTopicList.SelectedItem.ToString().IndexOf('-');
-            int currentIndex = lbxVocabulary.SelectedIndex;
             topic = cbxTopicList.SelectedItem.ToString().Substring(0, topicIndex).Trim();
-            string vocabulary = lbxVocabulary.SelectedItem.ToString().Substring(0, vocabularyIndex).Trim();
+            vocabulary = lbxVocabulary.SelectedItem.ToString().Substring(0, vocabularyIndex).Trim();
+
+            string message = "Are you sure you want to delete the vocabulary '" + vocabulary + "' from the topic " + topic + "?";
+            switch (MessageBox.Show(message, "Delete Vocabulary?", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.Yes:
+                    deleteVocabulary();
+                    break;
+            }
+        }
+
+        private void deleteVocabulary()
+        {
+            int currentIndex = lbxVocabulary.SelectedIndex;
 
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
@@ -377,9 +432,9 @@ namespace IrishLanguageApplicationDB
             {
                 btnPlayGame.Enabled = true;
                 if (currentIndex != 0)
-                { 
-                lbxVocabulary.SelectedIndex = currentIndex - 1;
-                } 
+                {
+                    lbxVocabulary.SelectedIndex = currentIndex - 1;
+                }
                 else
                 {
                     lbxVocabulary.SelectedIndex = currentIndex;
