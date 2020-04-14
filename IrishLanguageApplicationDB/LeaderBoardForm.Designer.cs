@@ -192,7 +192,7 @@
             // lblTenthName
             // 
             this.lblTenthName.AutoSize = true;
-            this.lblTenthName.Location = new System.Drawing.Point(455, 325);
+            this.lblTenthName.Location = new System.Drawing.Point(465, 325);
             this.lblTenthName.Name = "lblTenthName";
             this.lblTenthName.Size = new System.Drawing.Size(68, 18);
             this.lblTenthName.TabIndex = 30;
@@ -201,7 +201,7 @@
             // lblNinthName
             // 
             this.lblNinthName.AutoSize = true;
-            this.lblNinthName.Location = new System.Drawing.Point(455, 300);
+            this.lblNinthName.Location = new System.Drawing.Point(465, 300);
             this.lblNinthName.Name = "lblNinthName";
             this.lblNinthName.Size = new System.Drawing.Size(58, 18);
             this.lblNinthName.TabIndex = 29;
@@ -210,7 +210,7 @@
             // lblEighthName
             // 
             this.lblEighthName.AutoSize = true;
-            this.lblEighthName.Location = new System.Drawing.Point(455, 275);
+            this.lblEighthName.Location = new System.Drawing.Point(465, 275);
             this.lblEighthName.Name = "lblEighthName";
             this.lblEighthName.Size = new System.Drawing.Size(58, 18);
             this.lblEighthName.TabIndex = 28;
@@ -219,7 +219,7 @@
             // lblSeventhName
             // 
             this.lblSeventhName.AutoSize = true;
-            this.lblSeventhName.Location = new System.Drawing.Point(455, 250);
+            this.lblSeventhName.Location = new System.Drawing.Point(465, 250);
             this.lblSeventhName.Name = "lblSeventhName";
             this.lblSeventhName.Size = new System.Drawing.Size(58, 18);
             this.lblSeventhName.TabIndex = 27;
@@ -228,7 +228,7 @@
             // lblSixthName
             // 
             this.lblSixthName.AutoSize = true;
-            this.lblSixthName.Location = new System.Drawing.Point(455, 225);
+            this.lblSixthName.Location = new System.Drawing.Point(465, 225);
             this.lblSixthName.Name = "lblSixthName";
             this.lblSixthName.Size = new System.Drawing.Size(58, 18);
             this.lblSixthName.TabIndex = 26;
@@ -237,7 +237,7 @@
             // lblFifthName
             // 
             this.lblFifthName.AutoSize = true;
-            this.lblFifthName.Location = new System.Drawing.Point(455, 200);
+            this.lblFifthName.Location = new System.Drawing.Point(465, 200);
             this.lblFifthName.Name = "lblFifthName";
             this.lblFifthName.Size = new System.Drawing.Size(58, 18);
             this.lblFifthName.TabIndex = 25;
@@ -246,7 +246,7 @@
             // lblFourthName
             // 
             this.lblFourthName.AutoSize = true;
-            this.lblFourthName.Location = new System.Drawing.Point(455, 175);
+            this.lblFourthName.Location = new System.Drawing.Point(465, 175);
             this.lblFourthName.Name = "lblFourthName";
             this.lblFourthName.Size = new System.Drawing.Size(58, 18);
             this.lblFourthName.TabIndex = 24;
@@ -255,7 +255,7 @@
             // lblThirdName
             // 
             this.lblThirdName.AutoSize = true;
-            this.lblThirdName.Location = new System.Drawing.Point(455, 150);
+            this.lblThirdName.Location = new System.Drawing.Point(465, 150);
             this.lblThirdName.Name = "lblThirdName";
             this.lblThirdName.Size = new System.Drawing.Size(58, 18);
             this.lblThirdName.TabIndex = 23;
@@ -264,7 +264,7 @@
             // lblSecondName
             // 
             this.lblSecondName.AutoSize = true;
-            this.lblSecondName.Location = new System.Drawing.Point(455, 125);
+            this.lblSecondName.Location = new System.Drawing.Point(465, 125);
             this.lblSecondName.Name = "lblSecondName";
             this.lblSecondName.Size = new System.Drawing.Size(58, 18);
             this.lblSecondName.TabIndex = 22;
@@ -273,7 +273,7 @@
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(455, 100);
+            this.lblFirstName.Location = new System.Drawing.Point(465, 100);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(58, 18);
             this.lblFirstName.TabIndex = 21;
@@ -282,7 +282,7 @@
             // lblTenthClass
             // 
             this.lblTenthClass.AutoSize = true;
-            this.lblTenthClass.Location = new System.Drawing.Point(351, 325);
+            this.lblTenthClass.Location = new System.Drawing.Point(361, 325);
             this.lblTenthClass.Name = "lblTenthClass";
             this.lblTenthClass.Size = new System.Drawing.Size(68, 18);
             this.lblTenthClass.TabIndex = 40;
@@ -291,7 +291,7 @@
             // lblNinthClass
             // 
             this.lblNinthClass.AutoSize = true;
-            this.lblNinthClass.Location = new System.Drawing.Point(351, 300);
+            this.lblNinthClass.Location = new System.Drawing.Point(361, 300);
             this.lblNinthClass.Name = "lblNinthClass";
             this.lblNinthClass.Size = new System.Drawing.Size(58, 18);
             this.lblNinthClass.TabIndex = 39;
@@ -300,7 +300,7 @@
             // lblEighthClass
             // 
             this.lblEighthClass.AutoSize = true;
-            this.lblEighthClass.Location = new System.Drawing.Point(351, 275);
+            this.lblEighthClass.Location = new System.Drawing.Point(361, 275);
             this.lblEighthClass.Name = "lblEighthClass";
             this.lblEighthClass.Size = new System.Drawing.Size(58, 18);
             this.lblEighthClass.TabIndex = 38;
@@ -309,7 +309,7 @@
             // lblSeventhClass
             // 
             this.lblSeventhClass.AutoSize = true;
-            this.lblSeventhClass.Location = new System.Drawing.Point(351, 250);
+            this.lblSeventhClass.Location = new System.Drawing.Point(361, 250);
             this.lblSeventhClass.Name = "lblSeventhClass";
             this.lblSeventhClass.Size = new System.Drawing.Size(58, 18);
             this.lblSeventhClass.TabIndex = 37;
@@ -318,7 +318,7 @@
             // lblSixthClass
             // 
             this.lblSixthClass.AutoSize = true;
-            this.lblSixthClass.Location = new System.Drawing.Point(351, 225);
+            this.lblSixthClass.Location = new System.Drawing.Point(361, 225);
             this.lblSixthClass.Name = "lblSixthClass";
             this.lblSixthClass.Size = new System.Drawing.Size(58, 18);
             this.lblSixthClass.TabIndex = 36;
@@ -327,7 +327,7 @@
             // lblFifthClass
             // 
             this.lblFifthClass.AutoSize = true;
-            this.lblFifthClass.Location = new System.Drawing.Point(351, 200);
+            this.lblFifthClass.Location = new System.Drawing.Point(361, 200);
             this.lblFifthClass.Name = "lblFifthClass";
             this.lblFifthClass.Size = new System.Drawing.Size(58, 18);
             this.lblFifthClass.TabIndex = 35;
@@ -336,7 +336,7 @@
             // lblFourthClass
             // 
             this.lblFourthClass.AutoSize = true;
-            this.lblFourthClass.Location = new System.Drawing.Point(351, 175);
+            this.lblFourthClass.Location = new System.Drawing.Point(361, 175);
             this.lblFourthClass.Name = "lblFourthClass";
             this.lblFourthClass.Size = new System.Drawing.Size(58, 18);
             this.lblFourthClass.TabIndex = 34;
@@ -345,7 +345,7 @@
             // lblThirdClass
             // 
             this.lblThirdClass.AutoSize = true;
-            this.lblThirdClass.Location = new System.Drawing.Point(351, 150);
+            this.lblThirdClass.Location = new System.Drawing.Point(361, 150);
             this.lblThirdClass.Name = "lblThirdClass";
             this.lblThirdClass.Size = new System.Drawing.Size(58, 18);
             this.lblThirdClass.TabIndex = 33;
@@ -354,7 +354,7 @@
             // lblSecondClass
             // 
             this.lblSecondClass.AutoSize = true;
-            this.lblSecondClass.Location = new System.Drawing.Point(351, 125);
+            this.lblSecondClass.Location = new System.Drawing.Point(361, 125);
             this.lblSecondClass.Name = "lblSecondClass";
             this.lblSecondClass.Size = new System.Drawing.Size(58, 18);
             this.lblSecondClass.TabIndex = 32;
@@ -363,7 +363,7 @@
             // lblFirstClass
             // 
             this.lblFirstClass.AutoSize = true;
-            this.lblFirstClass.Location = new System.Drawing.Point(351, 100);
+            this.lblFirstClass.Location = new System.Drawing.Point(361, 100);
             this.lblFirstClass.Name = "lblFirstClass";
             this.lblFirstClass.Size = new System.Drawing.Size(58, 18);
             this.lblFirstClass.TabIndex = 31;
@@ -471,7 +471,7 @@
             // lblClass
             // 
             this.lblClass.AutoSize = true;
-            this.lblClass.Location = new System.Drawing.Point(351, 71);
+            this.lblClass.Location = new System.Drawing.Point(361, 71);
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(98, 18);
             this.lblClass.TabIndex = 53;
@@ -480,7 +480,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(455, 71);
+            this.lblName.Location = new System.Drawing.Point(465, 71);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(55, 18);
             this.lblName.TabIndex = 52;
@@ -537,6 +537,7 @@
             this.btnClose.TabIndex = 58;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnAllYears
             // 

@@ -21,6 +21,12 @@ namespace IrishLanguageApplicationDB
             InitializeComponent();
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            this.Hide();
+        }
+
         private void ChangePasswordForm_Load(object sender, EventArgs e)
         {
             txtUsername.Text = userName;

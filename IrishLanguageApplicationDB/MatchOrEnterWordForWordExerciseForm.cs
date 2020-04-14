@@ -19,6 +19,15 @@ namespace IrishLanguageApplicationDB
         string[] sortedVocabularyIrish, sortedVocabularyEnglish;
         int numberOfInstances;
         bool displayIrish = true, displayEnglish = true;
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Form MainForm = new ChoosingExerciseForm(currentUser, exerciseTopic);
+            MainForm.Show();
+            this.Enabled = false;
+            this.Hide();
+        }
+
         SqlConnection connection = new SqlConnection();
 
         public MatchOrEnterWordForWordExerciseForm()

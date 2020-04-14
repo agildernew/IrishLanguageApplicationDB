@@ -56,12 +56,14 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.Font = new System.Drawing.Font("Verdana", 12F);
             this.btnClose.Location = new System.Drawing.Point(436, 538);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(85, 36);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // AmhranNabfFiannForm
             // 

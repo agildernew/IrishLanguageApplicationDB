@@ -168,6 +168,7 @@
             this.btnDone.TabIndex = 17;
             this.btnDone.Text = "Done";
             this.btnDone.UseVisualStyleBackColor = false;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // btnFirst
             // 

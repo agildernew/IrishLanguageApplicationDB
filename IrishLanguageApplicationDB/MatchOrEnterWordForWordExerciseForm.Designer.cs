@@ -65,6 +65,7 @@
             this.txtAnswerTen = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.lblScore = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblExerciseInstructionsLabel
@@ -383,15 +384,27 @@
             this.lblScore.AutoSize = true;
             this.lblScore.Location = new System.Drawing.Point(12, 454);
             this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(61, 18);
+            this.lblScore.Size = new System.Drawing.Size(0, 18);
             this.lblScore.TabIndex = 15;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(512, 486);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(118, 26);
+            this.btnClose.TabIndex = 16;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // MatchOrEnterWordForWordExerciseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(663, 502);
+            this.ClientSize = new System.Drawing.Size(663, 523);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.lblExerciseInstructionsLabel);
@@ -480,5 +493,6 @@
 		private System.Windows.Forms.TextBox txtAnswerTen;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.Button btnClose;
     }
 }

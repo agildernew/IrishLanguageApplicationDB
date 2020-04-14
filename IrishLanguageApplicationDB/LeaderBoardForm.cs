@@ -18,6 +18,12 @@ namespace IrishLanguageApplicationDB
         List<string> userId = new List<string>(), score = new List<string>(), formClass = new List<string>(), exerciseType = new List<string>(), children = new List<string>();
         List<Label> labelsUserIds = new List<Label>(), labelsScores = new List<Label>(), labelsFormClasses = new List<Label>(), labelsExerciseType = new List<Label>();
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            this.Hide();
+        }
+
         private void btnYear8_Click(object sender, EventArgs e)
         {
             currentYearGroup = "8";
@@ -286,11 +292,11 @@ namespace IrishLanguageApplicationDB
                     {
                         currentExerciseType = "Match Irish to English";
                     }
-                    else if (exerciseType[n] == "EnterEngishForIrish")
+                    else if (exerciseType[n] == "EnterEnglishForIrish")
                     {
                         currentExerciseType = "Enter English for Irish";
                     }
-                    else if (exerciseType[n] == "Enter Irish For English")
+                    else if (exerciseType[n] == "EnterIrishForEnglish")
                     {
                         currentExerciseType = "Enter Irish for English";
                     }

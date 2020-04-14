@@ -120,12 +120,12 @@
             // 
             // lblUserName
             // 
-            this.lblUserName.Location = new System.Drawing.Point(598, 9);
+            this.lblUserName.Location = new System.Drawing.Point(585, 9);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(169, 28);
+            this.lblUserName.Size = new System.Drawing.Size(182, 28);
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "Username";
-            this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblImage
             // 
@@ -162,6 +162,7 @@
             this.lbxVocabulary.Name = "lbxVocabulary";
             this.lbxVocabulary.Size = new System.Drawing.Size(264, 274);
             this.lbxVocabulary.TabIndex = 0;
+            this.lbxVocabulary.SelectedIndexChanged += new System.EventHandler(this.lbxVocabulary_SelectedIndexChanged);
             // 
             // btnPlayGame
             // 
@@ -254,7 +255,7 @@
             // btnEditUser
             // 
             this.btnEditUser.BackColor = System.Drawing.Color.White;
-            this.btnEditUser.Location = new System.Drawing.Point(585, 121);
+            this.btnEditUser.Location = new System.Drawing.Point(585, 160);
             this.btnEditUser.Name = "btnEditUser";
             this.btnEditUser.Size = new System.Drawing.Size(182, 33);
             this.btnEditUser.TabIndex = 1;
@@ -297,7 +298,7 @@
             // btnAmhranNabhFiann
             // 
             this.btnAmhranNabhFiann.BackColor = System.Drawing.Color.White;
-            this.btnAmhranNabhFiann.Location = new System.Drawing.Point(585, 160);
+            this.btnAmhranNabhFiann.Location = new System.Drawing.Point(585, 121);
             this.btnAmhranNabhFiann.Name = "btnAmhranNabhFiann";
             this.btnAmhranNabhFiann.Size = new System.Drawing.Size(182, 33);
             this.btnAmhranNabhFiann.TabIndex = 18;
