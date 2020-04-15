@@ -39,6 +39,30 @@ namespace IrishLanguageApplicationDB
         {
             btnCancel.Hide();
 
+            loadUsersFromDatabase();
+
+            if (currentUserType == "Teacher")
+            {
+                btnAddUser.Hide();
+                btnDeleteUser.Hide();
+                txtFirstName.ReadOnly = true;
+                txtSurname.ReadOnly = true;
+                cbxUserType.Enabled = false;
+                txtFormClass.ReadOnly = true;
+            }
+            loadUsers(index);
+        }
+
+        private void loadUsersFromDatabase()
+        {
+            numberOfUsers = 0;
+            usernames.Clear();
+            firstnames.Clear();
+            surnames.Clear();
+            passwords.Clear();
+            usertypes.Clear();
+            formclass.Clear();
+
             connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
             connection.Open();
             SqlCommand cmd;
@@ -63,20 +87,10 @@ namespace IrishLanguageApplicationDB
                 formclass.Add(reader["form_class"].ToString());
 
                 usernames.ToArray();
-                numberOfUsers = numberOfUsers + 1;
             }
-            connection.Close();
 
-            if (currentUserType == "Teacher")
-            {
-                btnAddUser.Hide();
-                btnDeleteUser.Hide();
-                txtFirstName.ReadOnly = true;
-                txtSurname.ReadOnly = true;
-                cbxUserType.Enabled = false;
-                txtFormClass.ReadOnly = true;
-            }
-            loadUsers(index);
+            numberOfUsers = usernames.Count();
+            connection.Close();
         }
 
         private void loadUsers(int newIndex)
@@ -86,7 +100,6 @@ namespace IrishLanguageApplicationDB
             txtSurname.Text = surnames[newIndex];
             txtPassword.Text = passwords[newIndex];
             txtConfirmPassword.Text = passwords[newIndex];
-            cbxUserType.Text = usertypes[newIndex];
             txtFormClass.Text = formclass[newIndex];
 
             connection.Open();
@@ -98,20 +111,29 @@ namespace IrishLanguageApplicationDB
                 cbxUserType.Items.Add(reader["user_type"].ToString());
             }
 
+            cbxUserType.SelectedIndex = Int32.Parse(usertypes[newIndex]) - 1;
             connection.Close();
 
-            connection.Open();
-            editUserTypeId = cbxUserType.Text;
+            if (cbxUserType.Text == "Parent")
+            {
+                btnEditChildren.Show();
+            }
+            else
+            {
+                btnEditChildren.Hide();
+            }
+            // connection.Open();
+            /*editUserTypeId = cbxUserType.Text;
 
             cmd = new SqlCommand("SELECT * FROM UserTypes WHERE user_type_id = " + editUserTypeId + ";", connection);
             reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 editUserType = reader["user_type"].ToString();
-            }
+            }*/
 
-            cbxUserType.Text = editUserType;
-            connection.Close();
+            //cbxUserType.Text = editUserType;
+            //connection.Close();
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -125,6 +147,7 @@ namespace IrishLanguageApplicationDB
             txtFormClass.Text = "";
             cbxUserType.SelectedIndex = 2;
 
+            btnEditChildren.Hide();
             btnAddUser.Hide();
             btnCancel.Show();
 
@@ -135,6 +158,7 @@ namespace IrishLanguageApplicationDB
             btnNext.Enabled = false;
             btnLast.Enabled = false;
         }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             loadUsers(index);
@@ -165,71 +189,154 @@ namespace IrishLanguageApplicationDB
         {
             if (txtUsername.Text != "" & txtFirstName.Text != "" & txtSurname.Text != "" & txtPassword.Text != "" & txtConfirmPassword.Text != "" & cbxUserType.Text != "")
             {
-                bool userExists = false;
-                if (txtPassword.Text == txtConfirmPassword.Text)
+                if ((cbxUserType.Text == "Student" && txtFormClass.Text != "") || cbxUserType.Text != "Student")
                 {
-                    string userTypeId = "";
-                    SqlConnection connection = new SqlConnection();
-                    connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
-                    connection.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM UserTypes WHERE user_type = '" + cbxUserType.Text + "';", connection);
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    bool userExists = false;
+                    if (txtPassword.Text == txtConfirmPassword.Text)
                     {
-                        userTypeId = reader["user_type_id"].ToString();
-                    }
-                    connection.Close();
-
-                    connection.Open();
-                    if (isNewUser)
-                    {
-                        for (int i = 0; i < numberOfUsers; i++)
+                        string userTypeId = "", addedUser = "";
+                        SqlConnection connection = new SqlConnection();
+                        connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
+                        connection.Open();
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM UserTypes WHERE user_type = '" + cbxUserType.Text + "';", connection);
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
                         {
-                            if (txtUsername.Text == usernames[i])
+                            userTypeId = reader["user_type_id"].ToString();
+                        }
+                        connection.Close();
+
+                        if (isNewUser)
+                        {
+                            for (int i = 0; i < numberOfUsers; i++)
                             {
-                                message = "Username " + txtUsername.Text + " already exists. Please enter a unique username";
+                                if (txtUsername.Text == usernames[i])
+                                {
+                                    message = "Username " + txtUsername.Text + " already exists. Please enter a unique usernme";
+                                    MessageBox.Show(message);
+                                    userExists = true;
+                                }
+                            }
+
+                            if (userExists == false)
+                            {
+                                connection.Open();
+                                string surname = txtSurname.Text, firstName = txtFirstName.Text;
+
+                                if (surname.Contains("'"))
+                                {
+                                    surname = surname.Replace("'", "''");
+                                    txtSurname.Text = surname;
+                                }
+
+                                if (firstName.Contains("'"))
+                                {
+                                    firstName = firstName.Replace("'", "''");
+                                    txtFirstName.Text = firstName;
+                                }
+
+
+                                if (txtFormClass.Text != "")
+                                {
+                                    cmd = new SqlCommand("INSERT INTO Users (user_id, user_type_id, forename, surname, password, form_class) VALUES ('" + txtUsername.Text + "', " + userTypeId + ", '" + txtFirstName.Text + "', '" + txtSurname.Text + "','" + txtPassword.Text + "', '" + txtFormClass.Text + "');", connection);
+                                }
+                                else
+                                {
+                                    cmd = new SqlCommand("INSERT INTO Users (user_id, user_type_id, forename, surname, password) VALUES ('" + txtUsername.Text + "', " + userTypeId + ", '" + txtFirstName.Text + "', '" + txtSurname.Text + "','" + txtPassword.Text + "');", connection);
+                                }
+
+                                index = 0;
+
+                                for (int i = 0; i < numberOfUsers; i++)
+                                {
+                                    if (usernames[i] == addedUser)
+                                    {
+                                        index = i;
+                                    }
+                                }
+
+                                reader = cmd.ExecuteReader();
+                                connection.Close();
+
+                                connection.Open();
+                                editUserType = cbxUserType.Text;
+
+                                cmd = new SqlCommand("SELECT * FROM UserTypes WHERE user_type = '" + editUserType + "';", connection);
+                                reader = cmd.ExecuteReader();
+                                while (reader.Read())
+                                {
+                                    editUserTypeId = reader["user_type_id"].ToString();
+                                }
+
+                                addedUser = txtUsername.Text;
+
+                                connection.Close();
+
+                                formclass.Add(txtFormClass.Text);
+
+                                message = "User " + addedUser + " has been added to the database";
                                 MessageBox.Show(message);
-                                userExists = true;
-                            }
-                        }
 
-                        if (userExists == false)
-                        {
-                            if (txtFormClass.Text != "")
-                            {
-                                cmd = new SqlCommand("INSERT INTO Users (user_id, user_type_id, forename, surname, password, form_class) VALUES ('" + txtUsername.Text + "', " + userTypeId + ", '" + txtFirstName.Text + "', '" + txtSurname.Text + "','" + txtPassword.Text + "', '" + txtFormClass.Text + "');", connection);
-                            }
-                            else
-                            {
-                                cmd = new SqlCommand("INSERT INTO Users (user_id, user_type_id, forename, surname, password) VALUES ('" + txtUsername.Text + "', " + userTypeId + ", '" + txtFirstName.Text + "', '" + txtSurname.Text + "','" + txtPassword.Text + "');", connection);
-                            }
+                                isNewUser = false;
 
-                            message = "User " + txtUsername.Text + " has been added";
-                            MessageBox.Show(message);
-                        }
-                    }
-                    else
-                    {
-                        if (txtFormClass.Text != "")
-                        {
-                            cmd = new SqlCommand("UPDATE Users SET forename = '" + txtFirstName.Text + "', surname = '" + txtSurname.Text + "', password = '" + txtPassword.Text + "', form_class = '" + txtFormClass.Text + "', user_type_id = '" + userTypeId + "' WHERE user_id = '" + txtUsername.Text + "';", connection);
+                                loadUsersFromDatabase();
+
+                                loadUsers(index);
+
+                                btnAddUser.Show();
+                                btnCancel.Hide();
+
+                                txtUsername.ReadOnly = true;
+                                btnDeleteUser.Enabled = true;
+                                btnFirst.Enabled = true;
+                                btnPrevious.Enabled = true;
+                                btnNext.Enabled = true;
+                                btnLast.Enabled = true;
+                            }
                         }
                         else
                         {
-                            cmd = new SqlCommand("UPDATE Users SET forename = '" + txtFirstName.Text + "', surname = '" + txtSurname.Text + "', password = '" + txtPassword.Text + "', user_type_id = '" + userTypeId + "' WHERE user_id = '" + txtUsername.Text + "';", connection);
-                        }
+                            connection.Open();
+                            if (txtFormClass.Text != "")
+                            {
+                                cmd = new SqlCommand("UPDATE Users SET forename = '" + txtFirstName.Text + "', surname = '" + txtSurname.Text + "', password = '" + txtPassword.Text + "', form_class = '" + txtFormClass.Text + "', user_type_id = '" + userTypeId + "' WHERE user_id = '" + txtUsername.Text + "';", connection);
+                            }
+                            else
+                            {
+                                cmd = new SqlCommand("UPDATE Users SET forename = '" + txtFirstName.Text + "', surname = '" + txtSurname.Text + "', password = '" + txtPassword.Text + "', user_type_id = '" + userTypeId + "' WHERE user_id = '" + txtUsername.Text + "';", connection);
+                            }
+                            reader = cmd.ExecuteReader();
+                            connection.Close();
 
-                        message = "User " + txtUsername.Text + "'s data has been updated";
+                            message = "User " + txtUsername.Text + "'s data has been updated";
+                            MessageBox.Show(message);
+
+                            loadUsersFromDatabase();
+
+                            loadUsers(index);
+
+                            btnAddUser.Show();
+                            btnCancel.Hide();
+
+                            txtUsername.ReadOnly = true;
+                            btnDeleteUser.Enabled = true;
+                            btnFirst.Enabled = true;
+                            btnPrevious.Enabled = true;
+                            btnNext.Enabled = true;
+                            btnLast.Enabled = true;
+                        }
+                        //CATCH ALL FOR DUPLICATE
+
+                    }
+                    else
+                    {
+                        message = "Please ensure the new password and confirm password match";
                         MessageBox.Show(message);
                     }
-
-                    reader = cmd.ExecuteReader();
-                    connection.Close();
-
                 }
                 else
                 {
-                    message = "Please ensure the new password and confirm password match";
+                    message = "Students must have a form class";
                     MessageBox.Show(message);
                 }
             }
@@ -255,6 +362,8 @@ namespace IrishLanguageApplicationDB
             formclass.RemoveAt(index);
 
             index = index - 1;
+            numberOfUsers = numberOfUsers - 1;
+
             loadUsers(index);
 
             usernames.ToArray();
@@ -267,6 +376,33 @@ namespace IrishLanguageApplicationDB
         {
             index = 0;
             loadUsers(index);
+        }
+
+        private void cbxUserType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxUserType.Text == "Student")
+            {
+                lblFormClass.Text = "Form Class *";
+                txtFormClass.Enabled = true;
+            } 
+            else
+            {
+                lblFormClass.Text = "Form Class";
+                txtFormClass.Text = "";
+                txtFormClass.Enabled = false;
+            }
+        }
+
+        private void btnEditChildren_Click(object sender, EventArgs e)
+        {
+            Form EditUsersAddChildren = new EditUsersAddChildrenForm(txtUsername.Text);
+            EditUsersAddChildren.Show();
+        }
+
+        private void btnCloseForm_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            this.Hide();
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -285,7 +421,6 @@ namespace IrishLanguageApplicationDB
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            //index = usernames.IndexOf(txtUsername.Text);
             if (index != numberOfUsers - 1)
             {
                 index = index + 1;

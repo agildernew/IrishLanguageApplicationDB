@@ -51,6 +51,7 @@
             this.txtFormClass = new System.Windows.Forms.TextBox();
             this.lblFormClass = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnEditChildren = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -58,7 +59,7 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Location = new System.Drawing.Point(12, 17);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(55, 13);
+            this.lblUsername.Size = new System.Drawing.Size(106, 18);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Username *";
             // 
@@ -67,7 +68,7 @@
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Location = new System.Drawing.Point(12, 52);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(57, 13);
+            this.lblFirstName.Size = new System.Drawing.Size(113, 18);
             this.lblFirstName.TabIndex = 1;
             this.lblFirstName.Text = "First Name *";
             // 
@@ -76,7 +77,7 @@
             this.lblSurname.AutoSize = true;
             this.lblSurname.Location = new System.Drawing.Point(12, 87);
             this.lblSurname.Name = "lblSurname";
-            this.lblSurname.Size = new System.Drawing.Size(49, 13);
+            this.lblSurname.Size = new System.Drawing.Size(95, 18);
             this.lblSurname.TabIndex = 2;
             this.lblSurname.Text = "Surname *";
             // 
@@ -85,7 +86,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Location = new System.Drawing.Point(12, 126);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(53, 13);
+            this.lblPassword.Size = new System.Drawing.Size(101, 18);
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Password *";
             // 
@@ -94,7 +95,7 @@
             this.lblConfirmPassword.AutoSize = true;
             this.lblConfirmPassword.Location = new System.Drawing.Point(12, 162);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
-            this.lblConfirmPassword.Size = new System.Drawing.Size(91, 13);
+            this.lblConfirmPassword.Size = new System.Drawing.Size(170, 18);
             this.lblConfirmPassword.TabIndex = 4;
             this.lblConfirmPassword.Text = "Confirm Password *";
             // 
@@ -103,139 +104,160 @@
             this.lblUserType.AutoSize = true;
             this.lblUserType.Location = new System.Drawing.Point(12, 199);
             this.lblUserType.Name = "lblUserType";
-            this.lblUserType.Size = new System.Drawing.Size(56, 13);
+            this.lblUserType.Size = new System.Drawing.Size(104, 18);
             this.lblUserType.TabIndex = 5;
             this.lblUserType.Text = "User Type *";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(113, 14);
+            this.txtUsername.BackColor = System.Drawing.Color.White;
+            this.txtUsername.Location = new System.Drawing.Point(192, 14);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.ReadOnly = true;
-            this.txtUsername.Size = new System.Drawing.Size(169, 20);
+            this.txtUsername.Size = new System.Drawing.Size(216, 27);
             this.txtUsername.TabIndex = 6;
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(113, 49);
+            this.txtFirstName.BackColor = System.Drawing.Color.White;
+            this.txtFirstName.Location = new System.Drawing.Point(192, 49);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(169, 20);
+            this.txtFirstName.Size = new System.Drawing.Size(216, 27);
             this.txtFirstName.TabIndex = 7;
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(113, 84);
+            this.txtSurname.BackColor = System.Drawing.Color.White;
+            this.txtSurname.Location = new System.Drawing.Point(192, 84);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(169, 20);
+            this.txtSurname.Size = new System.Drawing.Size(216, 27);
             this.txtSurname.TabIndex = 8;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(113, 123);
+            this.txtPassword.BackColor = System.Drawing.Color.White;
+            this.txtPassword.Location = new System.Drawing.Point(192, 123);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(169, 20);
+            this.txtPassword.Size = new System.Drawing.Size(216, 27);
             this.txtPassword.TabIndex = 9;
             this.txtPassword.GotFocus += new System.EventHandler(this.txtPassword_GotFocus);
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(113, 159);
+            this.txtConfirmPassword.BackColor = System.Drawing.Color.White;
+            this.txtConfirmPassword.Location = new System.Drawing.Point(192, 159);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '*';
-            this.txtConfirmPassword.Size = new System.Drawing.Size(169, 20);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(216, 27);
             this.txtConfirmPassword.TabIndex = 10;
             this.txtConfirmPassword.GotFocus += new System.EventHandler(this.txtConfirmPassword_GotFocus);
             // 
             // cbxUserType
             // 
+            this.cbxUserType.BackColor = System.Drawing.Color.White;
+            this.cbxUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxUserType.FormattingEnabled = true;
-            this.cbxUserType.Location = new System.Drawing.Point(113, 196);
+            this.cbxUserType.Location = new System.Drawing.Point(192, 196);
             this.cbxUserType.Name = "cbxUserType";
-            this.cbxUserType.Size = new System.Drawing.Size(169, 21);
+            this.cbxUserType.Size = new System.Drawing.Size(216, 26);
             this.cbxUserType.TabIndex = 12;
-            //this.cbxUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxUserType.SelectedIndexChanged += new System.EventHandler(this.cbxUserType_SelectedIndexChanged);
             // 
             // btnFirst
             // 
-            this.btnFirst.Location = new System.Drawing.Point(132, 275);
+            this.btnFirst.BackColor = System.Drawing.Color.White;
+            this.btnFirst.Location = new System.Drawing.Point(249, 276);
             this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(30, 24);
+            this.btnFirst.Size = new System.Drawing.Size(39, 35);
             this.btnFirst.TabIndex = 14;
             this.btnFirst.Text = "|<";
+            this.btnFirst.UseVisualStyleBackColor = false;
             this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(172, 275);
+            this.btnPrevious.BackColor = System.Drawing.Color.White;
+            this.btnPrevious.Location = new System.Drawing.Point(289, 276);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(30, 24);
+            this.btnPrevious.Size = new System.Drawing.Size(39, 35);
             this.btnPrevious.TabIndex = 15;
             this.btnPrevious.Text = "<";
+            this.btnPrevious.UseVisualStyleBackColor = false;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(212, 275);
+            this.btnNext.BackColor = System.Drawing.Color.White;
+            this.btnNext.Location = new System.Drawing.Point(329, 276);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(30, 24);
+            this.btnNext.Size = new System.Drawing.Size(39, 35);
             this.btnNext.TabIndex = 16;
             this.btnNext.Text = ">";
+            this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnLast
             // 
-            this.btnLast.Location = new System.Drawing.Point(252, 275);
+            this.btnLast.BackColor = System.Drawing.Color.White;
+            this.btnLast.Location = new System.Drawing.Point(369, 276);
             this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(30, 24);
+            this.btnLast.Size = new System.Drawing.Size(39, 35);
             this.btnLast.TabIndex = 17;
             this.btnLast.Text = ">|";
+            this.btnLast.UseVisualStyleBackColor = false;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // btnAddUser
             // 
-            this.btnAddUser.Location = new System.Drawing.Point(12, 304);
+            this.btnAddUser.BackColor = System.Drawing.Color.White;
+            this.btnAddUser.Location = new System.Drawing.Point(85, 327);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(88, 23);
+            this.btnAddUser.Size = new System.Drawing.Size(158, 29);
             this.btnAddUser.TabIndex = 18;
             this.btnAddUser.Text = "Add User";
-            this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.UseVisualStyleBackColor = false;
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // btnDeleteUser
             // 
-            this.btnDeleteUser.Location = new System.Drawing.Point(104, 304);
+            this.btnDeleteUser.BackColor = System.Drawing.Color.White;
+            this.btnDeleteUser.Location = new System.Drawing.Point(250, 327);
             this.btnDeleteUser.Name = "btnDeleteUser";
-            this.btnDeleteUser.Size = new System.Drawing.Size(86, 23);
+            this.btnDeleteUser.Size = new System.Drawing.Size(158, 29);
             this.btnDeleteUser.TabIndex = 19;
             this.btnDeleteUser.Text = "Delete User";
-            this.btnDeleteUser.UseVisualStyleBackColor = true;
+            this.btnDeleteUser.UseVisualStyleBackColor = false;
             this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
             // 
             // btnCloseForm
             // 
-            this.btnCloseForm.Location = new System.Drawing.Point(195, 304);
+            this.btnCloseForm.BackColor = System.Drawing.Color.White;
+            this.btnCloseForm.Location = new System.Drawing.Point(250, 362);
             this.btnCloseForm.Name = "btnCloseForm";
-            this.btnCloseForm.Size = new System.Drawing.Size(87, 23);
+            this.btnCloseForm.Size = new System.Drawing.Size(158, 29);
             this.btnCloseForm.TabIndex = 20;
             this.btnCloseForm.Text = "Close Form";
-            this.btnCloseForm.UseVisualStyleBackColor = true;
+            this.btnCloseForm.UseVisualStyleBackColor = false;
+            this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
             // 
             // btnSaveChanges
             // 
-            this.btnSaveChanges.Location = new System.Drawing.Point(12, 275);
+            this.btnSaveChanges.BackColor = System.Drawing.Color.White;
+            this.btnSaveChanges.Location = new System.Drawing.Point(85, 362);
             this.btnSaveChanges.Name = "btnSaveChanges";
-            this.btnSaveChanges.Size = new System.Drawing.Size(102, 23);
+            this.btnSaveChanges.Size = new System.Drawing.Size(158, 29);
             this.btnSaveChanges.TabIndex = 13;
             this.btnSaveChanges.Text = "Save Changes";
-            this.btnSaveChanges.UseVisualStyleBackColor = true;
+            this.btnSaveChanges.UseVisualStyleBackColor = false;
             this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // txtFormClass
             // 
-            this.txtFormClass.Location = new System.Drawing.Point(113, 234);
+            this.txtFormClass.BackColor = System.Drawing.Color.White;
+            this.txtFormClass.Location = new System.Drawing.Point(192, 234);
             this.txtFormClass.Name = "txtFormClass";
-            this.txtFormClass.Size = new System.Drawing.Size(49, 20);
+            this.txtFormClass.Size = new System.Drawing.Size(96, 27);
             this.txtFormClass.TabIndex = 22;
             // 
             // lblFormClass
@@ -243,25 +265,40 @@
             this.lblFormClass.AutoSize = true;
             this.lblFormClass.Location = new System.Drawing.Point(12, 237);
             this.lblFormClass.Name = "lblFormClass";
-            this.lblFormClass.Size = new System.Drawing.Size(58, 13);
+            this.lblFormClass.Size = new System.Drawing.Size(98, 18);
             this.lblFormClass.TabIndex = 21;
             this.lblFormClass.Text = "Form Class";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(12, 304);
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(85, 327);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(88, 23);
+            this.btnCancel.Size = new System.Drawing.Size(158, 29);
             this.btnCancel.TabIndex = 23;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnEditChildren
+            // 
+            this.btnEditChildren.BackColor = System.Drawing.Color.White;
+            this.btnEditChildren.Location = new System.Drawing.Point(85, 282);
+            this.btnEditChildren.Name = "btnEditChildren";
+            this.btnEditChildren.Size = new System.Drawing.Size(158, 29);
+            this.btnEditChildren.TabIndex = 24;
+            this.btnEditChildren.Text = "Edit Children";
+            this.btnEditChildren.UseVisualStyleBackColor = false;
+            this.btnEditChildren.Click += new System.EventHandler(this.btnEditChildren_Click);
             // 
             // EditUsersForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 339);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(425, 406);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Controls.Add(this.btnEditChildren);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtFormClass);
             this.Controls.Add(this.lblFormClass);
@@ -285,6 +322,7 @@
             this.Controls.Add(this.lblSurname);
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.lblUsername);
+            this.Font = new System.Drawing.Font("Verdana", 12F);
             this.Name = "EditUsersForm";
             this.Text = "EditUsersForm";
             this.Load += new System.EventHandler(this.EditUsersForm_Load);
@@ -318,5 +356,6 @@
         private System.Windows.Forms.TextBox txtFormClass;
         private System.Windows.Forms.Label lblFormClass;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnEditChildren;
     }
 }
