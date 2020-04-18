@@ -18,7 +18,7 @@ namespace IrishLanguageApplicationDB
         List<TextBox> textboxesIrish = new List<TextBox>(), textboxesEnglish = new List<TextBox>(), textboxesAnswers = new List<TextBox>();
         string[] sortedVocabularyIrish, sortedVocabularyEnglish;
         int numberOfInstances;
-        bool displayIrish = true, displayEnglish = true;
+        bool displayIrish = true, displayEnglish = true, isStudent = false;
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -94,25 +94,57 @@ namespace IrishLanguageApplicationDB
                 }
             }
             scorePercentage = Math.Round(((double)score / (double)numberOfInstances) * 100, 2);
-            lblScore.Text = score.ToString() + " - " + scorePercentage.ToString() + "%";
+
+            string markingMessage = "";
+            if (scorePercentage > 90)
+            {
+                markingMessage = "Ar fheabhas! - Excellent!";
+            } 
+            else if (scorePercentage > 70)
+            {
+                markingMessage = "Go hiontach - Very good";
+            }
+            else if (scorePercentage > 60)
+            {
+                markingMessage = "Go maith - Good";
+            }
+            else
+            {
+                markingMessage = "Coinnigh ort ag iarraidh - Keep trying";
+            }
+            lblScore.Text = "Scór = " + score.ToString() + "/" + numberOfInstances.ToString() + " -> " + scorePercentage.ToString() + "% \r\n" + markingMessage;
+
+            if (isStudent)
+            {
+                int oldScore = 0;
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM LeaderBoard WHERE user_id = '" + currentUser + "' AND exerciseType = '" + exerciseType + "';", connection);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    oldScore = Int16.Parse(reader["score"].ToString());
+                }
+                connection.Close();
+
+                if (oldScore < score)
+                {
+                    connection.Open();
+                    cmd = new SqlCommand("INSERT INTO LeaderBoard (user_id, score, topic, exerciseType) VALUES ('" + currentUser + "', " + scorePercentage + ", '" + exerciseTopic + "', '" + exerciseType + "');", connection);
+
+                    reader = cmd.ExecuteReader();
+                    connection.Close();
+                }
+                btnSubmit.Enabled = false;
+            }
         }
 
-        public MatchOrEnterWordForWordExerciseForm(string user, string topic, string extype, string description)
+        public MatchOrEnterWordForWordExerciseForm(string user, bool isStudentUser, string topic, string extype, string description)
         {
             currentUser = user;
+            isStudent = isStudentUser;
             exerciseTopic = topic;
             exerciseType = extype;
-            exerciseDescription = description;
-            InitializeComponent();
-        }
-
-        public MatchOrEnterWordForWordExerciseForm(string user, string topic, string extype, bool displayIrishVocabulary, bool displayEnglishVocabulary, string description)
-        {
-            currentUser = user;
-            exerciseTopic = topic;
-            exerciseType = extype;
-            displayEnglish = displayEnglishVocabulary;
-            displayIrish = displayIrishVocabulary;
             exerciseDescription = description;
             InitializeComponent();
         }

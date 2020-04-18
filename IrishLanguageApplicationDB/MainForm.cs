@@ -135,6 +135,7 @@ namespace IrishLanguageApplicationDB
             topic = cbxTopicList.SelectedItem.ToString().Substring(0, index);
             this.Enabled = false;
             this.Hide();
+
             if (userType == "Student")
             {
                 Form ChoosingExerciseForm = new ChoosingExerciseForm(user, topic, true);
@@ -327,9 +328,6 @@ namespace IrishLanguageApplicationDB
 
         private void btnAddTopic_Click(object sender, EventArgs e)
         {
-            //this.Enabled = false;
-            //this.Hide();
-            //Form ChoosingExerciseForm = new ChoosingExerciseForm();
             Form AddTopicsForm = new AddTopicsForm();
             AddTopicsForm.Show();
         }
@@ -338,9 +336,6 @@ namespace IrishLanguageApplicationDB
         {
             int index = cbxTopicList.SelectedItem.ToString().IndexOf('-');
             topic = cbxTopicList.SelectedItem.ToString().Substring(0, index);
-            //this.Enabled = false;
-            //this.Hide();
-            //Form ChoosingExerciseForm = new ChoosingExerciseForm();
             Form AddVocabularyForm = new AddVocabularyForm(topic);
             AddVocabularyForm.Show();
         }
@@ -459,19 +454,13 @@ namespace IrishLanguageApplicationDB
 
         private void btnEditUser_Click(object sender, EventArgs e)
         {
-            //this.Enabled = false;
-            //this.Hide();
-            //Form ChoosingExerciseForm = new ChoosingExerciseForm();
             Form EditUsersForm = new EditUsersForm(user, userType);
             EditUsersForm.Show();
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
-            string currentUserName = user;
-            //this.Enabled = false;
-            //this.Hide();
-            Form ChangePasswordForm = new ChangePasswordForm(currentUserName);
+            Form ChangePasswordForm = new ChangePasswordForm(user);
             ChangePasswordForm.Show();
 
         }
