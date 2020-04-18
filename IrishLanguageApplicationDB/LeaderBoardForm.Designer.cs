@@ -718,7 +718,7 @@
             this.Controls.Add(this.lblYearGroup);
             this.Font = new System.Drawing.Font("Verdana", 12F);
             this.Name = "LeaderBoardForm";
-            this.Text = "LeaderBoardForm";
+            this.Text = "Leaderboard";
             this.Load += new System.EventHandler(this.LeaderBoardForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

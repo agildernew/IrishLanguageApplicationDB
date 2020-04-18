@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Button btnDeleteChild;
-            this.lblParentName = new System.Windows.Forms.Label();
+            this.lblParentUserName = new System.Windows.Forms.Label();
             this.txtParentName = new System.Windows.Forms.TextBox();
             this.btnAddChild = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.dgvChildrensDetails = new System.Windows.Forms.DataGridView();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Forename = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FormClass = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Child = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsChild = new System.Windows.Forms.DataGridViewTextBoxColumn();
             btnDeleteChild = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChildrensDetails)).BeginInit();
             this.SuspendLayout();
@@ -54,20 +54,20 @@
             btnDeleteChild.UseVisualStyleBackColor = false;
             btnDeleteChild.Click += new System.EventHandler(this.btnDeleteChild_Click);
             // 
-            // lblParentName
+            // lblParentUserName
             // 
-            this.lblParentName.AutoSize = true;
-            this.lblParentName.Location = new System.Drawing.Point(12, 19);
-            this.lblParentName.Name = "lblParentName";
-            this.lblParentName.Size = new System.Drawing.Size(127, 18);
-            this.lblParentName.TabIndex = 0;
-            this.lblParentName.Text = "Parent\'s Name";
+            this.lblParentUserName.AutoSize = true;
+            this.lblParentUserName.Location = new System.Drawing.Point(12, 19);
+            this.lblParentUserName.Name = "lblParentUserName";
+            this.lblParentUserName.Size = new System.Drawing.Size(170, 18);
+            this.lblParentUserName.TabIndex = 0;
+            this.lblParentUserName.Text = "Parent\'s User Name";
             // 
             // txtParentName
             // 
             this.txtParentName.BackColor = System.Drawing.Color.White;
             this.txtParentName.Enabled = false;
-            this.txtParentName.Location = new System.Drawing.Point(145, 10);
+            this.txtParentName.Location = new System.Drawing.Point(188, 10);
             this.txtParentName.Name = "txtParentName";
             this.txtParentName.Size = new System.Drawing.Size(262, 27);
             this.txtParentName.TabIndex = 1;
@@ -83,16 +83,16 @@
             this.btnAddChild.UseVisualStyleBackColor = false;
             this.btnAddChild.Click += new System.EventHandler(this.btnAddChild_Click);
             // 
-            // btnCancel
+            // btnClose
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(551, 391);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(122, 28);
-            this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(551, 391);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(122, 28);
+            this.btnClose.TabIndex = 4;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // dgvChildrensDetails
             // 
@@ -106,7 +106,7 @@
             this.Forename,
             this.Surname,
             this.FormClass,
-            this.Child});
+            this.IsChild});
             this.dgvChildrensDetails.Location = new System.Drawing.Point(18, 51);
             this.dgvChildrensDetails.MultiSelect = false;
             this.dgvChildrensDetails.Name = "dgvChildrensDetails";
@@ -133,30 +133,32 @@
             // 
             // FormClass
             // 
+            this.FormClass.HeaderText = "Form Class";
             this.FormClass.Name = "FormClass";
             this.FormClass.ReadOnly = true;
             // 
-            // Child
+            // IsChild
             // 
-            this.Child.Name = "Child";
-            this.Child.ReadOnly = true;
+            this.IsChild.HeaderText = "Is Child?";
+            this.IsChild.Name = "IsChild";
+            this.IsChild.ReadOnly = true;
             // 
-            // EditUsersAddChildren
+            // EditUsersAddChildrenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(685, 432);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Controls.Add(btnDeleteChild);
             this.Controls.Add(this.dgvChildrensDetails);
-            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAddChild);
             this.Controls.Add(this.txtParentName);
-            this.Controls.Add(this.lblParentName);
+            this.Controls.Add(this.lblParentUserName);
             this.Font = new System.Drawing.Font("Verdana", 12F);
-            this.Name = "EditUsersAddChildren";
-            this.Text = "EditUsersAddChildren";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Name = "EditUsersAddChildrenForm";
+            this.Text = "Add Children";
             this.Load += new System.EventHandler(this.EditUsersAddChildren_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChildrensDetails)).EndInit();
             this.ResumeLayout(false);
@@ -166,10 +168,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblParentName;
+        private System.Windows.Forms.Label lblParentUserName;
         private System.Windows.Forms.TextBox txtParentName;
         private System.Windows.Forms.Button btnAddChild;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridView dgvChildrensDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -181,5 +183,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Surname;
         private System.Windows.Forms.DataGridViewTextBoxColumn FormClass;
         private System.Windows.Forms.DataGridViewTextBoxColumn Child;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IsChild;
     }
 }

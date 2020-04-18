@@ -96,9 +96,9 @@
             // 
             // lblVocabulary
             // 
-            this.lblVocabulary.Location = new System.Drawing.Point(10, 337);
+            this.lblVocabulary.Location = new System.Drawing.Point(372, 14);
             this.lblVocabulary.Name = "lblVocabulary";
-            this.lblVocabulary.Size = new System.Drawing.Size(108, 34);
+            this.lblVocabulary.Size = new System.Drawing.Size(108, 22);
             this.lblVocabulary.TabIndex = 0;
             this.lblVocabulary.Text = "Vocabulary";
             // 
@@ -260,8 +260,8 @@
             this.btnEditUser.Size = new System.Drawing.Size(182, 33);
             this.btnEditUser.TabIndex = 1;
             this.btnEditUser.Text = "Edit User";
-            this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
             this.btnEditUser.UseVisualStyleBackColor = false;
+            this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
             // 
             // btnDeleteTopic
             // 
@@ -339,7 +339,7 @@
             this.Controls.Add(this.btnEditUser);
             this.Font = new System.Drawing.Font("Verdana", 12F);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Main Page";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImages)).EndInit();
             this.ResumeLayout(false);

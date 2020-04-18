@@ -76,7 +76,7 @@
             this.Controls.Add(this.lblTitle);
             this.Font = new System.Drawing.Font("Verdana", 16F);
             this.Name = "AmhranNabfFiannForm";
-            this.Text = "AmhranNabfFiannForm";
+            this.Text = "Amhrán na bhFiann";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,22 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTopicNameIrish = new System.Windows.Forms.Label();
+            // Initializing Labels
             this.lblTopicNameEnglish = new System.Windows.Forms.Label();
+            this.lblTopicNameIrish = new System.Windows.Forms.Label();
+            // Initializing Textboxes
             this.txtTopicNameEnglish = new System.Windows.Forms.TextBox();
             this.txtTopicNameIrish = new System.Windows.Forms.TextBox();
+            // Initializing Buttons
             this.btnAddTopic = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+
             this.SuspendLayout();
-            // 
-            // lblTopicNameIrish
-            // 
-            this.lblTopicNameIrish.AutoSize = true;
-            this.lblTopicNameIrish.Location = new System.Drawing.Point(12, 61);
-            this.lblTopicNameIrish.Name = "lblTopicNameIrish";
-            this.lblTopicNameIrish.Size = new System.Drawing.Size(145, 18);
-            this.lblTopicNameIrish.TabIndex = 0;
-            this.lblTopicNameIrish.Text = "Topic Name Irish";
+
+            // LABELS
             // 
             // lblTopicNameEnglish
             // 
@@ -53,6 +50,16 @@
             this.lblTopicNameEnglish.Size = new System.Drawing.Size(167, 18);
             this.lblTopicNameEnglish.TabIndex = 1;
             this.lblTopicNameEnglish.Text = "Topic Name English";
+            // 
+            // lblTopicNameIrish
+            // 
+            this.lblTopicNameIrish.AutoSize = true;
+            this.lblTopicNameIrish.Location = new System.Drawing.Point(12, 61);
+            this.lblTopicNameIrish.Name = "lblTopicNameIrish";
+            this.lblTopicNameIrish.Size = new System.Drawing.Size(145, 18);
+            this.lblTopicNameIrish.TabIndex = 0;
+            this.lblTopicNameIrish.Text = "Topic Name Irish";
+            // TEXTBOXES
             // 
             // txtTopicNameEnglish
             // 
@@ -69,6 +76,7 @@
             this.txtTopicNameIrish.Name = "txtTopicNameIrish";
             this.txtTopicNameIrish.Size = new System.Drawing.Size(229, 27);
             this.txtTopicNameIrish.TabIndex = 3;
+            // BUTTONS
             // 
             // btnAddTopic
             // 
@@ -98,26 +106,28 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(432, 133);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnAddTopic);
-            this.Controls.Add(this.txtTopicNameIrish);
-            this.Controls.Add(this.txtTopicNameEnglish);
             this.Controls.Add(this.lblTopicNameEnglish);
             this.Controls.Add(this.lblTopicNameIrish);
+            this.Controls.Add(this.txtTopicNameEnglish);
+            this.Controls.Add(this.txtTopicNameIrish);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnAddTopic);
             this.Font = new System.Drawing.Font("Verdana", 12F);
             this.Name = "AddTopicsForm";
-            this.Text = "AddTopicsForm";
+            this.Text = "Add Topics";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblTopicNameIrish;
+        // Declaring Labels
         private System.Windows.Forms.Label lblTopicNameEnglish;
+        private System.Windows.Forms.Label lblTopicNameIrish;
+        // Declaring Textboxes
         private System.Windows.Forms.TextBox txtTopicNameEnglish;
         private System.Windows.Forms.TextBox txtTopicNameIrish;
+        // Declaring Buttons
         private System.Windows.Forms.Button btnAddTopic;
         private System.Windows.Forms.Button btnClose;
     }
