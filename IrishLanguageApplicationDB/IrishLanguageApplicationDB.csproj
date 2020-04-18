@@ -85,6 +85,18 @@
     <Compile Include="ChoosingExerciseForm.Designer.cs">
       <DependentUpon>ChoosingExerciseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditUsersAddChildrenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUsersAddChildrenForm.Designer.cs">
+      <DependentUpon>EditUsersAddChildrenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditUsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUsersForm.Designer.cs">
+      <DependentUpon>EditUsersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddTopicsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +154,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChoosingExerciseForm.resx">
       <DependentUpon>ChoosingExerciseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUsersAddChildrenForm.resx">
+      <DependentUpon>EditUsersAddChildrenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUsersForm.resx">
+      <DependentUpon>EditUsersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LeaderBoardForm.resx">
       <DependentUpon>LeaderBoardForm.cs</DependentUpon>

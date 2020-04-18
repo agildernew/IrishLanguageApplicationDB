@@ -260,6 +260,7 @@
             this.btnEditUser.Size = new System.Drawing.Size(182, 33);
             this.btnEditUser.TabIndex = 1;
             this.btnEditUser.Text = "Edit User";
+            this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
             this.btnEditUser.UseVisualStyleBackColor = false;
             // 
             // btnDeleteTopic

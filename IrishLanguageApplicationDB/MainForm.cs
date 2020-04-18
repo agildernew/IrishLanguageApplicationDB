@@ -457,6 +457,15 @@ namespace IrishLanguageApplicationDB
             connection.Close();
         }
 
+        private void btnEditUser_Click(object sender, EventArgs e)
+        {
+            //this.Enabled = false;
+            //this.Hide();
+            //Form ChoosingExerciseForm = new ChoosingExerciseForm();
+            Form EditUsersForm = new EditUsersForm(user, userType);
+            EditUsersForm.Show();
+        }
+
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
             string currentUserName = user;
@@ -464,6 +473,7 @@ namespace IrishLanguageApplicationDB
             //this.Hide();
             Form ChangePasswordForm = new ChangePasswordForm(currentUserName);
             ChangePasswordForm.Show();
+
         }
     }
 }
