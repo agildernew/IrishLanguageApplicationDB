@@ -94,7 +94,7 @@ namespace IrishLanguageApplicationDB
         {
             exerciseType = "MatchIrishToImage";
             exerciseDescription = "Match the Irish word to the given image";
-            Form MatchWordToPictureExerciseForm = new MatchWordToPictureExerciseForm(currentUser, exerciseTopic, exerciseType, exerciseDescription);
+            Form MatchWordToPictureExerciseForm = new MatchWordToPictureExerciseForm(currentUser, isStudentUser, exerciseTopic, exerciseType, exerciseDescription);
             MatchWordToPictureExerciseForm.Show();
             this.Enabled = false;
             this.Hide();
@@ -104,7 +104,7 @@ namespace IrishLanguageApplicationDB
         {
             exerciseType = "MatchEnglishToIrish";
             exerciseDescription = "Match the English word to the given Irish word e.g. if the Irish word is 'Gaeilge' enter the English word for this (i.e. English)";
-            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(currentUser, exerciseTopic, exerciseType, exerciseDescription);
+            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(currentUser, isStudentUser, exerciseTopic, exerciseType, exerciseDescription);
             MatchOrEnterWordForWordExerciseForm.Show();
             this.Enabled = false;
             this.Hide();
@@ -122,7 +122,7 @@ namespace IrishLanguageApplicationDB
         {
             exerciseType = "MatchIrishToEnglish";
             exerciseDescription = "Match the Irish word to the given English word e.g. if the English word is 'Irish' enter the Irish word for this (i.e. Gaeilge)";
-            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(currentUser, exerciseTopic, exerciseType, exerciseDescription);
+            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(currentUser, isStudentUser, exerciseTopic, exerciseType, exerciseDescription);
             MatchOrEnterWordForWordExerciseForm.Show();
             this.Enabled = false;
             this.Hide();
@@ -132,7 +132,7 @@ namespace IrishLanguageApplicationDB
         {
             exerciseType = "EnterEnglishForIrish";
             exerciseDescription = "Enter the English word for the given Irish word e.g. if the Irish word is 'Gaeilge' enter the English word for this (i.e. English)";
-            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(currentUser, exerciseTopic, exerciseType, exerciseDescription);
+            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(currentUser, isStudentUser, exerciseTopic, exerciseType, exerciseDescription);
             MatchOrEnterWordForWordExerciseForm.Show();
             this.Enabled = false;
             this.Hide();
@@ -142,7 +142,7 @@ namespace IrishLanguageApplicationDB
         {
             exerciseType = "EnterIrishForEnglish";
             exerciseDescription = "Enter the Irish word for the given English word e.g. if the English word is 'English' enter the Irish word for this (i.e. Gaeilge)";
-            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(currentUser, exerciseTopic, exerciseType, exerciseDescription);
+            Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(currentUser, isStudentUser, exerciseTopic, exerciseType, exerciseDescription);
             MatchOrEnterWordForWordExerciseForm.Show();
             this.Enabled = false;
             this.Hide();
