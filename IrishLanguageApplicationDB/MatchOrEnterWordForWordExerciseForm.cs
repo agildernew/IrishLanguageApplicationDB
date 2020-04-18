@@ -190,7 +190,12 @@ namespace IrishLanguageApplicationDB
                 sortedVocabularyIrish[j] = temp;
             }
 
-            //lblExerciseInstructions.Text = displayEnglish.ToString() + "  " + displayIrish.ToString();
+            for (int i=0; i < 10; i++)
+            {
+                textboxesIrish[i].Hide();
+                textboxesEnglish[i].Hide();
+                textboxesAnswers[i].Hide();
+            }
 
             if (displayEnglish == true & displayIrish == true)
             {

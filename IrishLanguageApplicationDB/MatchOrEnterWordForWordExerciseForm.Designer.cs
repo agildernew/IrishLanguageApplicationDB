@@ -72,7 +72,7 @@
             // 
             this.lblExerciseInstructionsLabel.Location = new System.Drawing.Point(10, 9);
             this.lblExerciseInstructionsLabel.Name = "lblExerciseInstructionsLabel";
-            this.lblExerciseInstructionsLabel.Size = new System.Drawing.Size(104, 31);
+            this.lblExerciseInstructionsLabel.Size = new System.Drawing.Size(195, 31);
             this.lblExerciseInstructionsLabel.TabIndex = 0;
             this.lblExerciseInstructionsLabel.Text = "Exercise Instructions";
             // 
@@ -444,7 +444,7 @@
             this.Controls.Add(this.txtAnswerTen);
             this.Font = new System.Drawing.Font("Verdana", 12F);
             this.Name = "MatchOrEnterWordForWordExerciseForm";
-            this.Text = "Match Or Enter Word For Word Exercise Form";
+            this.Text = "Match Or Enter Word For Word Exercise";
             this.Load += new System.EventHandler(this.MatchOrEnterWordForWordExerciseForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -36,7 +36,7 @@
             this.btnEnterIrishWordForEnglishWord = new System.Windows.Forms.Button();
             this.btnFillInBlanks = new System.Windows.Forms.Button();
             this.btnMultipleChoice = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblChooseExercise
@@ -122,16 +122,16 @@
             this.btnMultipleChoice.Text = "Multiple Choice";
             this.btnMultipleChoice.UseVisualStyleBackColor = false;
             // 
-            // btnBack
+            // btnCancel
             // 
-            this.btnBack.BackColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(337, 337);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(68, 35);
-            this.btnBack.TabIndex = 1;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(328, 337);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(77, 35);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // ChoosingExerciseForm
             // 
@@ -147,10 +147,10 @@
             this.Controls.Add(this.btnEnterIrishWordForEnglishWord);
             this.Controls.Add(this.btnFillInBlanks);
             this.Controls.Add(this.btnMultipleChoice);
-            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnCancel);
             this.Font = new System.Drawing.Font("Verdana", 12F);
             this.Name = "ChoosingExerciseForm";
-            this.Text = "ChoosingExerciseForm";
+            this.Text = "Choose an Exercise";
             this.Load += new System.EventHandler(this.ChoosingExerciseForm_Load);
             this.ResumeLayout(false);
 
@@ -168,6 +168,6 @@
         private System.Windows.Forms.Button btnEnterIrishWordForEnglishWord;
         private System.Windows.Forms.Button btnFillInBlanks;
         private System.Windows.Forms.Button btnMultipleChoice;
-        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

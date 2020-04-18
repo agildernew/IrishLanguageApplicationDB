@@ -97,7 +97,7 @@
             this.btnLogin.BackColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(225, 165);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(152, 32);
+            this.btnLogin.Size = new System.Drawing.Size(152, 55);
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Logáil Isteach\r\nLog In";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -108,7 +108,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(397, 218);
+            this.ClientSize = new System.Drawing.Size(397, 230);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -118,7 +118,7 @@
             this.Controls.Add(this.lblWelcome);
             this.Font = new System.Drawing.Font("Verdana", 12F);
             this.Name = "LoginForm";
-            this.Text = "LoginForm";
+            this.Text = "s";
             this.ResumeLayout(false);
             this.PerformLayout();
 

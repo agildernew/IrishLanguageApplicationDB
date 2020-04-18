@@ -77,9 +77,9 @@
             // 
             // lblExerciseInstructionsLabel
             // 
-            this.lblExerciseInstructionsLabel.Location = new System.Drawing.Point(10, 20);
+            this.lblExerciseInstructionsLabel.Location = new System.Drawing.Point(10, 13);
             this.lblExerciseInstructionsLabel.Name = "lblExerciseInstructionsLabel";
-            this.lblExerciseInstructionsLabel.Size = new System.Drawing.Size(100, 16);
+            this.lblExerciseInstructionsLabel.Size = new System.Drawing.Size(201, 27);
             this.lblExerciseInstructionsLabel.TabIndex = 0;
             this.lblExerciseInstructionsLabel.Text = "Exercise Instructions";
             // 
@@ -454,7 +454,7 @@
             this.Controls.Add(this.pbxImageOne);
             this.Font = new System.Drawing.Font("Verdana", 12F);
             this.Name = "MatchWordToPictureExerciseForm";
-            this.Text = "MatchWordToPictureExerciseForm";
+            this.Text = "Match Word To Image Exercise";
             this.Load += new System.EventHandler(this.MatchWordToPictureExerciseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImageOne)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImageTwo)).EndInit();

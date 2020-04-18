@@ -96,9 +96,9 @@
             // 
             // lblVocabulary
             // 
-            this.lblVocabulary.Location = new System.Drawing.Point(10, 337);
+            this.lblVocabulary.Location = new System.Drawing.Point(372, 14);
             this.lblVocabulary.Name = "lblVocabulary";
-            this.lblVocabulary.Size = new System.Drawing.Size(108, 34);
+            this.lblVocabulary.Size = new System.Drawing.Size(108, 22);
             this.lblVocabulary.TabIndex = 0;
             this.lblVocabulary.Text = "Vocabulary";
             // 
@@ -260,8 +260,8 @@
             this.btnEditUser.Size = new System.Drawing.Size(182, 33);
             this.btnEditUser.TabIndex = 1;
             this.btnEditUser.Text = "Edit User";
-            this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
             this.btnEditUser.UseVisualStyleBackColor = false;
+            this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
             // 
             // btnDeleteTopic
             // 
@@ -313,33 +313,33 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(788, 398);
-            this.Controls.Add(this.btnAmhranNabhFiann);
-            this.Controls.Add(this.btnViewLeaderboard);
-            this.Controls.Add(this.btnDeleteTopic);
-            this.Controls.Add(this.btnDeleteVocabulary);
             this.Controls.Add(this.lblTopics);
-            this.Controls.Add(this.cbxTopicList);
-            this.Controls.Add(this.lbxVocabulary);
-            this.Controls.Add(this.btnPlayGame);
             this.Controls.Add(this.lblVocabulary);
             this.Controls.Add(this.lblIrish);
-            this.Controls.Add(this.txtIrishVocabulary);
             this.Controls.Add(this.lblEnglish);
-            this.Controls.Add(this.txtEnglishVocabulary);
             this.Controls.Add(this.lblImage);
+            this.Controls.Add(this.lblUserName);
+            this.Controls.Add(this.lbxVocabulary);
+            this.Controls.Add(this.cbxTopicList);
+            this.Controls.Add(this.txtIrishVocabulary);
+            this.Controls.Add(this.txtEnglishVocabulary);
             this.Controls.Add(this.pbxImages);
+            this.Controls.Add(this.btnPlayGame);
             this.Controls.Add(this.btnFirst);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnLast);
             this.Controls.Add(this.btnAddTopic);
+            this.Controls.Add(this.btnDeleteTopic);
             this.Controls.Add(this.btnAddVocabulary);
-            this.Controls.Add(this.lblUserName);
+            this.Controls.Add(this.btnDeleteVocabulary);
             this.Controls.Add(this.btnChangePassword);
+            this.Controls.Add(this.btnViewLeaderboard);
+            this.Controls.Add(this.btnAmhranNabhFiann);
             this.Controls.Add(this.btnEditUser);
             this.Font = new System.Drawing.Font("Verdana", 12F);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Irish Vocabulary Application";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImages)).EndInit();
             this.ResumeLayout(false);
