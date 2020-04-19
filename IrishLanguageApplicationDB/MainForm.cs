@@ -81,7 +81,7 @@ namespace IrishLanguageApplicationDB
             {
                 btnAddTopic.Hide();
                 btnDeleteTopic.Hide();
-                btnEditVocabulary.Hide();
+                ///btnAddVocabulary.Hide();
                 btnDeleteVocabulary.Hide();
                 if (userType != "Teacher")
                 {
@@ -176,8 +176,8 @@ namespace IrishLanguageApplicationDB
                 selectedTopicNameEnglish = cbxTopicList.SelectedItem.ToString().Substring(0, index);
             };
 
-            lbxVocabulary.Items.Clear();
             connection.Open();
+            lbxVocabulary.Items.Clear();
             cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE topic_name_english='" + selectedTopicNameEnglish + "';", connection);
             reader = cmd.ExecuteReader();
             int numberOfVocabulary = 0;
