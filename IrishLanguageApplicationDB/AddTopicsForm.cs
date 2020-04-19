@@ -33,8 +33,10 @@ namespace IrishLanguageApplicationDB
                 connection.Close();
 
                 string topic = txtTopicNameEnglish.Text;
-                Form AddVocabularyForm = new AddVocabularyForm(connection, topic);
+                Form AddVocabularyForm = new AddVocabularyForm(connection, topic, true);
                 AddVocabularyForm.Show();
+                this.Enabled = false;
+                this.Hide();
             }
         }
 

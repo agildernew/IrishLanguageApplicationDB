@@ -20,7 +20,6 @@ namespace IrishLanguageApplicationDB
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = "com667.database.windows.net";
             builder.UserID = "aoifegildernew";
-            //builder.Password = "AzureUniCOM667";
             string passwordFilePath = "C:\\AzurePassword.txt";
             if (File.Exists(passwordFilePath))
             {
