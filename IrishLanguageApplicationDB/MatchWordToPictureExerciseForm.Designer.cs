@@ -230,6 +230,7 @@
             this.pbxImageOne.Size = new System.Drawing.Size(162, 163);
             this.pbxImageOne.TabIndex = 14;
             this.pbxImageOne.TabStop = false;
+            this.pbxImageOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageOne.Click += new System.EventHandler(this.pbxImageOne_Click);
             // 
             // pbxImageTwo
@@ -239,6 +240,7 @@
             this.pbxImageTwo.Size = new System.Drawing.Size(162, 163);
             this.pbxImageTwo.TabIndex = 15;
             this.pbxImageTwo.TabStop = false;
+            this.pbxImageTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageTwo.Click += new System.EventHandler(this.pbxImageTwo_Click);
             // 
             // pbxImageThree
@@ -248,6 +250,7 @@
             this.pbxImageThree.Size = new System.Drawing.Size(162, 163);
             this.pbxImageThree.TabIndex = 16;
             this.pbxImageThree.TabStop = false;
+            this.pbxImageThree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageThree.Click += new System.EventHandler(this.pbxImageThree_Click);
             // 
             // pbxImageFour
@@ -257,6 +260,7 @@
             this.pbxImageFour.Size = new System.Drawing.Size(162, 163);
             this.pbxImageFour.TabIndex = 17;
             this.pbxImageFour.TabStop = false;
+            this.pbxImageFour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageFour.Click += new System.EventHandler(this.pbxImageFour_Click);
             // 
             // pbxImageFive
@@ -266,6 +270,7 @@
             this.pbxImageFive.Size = new System.Drawing.Size(162, 163);
             this.pbxImageFive.TabIndex = 18;
             this.pbxImageFive.TabStop = false;
+            this.pbxImageFive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageFive.Click += new System.EventHandler(this.pbxImageFive_Click);
             // 
             // pbxImageSix
@@ -275,6 +280,7 @@
             this.pbxImageSix.Size = new System.Drawing.Size(162, 163);
             this.pbxImageSix.TabIndex = 19;
             this.pbxImageSix.TabStop = false;
+            this.pbxImageSix.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageSix.Click += new System.EventHandler(this.pbxImageSix_Click);
             // 
             // pbxImageSeven
@@ -284,6 +290,7 @@
             this.pbxImageSeven.Size = new System.Drawing.Size(162, 163);
             this.pbxImageSeven.TabIndex = 20;
             this.pbxImageSeven.TabStop = false;
+            this.pbxImageSeven.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageSeven.Click += new System.EventHandler(this.pbxImageSeven_Click);
             // 
             // pbxImageEight
@@ -293,6 +300,7 @@
             this.pbxImageEight.Size = new System.Drawing.Size(162, 163);
             this.pbxImageEight.TabIndex = 21;
             this.pbxImageEight.TabStop = false;
+            this.pbxImageEight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageEight.Click += new System.EventHandler(this.pbxImageEight_Click);
             // 
             // pbxImageNine
@@ -302,6 +310,7 @@
             this.pbxImageNine.Size = new System.Drawing.Size(162, 163);
             this.pbxImageNine.TabIndex = 22;
             this.pbxImageNine.TabStop = false;
+            this.pbxImageNine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageNine.Click += new System.EventHandler(this.pbxImageNine_Click);
             // 
             // pbxImageTen
@@ -311,6 +320,7 @@
             this.pbxImageTen.Size = new System.Drawing.Size(162, 163);
             this.pbxImageTen.TabIndex = 23;
             this.pbxImageTen.TabStop = false;
+            this.pbxImageTen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageTen.Click += new System.EventHandler(this.pbxImageTen_Click);
             // 
             // txtImageOne
