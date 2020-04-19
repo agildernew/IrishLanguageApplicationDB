@@ -46,7 +46,7 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnLast = new System.Windows.Forms.Button();
             this.btnAddTopic = new System.Windows.Forms.Button();
-            this.btnAddVocabulary = new System.Windows.Forms.Button();
+            this.btnEditVocabulary = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnEditUser = new System.Windows.Forms.Button();
             this.btnDeleteTopic = new System.Windows.Forms.Button();
@@ -230,16 +230,16 @@
             this.btnAddTopic.UseVisualStyleBackColor = false;
             this.btnAddTopic.Click += new System.EventHandler(this.btnAddTopic_Click);
             // 
-            // btnAddVocabulary
+            // btnEditVocabulary
             // 
-            this.btnAddVocabulary.BackColor = System.Drawing.Color.White;
-            this.btnAddVocabulary.Location = new System.Drawing.Point(471, 313);
-            this.btnAddVocabulary.Name = "btnAddVocabulary";
-            this.btnAddVocabulary.Size = new System.Drawing.Size(169, 33);
-            this.btnAddVocabulary.TabIndex = 1;
-            this.btnAddVocabulary.Text = "Add Vocabulary";
-            this.btnAddVocabulary.UseVisualStyleBackColor = false;
-            this.btnAddVocabulary.Click += new System.EventHandler(this.btnAddVocabulary_Click);
+            this.btnEditVocabulary.BackColor = System.Drawing.Color.White;
+            this.btnEditVocabulary.Location = new System.Drawing.Point(471, 313);
+            this.btnEditVocabulary.Name = "btnEditVocabulary";
+            this.btnEditVocabulary.Size = new System.Drawing.Size(169, 33);
+            this.btnEditVocabulary.TabIndex = 1;
+            this.btnEditVocabulary.Text = "Edit Vocabulary";
+            this.btnEditVocabulary.UseVisualStyleBackColor = false;
+            this.btnEditVocabulary.Click += new System.EventHandler(this.btnAddVocabulary_Click);
             // 
             // btnChangePassword
             // 
@@ -331,7 +331,7 @@
             this.Controls.Add(this.btnLast);
             this.Controls.Add(this.btnAddTopic);
             this.Controls.Add(this.btnDeleteTopic);
-            this.Controls.Add(this.btnAddVocabulary);
+            this.Controls.Add(this.btnEditVocabulary);
             this.Controls.Add(this.btnDeleteVocabulary);
             this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.btnViewLeaderboard);
@@ -373,7 +373,7 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnLast;
         private System.Windows.Forms.Button btnAddTopic;
-        private System.Windows.Forms.Button btnAddVocabulary;
+        private System.Windows.Forms.Button btnEditVocabulary;
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Button btnEditUser;
         private System.Windows.Forms.Button btnDeleteTopic;

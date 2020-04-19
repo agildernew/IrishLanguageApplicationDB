@@ -35,7 +35,8 @@ namespace IrishLanguageApplicationDB
                     sqlConnection.Close();
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
-                    Application.Run(new LoginForm(sqlConnection));
+                    Application.Run(new MainForm(sqlConnection, "agildernew", "Admin"));
+                    //Application.Run(new LoginForm(sqlConnection));
                 } 
                 catch (SqlException s)
                 {

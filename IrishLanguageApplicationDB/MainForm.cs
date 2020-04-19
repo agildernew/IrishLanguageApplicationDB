@@ -81,7 +81,7 @@ namespace IrishLanguageApplicationDB
             {
                 btnAddTopic.Hide();
                 btnDeleteTopic.Hide();
-                btnAddVocabulary.Hide();
+                btnEditVocabulary.Hide();
                 btnDeleteVocabulary.Hide();
                 if (userType != "Teacher")
                 {
