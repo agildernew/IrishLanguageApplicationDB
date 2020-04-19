@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace IrishLanguageApplicationDB
 {
@@ -76,12 +77,14 @@ namespace IrishLanguageApplicationDB
             reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                int index = 0;
-                vocabularyIrish.Add(reader["vocabulary_irish"].ToString());
-                vocabularyEnglish.Add(reader["vocabulary_english"].ToString());
-                vocabularyImagePath.Add(reader["vocabulary_image"].ToString());
-
-                index = index + 1;
+                if (reader["vocabulary_image"].ToString().Substring(0, 8) == "\\Images\\")
+                {
+                    int index = 0;
+                    vocabularyIrish.Add(reader["vocabulary_irish"].ToString());
+                    vocabularyEnglish.Add(reader["vocabulary_english"].ToString());
+                    vocabularyImagePath.Add(reader["vocabulary_image"].ToString());
+                    index = index + 1;
+                }
             }
             connection.Close();
 
@@ -206,17 +209,29 @@ namespace IrishLanguageApplicationDB
 
         public void DisplayVocabulary()
         {
-            int n = 0;
-            do
+            try
             {
-                buttonsIrish[n].Text = sortedVocabularyIrish[n];
-                currentImage = Image.FromFile(sortedVocabularyImagePath[n]);
-                pictureboxesImages[n].Image = currentImage;
-                buttonsIrish[n].Show();
-                textboxesAnswers[n].Show();
-                pictureboxesImages[n].Show();
-                n = n + 1;
-            } while (n < numberOfInstances);
+                currentImage = null;
+                string filePath = "", root = "", newPath = "";
+
+                int n = 0;
+                do
+                {
+                    buttonsIrish[n].Text = sortedVocabularyIrish[n];
+                    filePath = sortedVocabularyImagePath[n];
+                    root = Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()).Parent.FullName + filePath;
+                    currentImage = Image.FromFile(root);
+                    pictureboxesImages[n].Image = currentImage;
+                    buttonsIrish[n].Show();
+                    textboxesAnswers[n].Show();
+                    pictureboxesImages[n].Show();
+                    n = n + 1;
+                } while (n < numberOfInstances);
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         int numberOfInstances;
