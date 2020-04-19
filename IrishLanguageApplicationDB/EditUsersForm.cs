@@ -13,7 +13,9 @@ namespace IrishLanguageApplicationDB
 {
     public partial class EditUsersForm : Form
     {
-        SqlConnection connection = new SqlConnection();
+        SqlConnection connection;
+        SqlCommand cmd;
+        SqlDataReader reader;
 
         List<string> usernames = new List<string>();
         List<string> firstnames = new List<string>();
@@ -28,8 +30,9 @@ namespace IrishLanguageApplicationDB
         int numberOfUsers = 0;
         string currentUser = "", currentUserType = "", editUserTypeId = "", editUserType = "";
 
-        public EditUsersForm(string username, string userType)
+        public EditUsersForm(SqlConnection sqlConnection, string username, string userType)
         {
+            connection = sqlConnection;
             currentUser = username;
             currentUserType = userType;
             InitializeComponent();
@@ -63,9 +66,7 @@ namespace IrishLanguageApplicationDB
             usertypes.Clear();
             formclass.Clear();
 
-            connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
             connection.Open();
-            SqlCommand cmd;
 
             if (currentUserType == "Admin")
             {
@@ -76,10 +77,10 @@ namespace IrishLanguageApplicationDB
                 cmd = new SqlCommand("SELECT * FROM Users WHERE user_type_id <> 1;", connection);
             }
 
-            SqlDataReader reader = cmd.ExecuteReader();
+            reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                usernames.Add(reader["user_id"].ToString());
+                usernames.Add(reader["username"].ToString());
                 firstnames.Add(reader["forename"].ToString());
                 surnames.Add(reader["surname"].ToString());
                 passwords.Add(reader["password"].ToString());
@@ -103,8 +104,8 @@ namespace IrishLanguageApplicationDB
             txtFormClass.Text = formclass[newIndex];
 
             connection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM UserTypes;", connection);
-            SqlDataReader reader = cmd.ExecuteReader();
+            cmd = new SqlCommand("SELECT * FROM UserTypes;", connection);
+            reader = cmd.ExecuteReader();
             cbxUserType.Items.Clear();
             while (reader.Read())
             {
@@ -122,18 +123,6 @@ namespace IrishLanguageApplicationDB
             {
                 btnEditChildren.Hide();
             }
-            // connection.Open();
-            /*editUserTypeId = cbxUserType.Text;
-
-            cmd = new SqlCommand("SELECT * FROM UserTypes WHERE user_type_id = " + editUserTypeId + ";", connection);
-            reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                editUserType = reader["user_type"].ToString();
-            }*/
-
-            //cbxUserType.Text = editUserType;
-            //connection.Close();
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
@@ -195,11 +184,9 @@ namespace IrishLanguageApplicationDB
                     if (txtPassword.Text == txtConfirmPassword.Text)
                     {
                         string userTypeId = "", addedUser = "";
-                        SqlConnection connection = new SqlConnection();
-                        connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
                         connection.Open();
-                        SqlCommand cmd = new SqlCommand("SELECT * FROM UserTypes WHERE user_type = '" + cbxUserType.Text + "';", connection);
-                        SqlDataReader reader = cmd.ExecuteReader();
+                        cmd = new SqlCommand("SELECT * FROM UserTypes WHERE user_type = '" + cbxUserType.Text + "';", connection);
+                        reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
                             userTypeId = reader["user_type_id"].ToString();
@@ -238,11 +225,11 @@ namespace IrishLanguageApplicationDB
 
                                 if (txtFormClass.Text != "")
                                 {
-                                    cmd = new SqlCommand("INSERT INTO Users (user_id, user_type_id, forename, surname, password, form_class) VALUES ('" + txtUsername.Text + "', " + userTypeId + ", '" + txtFirstName.Text + "', '" + txtSurname.Text + "','" + txtPassword.Text + "', '" + txtFormClass.Text + "');", connection);
+                                    cmd = new SqlCommand("INSERT INTO Users (username, user_type_id, forename, surname, password, form_class) VALUES ('" + txtUsername.Text + "', " + userTypeId + ", '" + txtFirstName.Text + "', '" + txtSurname.Text + "','" + txtPassword.Text + "', '" + txtFormClass.Text + "');", connection);
                                 }
                                 else
                                 {
-                                    cmd = new SqlCommand("INSERT INTO Users (user_id, user_type_id, forename, surname, password) VALUES ('" + txtUsername.Text + "', " + userTypeId + ", '" + txtFirstName.Text + "', '" + txtSurname.Text + "','" + txtPassword.Text + "');", connection);
+                                    cmd = new SqlCommand("INSERT INTO Users (username, user_type_id, forename, surname, password) VALUES ('" + txtUsername.Text + "', " + userTypeId + ", '" + txtFirstName.Text + "', '" + txtSurname.Text + "','" + txtPassword.Text + "');", connection);
                                 }
 
                                 index = 0;
@@ -299,11 +286,11 @@ namespace IrishLanguageApplicationDB
                             connection.Open();
                             if (txtFormClass.Text != "")
                             {
-                                cmd = new SqlCommand("UPDATE Users SET forename = '" + txtFirstName.Text + "', surname = '" + txtSurname.Text + "', password = '" + txtPassword.Text + "', form_class = '" + txtFormClass.Text + "', user_type_id = '" + userTypeId + "' WHERE user_id = '" + txtUsername.Text + "';", connection);
+                                cmd = new SqlCommand("UPDATE Users SET forename = '" + txtFirstName.Text + "', surname = '" + txtSurname.Text + "', password = '" + txtPassword.Text + "', form_class = '" + txtFormClass.Text + "', user_type_id = '" + userTypeId + "' WHERE username = '" + txtUsername.Text + "';", connection);
                             }
                             else
                             {
-                                cmd = new SqlCommand("UPDATE Users SET forename = '" + txtFirstName.Text + "', surname = '" + txtSurname.Text + "', password = '" + txtPassword.Text + "', user_type_id = '" + userTypeId + "' WHERE user_id = '" + txtUsername.Text + "';", connection);
+                                cmd = new SqlCommand("UPDATE Users SET forename = '" + txtFirstName.Text + "', surname = '" + txtSurname.Text + "', password = '" + txtPassword.Text + "', user_type_id = '" + userTypeId + "' WHERE username = '" + txtUsername.Text + "';", connection);
                             }
                             reader = cmd.ExecuteReader();
                             connection.Close();
@@ -349,10 +336,8 @@ namespace IrishLanguageApplicationDB
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
             connection.Open();
-            SqlCommand cmd = new SqlCommand("DELETE FROM Users WHERE user_id = '" + txtUsername.Text + "'", connection);
+            cmd = new SqlCommand("DELETE FROM Users WHERE username = '" + txtUsername.Text + "'", connection);
 
             usernames.RemoveAt(index);
             firstnames.RemoveAt(index);
@@ -368,7 +353,7 @@ namespace IrishLanguageApplicationDB
 
             usernames.ToArray();
 
-            SqlDataReader reader = cmd.ExecuteReader();
+            reader = cmd.ExecuteReader();
             connection.Close();
         }
 
@@ -395,7 +380,7 @@ namespace IrishLanguageApplicationDB
 
         private void btnEditChildren_Click(object sender, EventArgs e)
         {
-            Form EditUsersAddChildren = new EditUsersAddChildrenForm(txtUsername.Text);
+            Form EditUsersAddChildren = new EditUsersAddChildrenForm(connection, txtUsername.Text);
             EditUsersAddChildren.Show();
         }
 

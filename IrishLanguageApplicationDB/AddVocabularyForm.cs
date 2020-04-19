@@ -13,20 +13,18 @@ namespace IrishLanguageApplicationDB
 {
     public partial class AddVocabularyForm : Form
     {
-        public AddVocabularyForm()
+        SqlConnection connection;
+        SqlCommand cmd;
+        SqlDataReader reader;
+
+        public AddVocabularyForm(SqlConnection sqlConnection, string selectedTopic)
         {
             InitializeComponent();
-        }
 
-        public AddVocabularyForm(string selectedTopic)
-        {
-            InitializeComponent();
-
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
+            connection = sqlConnection;
             connection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Topics;", connection);
-            SqlDataReader reader = cmd.ExecuteReader();
+            cmd = new SqlCommand("SELECT * FROM Topics;", connection);
+            reader = cmd.ExecuteReader();
             cbxTopicList.Items.Clear();
             while (reader.Read())
             {
@@ -35,7 +33,6 @@ namespace IrishLanguageApplicationDB
 
             int topicIndex = 0, numberTopics = 0;
             numberTopics = cbxTopicList.Items.Count;
-
 
             for (int i = 0; i < numberTopics; i++)
             {
@@ -94,11 +91,9 @@ namespace IrishLanguageApplicationDB
         {
             if (txtVocabularyEnglish.Text.Length > 0 && txtVocabularyIrish.Text.Length > 0)
             {
-                SqlConnection connection = new SqlConnection();
-                connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Vocabulary (vocabulary_english, topic_name_english, vocabulary_irish, vocabulary_image) VALUES ('" + txtVocabularyEnglish.Text + "', '" + cbxTopicList.SelectedItem.ToString() + "', '" + txtVocabularyIrish.Text + "', '" + txtImagePath.Text + "');", connection);
-                SqlDataReader reader = cmd.ExecuteReader();
+                cmd = new SqlCommand("INSERT INTO Vocabulary (vocabulary_english, topic_name_english, vocabulary_irish, vocabulary_image) VALUES ('" + txtVocabularyEnglish.Text + "', '" + cbxTopicList.SelectedItem.ToString() + "', '" + txtVocabularyIrish.Text + "', '" + txtImagePath.Text + "');", connection);
+                reader = cmd.ExecuteReader();
                 connection.Close();
                 txtVocabularyEnglish.Text = "";
                 txtVocabularyIrish.Text = "";

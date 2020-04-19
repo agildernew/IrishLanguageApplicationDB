@@ -13,19 +13,22 @@ namespace IrishLanguageApplicationDB
 {
     public partial class MainForm : Form
     {
-        SqlConnection connection = new SqlConnection();
         public string topic = "", vocabulary = "", selectedVocabularyIrish = "", selectedVocabularyEnglish = "", selectedVocabularyImagePath = "", user = "", userType = "", userTypeIdStr;
         Image currentImage;
         int userTypeId = 0;
 
-        public MainForm(string currentUser)
+        SqlConnection connection;
+        SqlCommand cmd;
+        SqlDataReader reader;
+
+        public MainForm(SqlConnection sqlConnection, string currentUser)
         {
+            connection = sqlConnection;
             user = currentUser;
 
-            connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
             connection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE user_id = '" + user + "';", connection);
-            SqlDataReader reader = cmd.ExecuteReader();
+            cmd = new SqlCommand("SELECT * FROM Users WHERE username = '" + user + "';", connection);
+            reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 userTypeIdStr = reader["user_type_id"].ToString();
@@ -44,8 +47,9 @@ namespace IrishLanguageApplicationDB
             InitializeComponent();
         }
 
-        public MainForm(string currentUser, string currentUserType)
+        public MainForm(SqlConnection sqlConnection, string currentUser, string currentUserType)
         {
+            connection = sqlConnection;
             user = currentUser;
             userType = currentUserType;
             InitializeComponent();
@@ -56,11 +60,9 @@ namespace IrishLanguageApplicationDB
             string selectedTopicNameEnglish = "";
             lblUserName.Text = user;
 
-            connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
-            //sconnection.ConnectionString = Properties.Settings.Default.IrishAppDBConnectionString;
             connection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Topics;", connection);
-            SqlDataReader reader = cmd.ExecuteReader();
+            cmd = new SqlCommand("SELECT * FROM Topics;", connection);
+            reader = cmd.ExecuteReader();
             cbxTopicList.Items.Clear();
             while (reader.Read())
             {
@@ -95,9 +97,6 @@ namespace IrishLanguageApplicationDB
             selectedVocabularyImagePath = "";
             pbxImages.Image = null;
 
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
-
             connection.Open();
             if (!(newPosition > lbxVocabulary.Items.Count - 1) && !(newPosition < 0))
             {
@@ -110,8 +109,8 @@ namespace IrishLanguageApplicationDB
                 selectedVocabularyIrish = lbxVocabulary.SelectedItem.ToString().Substring(index + 2);
                 selectedVocabularyEnglish = lbxVocabulary.SelectedItem.ToString().Substring(0, index);
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE vocabulary_english='" + selectedVocabularyEnglish + "';", connection);
-                SqlDataReader reader = cmd.ExecuteReader();
+                cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE vocabulary_english='" + selectedVocabularyEnglish + "';", connection);
+                reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     selectedVocabularyImagePath = reader["vocabulary_image"].ToString();
@@ -138,12 +137,12 @@ namespace IrishLanguageApplicationDB
 
             if (userType == "Student")
             {
-                Form ChoosingExerciseForm = new ChoosingExerciseForm(user, topic, true);
+                Form ChoosingExerciseForm = new ChoosingExerciseForm(connection, user, topic, true);
                 ChoosingExerciseForm.Show();
             }
             else
             {
-                Form ChoosingExerciseForm = new ChoosingExerciseForm(user, topic, false);
+                Form ChoosingExerciseForm = new ChoosingExerciseForm(connection, user, topic, false);
                 ChoosingExerciseForm.Show();
             }
         }
@@ -154,8 +153,6 @@ namespace IrishLanguageApplicationDB
             selectedVocabularyEnglish = "";
             selectedVocabularyImagePath = "";
             pbxImages.Image = null;
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
             int index = cbxTopicList.SelectedItem.ToString().IndexOf('-');
             if (index > 0)
             {
@@ -165,8 +162,8 @@ namespace IrishLanguageApplicationDB
 
             connection.Open();
             lbxVocabulary.Items.Clear();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE topic_name_english='" + selectedTopicNameEnglish + "';", connection);
-            SqlDataReader reader = cmd.ExecuteReader();
+            cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE topic_name_english='" + selectedTopicNameEnglish + "';", connection);
+            reader = cmd.ExecuteReader();
             int numberOfVocabulary = 0;
             while (reader.Read())
             {
@@ -218,9 +215,6 @@ namespace IrishLanguageApplicationDB
             string selectedVocabularyEnglish = "";
             pbxImages.Image = null;
             
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
-
             connection.Open();
             int index = lbxVocabulary.SelectedItem.ToString().IndexOf('-');
             if (index > 0)
@@ -228,8 +222,8 @@ namespace IrishLanguageApplicationDB
                 selectedVocabularyIrish = lbxVocabulary.SelectedItem.ToString().Substring(index + 2);
                 selectedVocabularyEnglish = lbxVocabulary.SelectedItem.ToString().Substring(0, index);
                 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE vocabulary_english='" + selectedVocabularyEnglish + "';", connection);
-                SqlDataReader reader = cmd.ExecuteReader();
+                cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE vocabulary_english='" + selectedVocabularyEnglish + "';", connection);
+                reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     selectedVocabularyImagePath = reader["vocabulary_image"].ToString();
@@ -273,9 +267,6 @@ namespace IrishLanguageApplicationDB
         {
             int newPosition = newIndex;
 
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
-
             connection.Open();
             lbxVocabulary.SelectedIndex = newPosition;
 
@@ -285,8 +276,8 @@ namespace IrishLanguageApplicationDB
                 selectedVocabularyIrish = lbxVocabulary.SelectedItem.ToString().Substring(index + 2);
                 selectedVocabularyEnglish = lbxVocabulary.SelectedItem.ToString().Substring(0, index);
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE vocabulary_english='" + selectedVocabularyEnglish + "';", connection);
-                SqlDataReader reader = cmd.ExecuteReader();
+                cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE vocabulary_english='" + selectedVocabularyEnglish + "';", connection);
+                reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     selectedVocabularyImagePath = reader["vocabulary_image"].ToString();
@@ -308,15 +299,22 @@ namespace IrishLanguageApplicationDB
         {
             int index = cbxTopicList.SelectedItem.ToString().IndexOf('-');
             topic = cbxTopicList.SelectedItem.ToString().Substring(0, index).Trim();
-            if (userType == "Parent")
+            try
             {
-                Form LeaderBoardForm = new LeaderBoardForm(topic, "All", user);
-                LeaderBoardForm.Show();
+                if (userType == "Parent")
+                {
+                    Form LeaderBoardForm = new LeaderBoardForm(connection, topic, "All", user);
+                    LeaderBoardForm.Show();
+                }
+                else
+                {
+                    Form LeaderBoardForm = new LeaderBoardForm(connection, topic, "All");
+                    LeaderBoardForm.Show();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Form LeaderBoardForm = new LeaderBoardForm(topic, "All");
-                LeaderBoardForm.Show();
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -328,7 +326,7 @@ namespace IrishLanguageApplicationDB
 
         private void btnAddTopic_Click(object sender, EventArgs e)
         {
-            Form AddTopicsForm = new AddTopicsForm();
+            Form AddTopicsForm = new AddTopicsForm(connection);
             AddTopicsForm.Show();
         }
 
@@ -336,7 +334,7 @@ namespace IrishLanguageApplicationDB
         {
             int index = cbxTopicList.SelectedItem.ToString().IndexOf('-');
             topic = cbxTopicList.SelectedItem.ToString().Substring(0, index);
-            Form AddVocabularyForm = new AddVocabularyForm(topic);
+            Form AddVocabularyForm = new AddVocabularyForm(connection, topic);
             AddVocabularyForm.Show();
         }
 
@@ -356,12 +354,9 @@ namespace IrishLanguageApplicationDB
 
         private void deleteTopic()
         {
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
-
             connection.Open();
-            SqlCommand cmd = new SqlCommand("DELETE FROM LeaderBoard WHERE topic = '" + topic + "'", connection);
-            SqlDataReader reader = cmd.ExecuteReader();
+            cmd = new SqlCommand("DELETE FROM LeaderBoard WHERE topic = '" + topic + "'", connection);
+            reader = cmd.ExecuteReader();
             connection.Close();
 
             connection.Open();
@@ -406,11 +401,9 @@ namespace IrishLanguageApplicationDB
         {
             int currentIndex = lbxVocabulary.SelectedIndex;
 
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
             connection.Open();
-            SqlCommand cmd = new SqlCommand("DELETE FROM Vocabulary WHERE vocabulary_english = '" + vocabulary + "'", connection);
-            SqlDataReader reader = cmd.ExecuteReader();
+            cmd = new SqlCommand("DELETE FROM Vocabulary WHERE vocabulary_english = '" + vocabulary + "'", connection);
+            reader = cmd.ExecuteReader();
             connection.Close();
 
             connection.Open();
@@ -454,13 +447,13 @@ namespace IrishLanguageApplicationDB
 
         private void btnEditUser_Click(object sender, EventArgs e)
         {
-            Form EditUsersForm = new EditUsersForm(user, userType);
+            Form EditUsersForm = new EditUsersForm(connection, user, userType);
             EditUsersForm.Show();
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
-            Form ChangePasswordForm = new ChangePasswordForm(user);
+            Form ChangePasswordForm = new ChangePasswordForm(connection, user);
             ChangePasswordForm.Show();
 
         }

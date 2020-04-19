@@ -13,10 +13,14 @@ namespace IrishLanguageApplicationDB
 {
     public partial class ChangePasswordForm : Form
     {
+        SqlConnection connection;
+        SqlCommand cmd;
+        SqlDataReader reader;
         string userName = "", currentPassword = "", newPassword = "";
 
-        public ChangePasswordForm(string currentUserName)
+        public ChangePasswordForm(SqlConnection sqlConnection, string currentUserName)
         {
+            connection = sqlConnection;
             userName = currentUserName;
             InitializeComponent();
         }
@@ -39,14 +43,12 @@ namespace IrishLanguageApplicationDB
             {
                 if (txtNewPassword.Text == txtConfirmPassword.Text)
                 {
-                    SqlConnection connection = new SqlConnection();
-                    connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
                     connection.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Users;", connection);
-                    SqlDataReader reader = cmd.ExecuteReader();
+                    cmd = new SqlCommand("SELECT * FROM Users;", connection);
+                    reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
-                        if (txtUsername.Text == reader["user_id"].ToString())
+                        if (txtUsername.Text == reader["username"].ToString())
                         {
                             currentPassword = reader["password"].ToString();
                         } 
@@ -56,7 +58,7 @@ namespace IrishLanguageApplicationDB
                     {
                         newPassword = txtNewPassword.Text;
                         connection.Open();
-                        cmd = new SqlCommand("UPDATE Users SET password = '" + newPassword + "' WHERE user_id = '" + userName + "';", connection);
+                        cmd = new SqlCommand("UPDATE Users SET password = '" + newPassword + "' WHERE username = '" + userName + "';", connection);
                         reader = cmd.ExecuteReader();
                         connection.Close();
 

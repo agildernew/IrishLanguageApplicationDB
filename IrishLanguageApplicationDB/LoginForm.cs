@@ -13,11 +13,16 @@ namespace IrishLanguageApplicationDB
 {
     public partial class LoginForm : Form
     {
+        SqlConnection connection;
+        SqlCommand cmd;
+        SqlDataReader reader;
+        
         string userName = "", userPassword = "", userTypeIdStr = "", userType = "";
         int userTypeId = 0;
 
-        public LoginForm()
+        public LoginForm(SqlConnection sqlConnection)
         {
+            connection = sqlConnection;
             InitializeComponent();
         }
 
@@ -25,17 +30,15 @@ namespace IrishLanguageApplicationDB
         {
             if (txtUsername.Text != "" && txtPassword.Text != "")
             {
-                SqlConnection connection = new SqlConnection();
-                connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
-                //connection.ConnectionString = Properties.Settings.Default.IrishAppDBConnectionString;
+                //connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Users;", connection);
-                SqlDataReader reader = cmd.ExecuteReader();
+                cmd = new SqlCommand("SELECT * FROM Users;", connection);
+                reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    if (txtUsername.Text == reader["user_id"].ToString())
+                    if (txtUsername.Text == reader["username"].ToString())
                     {
-                        userName = reader["user_id"].ToString();
+                        userName = reader["username"].ToString();
                         userPassword = reader["password"].ToString();
                         userTypeIdStr = reader["user_type_id"].ToString();
                         userTypeId = Int16.Parse(userTypeIdStr);
@@ -43,26 +46,33 @@ namespace IrishLanguageApplicationDB
                 }
                 connection.Close();
 
-                connection.Open();
-                cmd = new SqlCommand("SELECT * FROM UserTypes WHERE user_type_id = " + userTypeIdStr + ";", connection);
-                reader = cmd.ExecuteReader();
-                while (reader.Read())
+                if (userName.Length == 0)
                 {
-                    userType = reader["user_type"].ToString();
-                }
-                connection.Close();
-
-                if (txtPassword.Text == userPassword)
-                {
-                    this.Hide();
-                    Form MainForm = new MainForm(userName, userType);
-                    MainForm.Closed += (s, args) => this.Close();
-                    MainForm.Show();
-                }
+                    MessageBox.Show("Please enter a valid username");
+                } 
                 else
                 {
-                    string message = "Please enter a valid username and password.";
-                    MessageBox.Show(message);
+                    connection.Open();
+                    cmd = new SqlCommand("SELECT * FROM UserTypes WHERE user_type_id = " + userTypeIdStr + ";", connection);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        userType = reader["user_type"].ToString();
+                    }
+                    connection.Close();
+
+                    if (txtPassword.Text == userPassword)
+                    {
+                        this.Hide();
+                        Form MainForm = new MainForm(connection, userName, userType);
+                        MainForm.Closed += (s, args) => this.Close();
+                        MainForm.Show();
+                    }
+                    else
+                    {
+                        string message = "Please enter a valid username and password.";
+                        MessageBox.Show(message);
+                    }
                 }
             }
             else

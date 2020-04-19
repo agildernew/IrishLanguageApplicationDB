@@ -13,7 +13,10 @@ namespace IrishLanguageApplicationDB
 {
     public partial class LeaderBoardForm : Form
     {
-        SqlConnection connection = new SqlConnection();
+        SqlConnection connection;
+        SqlCommand cmd;
+        SqlDataReader reader;
+
         string currentTopic = "", currentYearGroup = "", currentExerciseType = "", parentUsername = "";
         List<string> userId = new List<string>(), score = new List<string>(), formClass = new List<string>(), exerciseType = new List<string>(), children = new List<string>();
         List<Label> labelsUserIds = new List<Label>(), labelsScores = new List<Label>(), labelsFormClasses = new List<Label>(), labelsExerciseType = new List<Label>();
@@ -51,21 +54,24 @@ namespace IrishLanguageApplicationDB
         int numberOfInstances = 0;
 
 
-        public LeaderBoardForm(string yearGroup)
+        public LeaderBoardForm(SqlConnection sqlConnection, string yearGroup)
         {
+            connection = sqlConnection;
             currentYearGroup = yearGroup;
             InitializeComponent();
         }
 
-        public LeaderBoardForm(string topic, string yearGroup)
+        public LeaderBoardForm(SqlConnection sqlConnection, string topic, string yearGroup)
         {
+            connection = sqlConnection;
             currentTopic = topic;
             currentYearGroup = yearGroup;
             InitializeComponent();
         }
 
-        public LeaderBoardForm(string topic, string yearGroup, string user)
+        public LeaderBoardForm(SqlConnection sqlConnection, string topic, string yearGroup, string user)
         {
+            connection = sqlConnection;
             currentTopic = topic;
             currentYearGroup = yearGroup;
             parentUsername = user;
@@ -148,168 +154,159 @@ namespace IrishLanguageApplicationDB
                 children.Clear();
             }
 
-            connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
-
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader reader;
-
-            if (parentUsername != "")
-            {
-                connection.Open();
-                cmd = new SqlCommand("SELECT * FROM ParentStudent WHERE user_id = '" + parentUsername + "';", connection);
-                reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                if (parentUsername != "")
                 {
-                    int index = 0;
-                    children.Add(reader["student_user_id"].ToString());
-                    index = index + 1;
-                }
-                connection.Close();
-
-                for (int i = 0; i < children.Count; i++)
-                {
-
                     connection.Open();
-                    cmd = new SqlCommand("SELECT * FROM LeaderBoard WHERE topic = '" + currentTopic + "' AND user_id = '" + children[i] + "' ORDER BY score DESC;", connection);
+                    cmd = new SqlCommand("SELECT * FROM ParentStudent WHERE username = '" + parentUsername + "';", connection);
+                    reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        int index = 0;
+                        children.Add(reader["student_username"].ToString());
+                        index = index + 1;
+                    }
+                    connection.Close();
+
+                    for (int i = 0; i < children.Count; i++)
+                    {
+
+                        connection.Open();
+                        cmd = new SqlCommand("SELECT * FROM LeaderBoard WHERE topic = '" + currentTopic + "' AND username = '" + children[i] + "' ORDER BY score DESC;", connection);
+                        reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            int index = 0;
+                            userId.Add(reader["username"].ToString());
+                            score.Add(reader["score"].ToString());
+                            exerciseType.Add(reader["exerciseType"].ToString());
+                            index = index + 1;
+                        }
+                        connection.Close();
+                    }
+                }
+                else
+                {
+                    connection.Open();
+                    cmd = new SqlCommand("SELECT * FROM LeaderBoard WHERE topic = '" + currentTopic + "' ORDER BY score DESC;", connection);
                     reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
                         int index = 0;
-                        userId.Add(reader["user_id"].ToString());
+                        userId.Add(reader["username"].ToString());
                         score.Add(reader["score"].ToString());
                         exerciseType.Add(reader["exerciseType"].ToString());
                         index = index + 1;
                     }
                     connection.Close();
                 }
-            }
-            else
-            {
-                connection.Open();
-                cmd = new SqlCommand("SELECT * FROM LeaderBoard WHERE topic = '" + currentTopic + "' ORDER BY score DESC;", connection);
-                reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    int index = 0;
-                    userId.Add(reader["user_id"].ToString());
-                    score.Add(reader["score"].ToString());
-                    exerciseType.Add(reader["exerciseType"].ToString());
-                    index = index + 1;
-                }
-                connection.Close();
-            }
 
             numberOfInstances = userId.Count();
-
-            for (int i = 0; i < numberOfInstances; i++)
-            {
-                connection.Open();
-
-                cmd = new SqlCommand("SELECT * FROM Users WHERE user_id = '" + userId[i] + "';", connection);
-
-                reader = cmd.ExecuteReader();
-                while (reader.Read())
+                for (int i = 0; i < numberOfInstances; i++)
                 {
-                    formClass.Add(reader["form_class"].ToString());
+                    connection.Open();
+
+                    cmd = new SqlCommand("SELECT * FROM Users WHERE username = '" + userId[i] + "';", connection);
+
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        formClass.Add(reader["form_class"].ToString());
+                    }
+
+                    connection.Close();
                 }
 
-                connection.Close();
-            }
-
-
-
-
-            for (int i = numberOfInstances - 1; i >= 0; i--)
-            {
-                if (currentYearGroup == "8")
+                for (int i = numberOfInstances - 1; i >= 0; i--)
                 {
-                    if (formClass[i].Contains("9") || formClass[i].Contains("10"))
+                    if (currentYearGroup == "8")
                     {
-                        userId.RemoveAt(i);
-                        score.RemoveAt(i);
-                        formClass.RemoveAt(i);
+                        if (formClass[i].Contains("9") || formClass[i].Contains("10"))
+                        {
+                            userId.RemoveAt(i);
+                            score.RemoveAt(i);
+                            formClass.RemoveAt(i);
 
-                        userId.ToArray();
-                        score.ToArray();
-                        formClass.ToArray();
+                            userId.ToArray();
+                            score.ToArray();
+                            formClass.ToArray();
+                        }
                     }
+
+                    if (currentYearGroup == "9")
+                    {
+                        if (formClass[i].Contains("8") || formClass[i].Contains("10"))
+                        {
+                            userId.RemoveAt(i);
+                            score.RemoveAt(i);
+                            formClass.RemoveAt(i);
+
+                            userId.ToArray();
+                            score.ToArray();
+                            formClass.ToArray();
+                        }
+                    }
+
+                    if (currentYearGroup == "10")
+                    {
+                        if (formClass[i].Contains("8") || formClass[i].Contains("9"))
+                        {
+                            userId.RemoveAt(i);
+                            score.RemoveAt(i);
+                            formClass.RemoveAt(i);
+
+                            userId.ToArray();
+                            score.ToArray();
+                            formClass.ToArray();
+                            //}
+                        }
                 }
 
-                if (currentYearGroup == "9")
-                {
-                    if (formClass[i].Contains("8") || formClass[i].Contains("10"))
-                    {
-                        userId.RemoveAt(i);
-                        score.RemoveAt(i);
-                        formClass.RemoveAt(i);
+                numberOfInstances = userId.Count();
 
-                        userId.ToArray();
-                        score.ToArray();
-                        formClass.ToArray();
-                    }
+                if (numberOfInstances > 0)
+                {
+                    int n = 0;
+                    do
+                    {
+                        labelsUserIds[n].Show();
+                        labelsScores[n].Show();
+                        labelsFormClasses[n].Show();
+                        labelsExerciseType[n].Show();
+
+                        labelsUserIds[n].Text = userId[n];
+                        labelsScores[n].Text = score[n];
+                        labelsFormClasses[n].Text = formClass[n];
+                        if (exerciseType[n] == "MatchIrishToImage")
+                        {
+                            currentExerciseType = "Match Irish to Image";
+                        }
+                        else if (exerciseType[n] == "MatchEnglishToIrish")
+                        {
+                            currentExerciseType = "Match English to Irish";
+                        }
+                        else if (exerciseType[n] == "MatchIrishToEnglish")
+                        {
+                            currentExerciseType = "Match Irish to English";
+                        }
+                        else if (exerciseType[n] == "EnterEnglishForIrish")
+                        {
+                            currentExerciseType = "Enter English for Irish";
+                        }
+                        else if (exerciseType[n] == "EnterIrishForEnglish")
+                        {
+                            currentExerciseType = "Enter Irish for English";
+                        }
+                        else
+                        {
+                            currentExerciseType = exerciseType[n];
+                        }
+
+                        labelsExerciseType[n].Text = currentExerciseType;
+                        n = n + 1;
+                    } while (n < numberOfInstances);
                 }
-
-                if (currentYearGroup == "10")
-                {
-                    if (formClass[i].Contains("8") || formClass[i].Contains("9"))
-                    {
-                        userId.RemoveAt(i);
-                        score.RemoveAt(i);
-                        formClass.RemoveAt(i);
-
-                        userId.ToArray();
-                        score.ToArray();
-                        formClass.ToArray();
-                    }
-                }
-            }
-
-            numberOfInstances = userId.Count();
-
-            if (numberOfInstances > 0)
-            {
-                int n = 0;
-                do
-                {
-                    labelsUserIds[n].Show();
-                    labelsScores[n].Show();
-                    labelsFormClasses[n].Show();
-                    labelsExerciseType[n].Show();
-
-                    labelsUserIds[n].Text = userId[n];
-                    labelsScores[n].Text = score[n];
-                    labelsFormClasses[n].Text = formClass[n];
-                    if (exerciseType[n] == "MatchIrishToImage")
-                    {
-                        currentExerciseType = "Match Irish to Image";
-                    }
-                    else if (exerciseType[n] == "MatchEnglishToIrish")
-                    {
-                        currentExerciseType = "Match English to Irish";
-                    }
-                    else if (exerciseType[n] == "MatchIrishToEnglish")
-                    {
-                        currentExerciseType = "Match Irish to English";
-                    }
-                    else if (exerciseType[n] == "EnterEnglishForIrish")
-                    {
-                        currentExerciseType = "Enter English for Irish";
-                    }
-                    else if (exerciseType[n] == "EnterIrishForEnglish")
-                    {
-                        currentExerciseType = "Enter Irish for English";
-                    }
-                    else
-                    {
-                        currentExerciseType = exerciseType[n];
-                    }
-
-                    labelsExerciseType[n].Text = currentExerciseType;
-                    n = n + 1;
-                } while (n < numberOfInstances);
             }
         }
-
     }
 }

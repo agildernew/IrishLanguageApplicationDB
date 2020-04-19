@@ -120,9 +120,9 @@
             // 
             // lblUserName
             // 
-            this.lblUserName.Location = new System.Drawing.Point(585, 9);
+            this.lblUserName.Location = new System.Drawing.Point(471, 9);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(182, 28);
+            this.lblUserName.Size = new System.Drawing.Size(296, 28);
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "Username";
             this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

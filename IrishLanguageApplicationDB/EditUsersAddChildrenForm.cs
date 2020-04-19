@@ -13,11 +13,12 @@ namespace IrishLanguageApplicationDB
 {
     public partial class EditUsersAddChildrenForm : Form
     {
-        SqlConnection connection = new SqlConnection();
+        SqlConnection connection;
+        SqlCommand cmd;
+        SqlDataReader reader;
+
         string currentParentName = "", selectedUsername = "", selectedUserFormClass = "", currentChildUsername = "";
         List<string> usernames = new List<string>(), forenames = new List<string>(), surnames = new List<string>(), formclasses = new List<string>(), currentParentsChildren = new List<string>();
-
-        SqlCommand cmd;
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -33,10 +34,9 @@ namespace IrishLanguageApplicationDB
             }
         }
 
-        SqlDataReader reader;
-
-        public EditUsersAddChildrenForm(string parentName)
+        public EditUsersAddChildrenForm(SqlConnection sqlConnection, string parentName)
         {
+            connection = sqlConnection;
             currentParentName = parentName;
             InitializeComponent();
         }
@@ -63,8 +63,6 @@ namespace IrishLanguageApplicationDB
             txtParentName.Text = currentParentName;
             dgvChildrensDetails.Rows.Clear();
 
-            connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
-
             connection.Open();
             cmd = new SqlCommand("SELECT * FROM UserTypes WHERE user_type = 'Student';", connection);
             reader = cmd.ExecuteReader();
@@ -80,23 +78,23 @@ namespace IrishLanguageApplicationDB
             reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                usernames.Add(reader["user_id"].ToString());
+                usernames.Add(reader["username"].ToString());
                 forenames.Add(reader["forename"].ToString());
                 surnames.Add(reader["surname"].ToString());
                 formclasses.Add(reader["form_class"].ToString());
 
-                dgvChildrensDetails.Rows.Add(reader["user_id"].ToString(), reader["forename"].ToString(), reader["surname"].ToString(), reader["form_class"].ToString(), "");
+                dgvChildrensDetails.Rows.Add(reader["username"].ToString(), reader["forename"].ToString(), reader["surname"].ToString(), reader["form_class"].ToString(), "");
                 numberOfStudents = numberOfStudents + 1;
             }
             connection.Close();
 
             connection.Open();
-            cmd = new SqlCommand("SELECT * FROM ParentStudent WHERE user_id = '" + currentParentName + "';", connection);
+            cmd = new SqlCommand("SELECT * FROM ParentStudent WHERE username = '" + currentParentName + "';", connection);
 
             reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                currentParentsChildren.Add(reader["student_user_id"].ToString());
+                currentParentsChildren.Add(reader["student_username"].ToString());
             }
             connection.Close();
 
@@ -141,7 +139,7 @@ namespace IrishLanguageApplicationDB
             if (!isAlreadyChildOfParent)
             {
                 connection.Open();
-                cmd = new SqlCommand("INSERT INTO ParentStudent (user_id, student_user_id) VALUES ('" + currentParentName + "', '" + currentChildUsername + "');", connection);
+                cmd = new SqlCommand("INSERT INTO ParentStudent (username, student_username) VALUES ('" + currentParentName + "', '" + currentChildUsername + "');", connection);
 
                 reader = cmd.ExecuteReader();
                 connection.Close();
@@ -175,7 +173,7 @@ namespace IrishLanguageApplicationDB
             if (!isAlreadyChildOfParent)
             {
                 connection.Open();
-                cmd = new SqlCommand("DELETE FROM ParentStudent WHERE user_id = '" + currentParentName + "' AND student_user_id ='" + currentChildUsername + "';", connection);
+                cmd = new SqlCommand("DELETE FROM ParentStudent WHERE username = '" + currentParentName + "' AND student_username ='" + currentChildUsername + "';", connection);
 
                 reader = cmd.ExecuteReader();
                 connection.Close();
