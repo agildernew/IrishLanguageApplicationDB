@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace IrishLanguageApplicationDB
 {
     public partial class MainForm : Form
     {
         public string topic = "", vocabulary = "", selectedVocabularyIrish = "", selectedVocabularyEnglish = "", selectedVocabularyImagePath = "", user = "", userType = "", userTypeIdStr;
-        Image currentImage;
+        Image currentImage = null;
         int userTypeId = 0;
 
         SqlConnection connection;
@@ -116,16 +117,32 @@ namespace IrishLanguageApplicationDB
                     selectedVocabularyImagePath = reader["vocabulary_image"].ToString();
                 }
             };
+            connection.Close();
             txtIrishVocabulary.Text = selectedVocabularyIrish;
             txtEnglishVocabulary.Text = selectedVocabularyEnglish;
 
-            if (selectedVocabularyImagePath != "") 
+            if (selectedVocabularyImagePath != "")
             {
-                currentImage = Image.FromFile(selectedVocabularyImagePath);
+                loadImage();
+            }
+        }
+
+        public void loadImage()
+        {
+            try
+            {
+                currentImage = null;
+                string filePath = "", root = "", newPath = "";
+
+                filePath = selectedVocabularyImagePath;
+                root = Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()).Parent.FullName + filePath;
+                currentImage = Image.FromFile(root);
                 pbxImages.Image = currentImage;
             }
-            
-            connection.Close();
+            catch (Exception ex)
+            {
+               // MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnPlayGame_Click(object sender, EventArgs e)
@@ -196,8 +213,7 @@ namespace IrishLanguageApplicationDB
 
                 if (selectedVocabularyImagePath != "")
                 {
-                    currentImage = Image.FromFile(selectedVocabularyImagePath);
-                    pbxImages.Image = currentImage;
+                    loadImage();
                 }
             }
             else
@@ -235,10 +251,10 @@ namespace IrishLanguageApplicationDB
 
             if (selectedVocabularyImagePath != "")
             {
-                currentImage = Image.FromFile(selectedVocabularyImagePath);
-                pbxImages.Image = currentImage;
+                loadImage();
             }
         }
+
 
         private void btnFirst_Click(object sender, EventArgs e)
         {
@@ -289,8 +305,8 @@ namespace IrishLanguageApplicationDB
 
             if (selectedVocabularyImagePath != "")
             {
-                currentImage = Image.FromFile(selectedVocabularyImagePath);
-                pbxImages.Image = currentImage;
+                loadImage();
+
             }
             connection.Close();
         }
@@ -377,8 +393,9 @@ namespace IrishLanguageApplicationDB
             {
                 cbxTopicList.Items.Add(reader["topic_name_english"].ToString() + " - " + reader["topic_name_irish"].ToString());
             }
-            cbxTopicList.SelectedIndex = 0;
             connection.Close();
+            cbxTopicList.SelectedIndex = 0;
+           
         }
 
         private void btnDeleteVocabulary_Click(object sender, EventArgs e)
@@ -416,6 +433,7 @@ namespace IrishLanguageApplicationDB
                 lbxVocabulary.Items.Add(reader["vocabulary_english"].ToString() + " - " + reader["vocabulary_irish"].ToString());
                 numberOfVocabulary = numberOfVocabulary + 1;
             }
+            connection.Close();
             if (numberOfVocabulary > 0)
             {
                 btnPlayGame.Enabled = true;
@@ -442,7 +460,6 @@ namespace IrishLanguageApplicationDB
                 txtEnglishVocabulary.Text = "";
                 txtIrishVocabulary.Text = "";
             }
-            connection.Close();
         }
 
         private void btnEditUser_Click(object sender, EventArgs e)

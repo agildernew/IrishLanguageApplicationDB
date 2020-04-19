@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace IrishLanguageApplicationDB
 {
@@ -57,17 +58,27 @@ namespace IrishLanguageApplicationDB
 
         private void btnAddImage_Click(object sender, EventArgs e)
         {
-            string filePath = "";
+            string filePath = "", root = "", newPath = "";
 
             OpenFileDialog selectImage = new OpenFileDialog();
             selectImage.Filter = "All Files (*.*)|*.*";
             selectImage.FilterIndex = 1;
-            selectImage.Multiselect = true;
+            selectImage.Multiselect = false;
 
             if (selectImage.ShowDialog() == DialogResult.OK)
             {
-                filePath = selectImage.FileName;
-                txtImagePath.Text = filePath;
+                root = Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()).Parent.FullName;
+                filePath =  selectImage.FileName;
+                if (filePath.Contains(root))
+                {
+                    newPath = filePath.Substring(root.Length);
+                } 
+                else
+                {
+                    newPath = filePath;
+                }
+
+                txtImagePath.Text = newPath;
             }
         }
 
