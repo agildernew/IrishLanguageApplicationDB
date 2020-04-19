@@ -90,7 +90,7 @@
             this.txtVocabularyEnglish.BackColor = System.Drawing.Color.White;
             this.txtVocabularyEnglish.Location = new System.Drawing.Point(187, 42);
             this.txtVocabularyEnglish.Name = "txtVocabularyEnglish";
-            this.txtVocabularyEnglish.Size = new System.Drawing.Size(241, 27);
+            this.txtVocabularyEnglish.Size = new System.Drawing.Size(383, 27);
             this.txtVocabularyEnglish.TabIndex = 8;
             // 
             // txtVocabularyIrish
@@ -98,7 +98,7 @@
             this.txtVocabularyIrish.BackColor = System.Drawing.Color.White;
             this.txtVocabularyIrish.Location = new System.Drawing.Point(187, 75);
             this.txtVocabularyIrish.Name = "txtVocabularyIrish";
-            this.txtVocabularyIrish.Size = new System.Drawing.Size(241, 27);
+            this.txtVocabularyIrish.Size = new System.Drawing.Size(383, 27);
             this.txtVocabularyIrish.TabIndex = 13;
             // 
             // txtImagePath
@@ -106,7 +106,7 @@
             this.txtImagePath.BackColor = System.Drawing.Color.White;
             this.txtImagePath.Location = new System.Drawing.Point(187, 108);
             this.txtImagePath.Name = "txtImagePath";
-            this.txtImagePath.Size = new System.Drawing.Size(241, 27);
+            this.txtImagePath.Size = new System.Drawing.Size(383, 27);
             this.txtImagePath.TabIndex = 12;
             // 
             // cbxTopicList
@@ -115,14 +115,14 @@
             this.cbxTopicList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTopicList.Location = new System.Drawing.Point(187, 10);
             this.cbxTopicList.Name = "cbxTopicList";
-            this.cbxTopicList.Size = new System.Drawing.Size(241, 26);
+            this.cbxTopicList.Size = new System.Drawing.Size(383, 26);
             this.cbxTopicList.TabIndex = 6;
             this.cbxTopicList.SelectedIndexChanged += new System.EventHandler(this.cbxTopicList_SelectedIndexChanged);
             // 
             // btnFirst
             // 
             this.btnFirst.BackColor = System.Drawing.Color.White;
-            this.btnFirst.Location = new System.Drawing.Point(258, 141);
+            this.btnFirst.Location = new System.Drawing.Point(398, 143);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(38, 32);
             this.btnFirst.TabIndex = 18;
@@ -133,7 +133,7 @@
             // btnPrevious
             // 
             this.btnPrevious.BackColor = System.Drawing.Color.White;
-            this.btnPrevious.Location = new System.Drawing.Point(302, 141);
+            this.btnPrevious.Location = new System.Drawing.Point(442, 143);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(38, 32);
             this.btnPrevious.TabIndex = 19;
@@ -144,7 +144,7 @@
             // btnNext
             // 
             this.btnNext.BackColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(346, 141);
+            this.btnNext.Location = new System.Drawing.Point(486, 143);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(38, 32);
             this.btnNext.TabIndex = 20;
@@ -155,7 +155,7 @@
             // btnLast
             // 
             this.btnLast.BackColor = System.Drawing.Color.White;
-            this.btnLast.Location = new System.Drawing.Point(390, 141);
+            this.btnLast.Location = new System.Drawing.Point(530, 143);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(38, 32);
             this.btnLast.TabIndex = 21;
@@ -166,7 +166,7 @@
             // btnAddImage
             // 
             this.btnAddImage.BackColor = System.Drawing.Color.White;
-            this.btnAddImage.Location = new System.Drawing.Point(90, 191);
+            this.btnAddImage.Location = new System.Drawing.Point(230, 193);
             this.btnAddImage.Name = "btnAddImage";
             this.btnAddImage.Size = new System.Drawing.Size(166, 34);
             this.btnAddImage.TabIndex = 14;
@@ -177,7 +177,7 @@
             // btnRemoveImage
             // 
             this.btnRemoveImage.BackColor = System.Drawing.Color.White;
-            this.btnRemoveImage.Location = new System.Drawing.Point(90, 231);
+            this.btnRemoveImage.Location = new System.Drawing.Point(230, 233);
             this.btnRemoveImage.Name = "btnRemoveImage";
             this.btnRemoveImage.Size = new System.Drawing.Size(166, 34);
             this.btnRemoveImage.TabIndex = 15;
@@ -188,7 +188,7 @@
             // btnSaveChanges
             // 
             this.btnSaveChanges.BackColor = System.Drawing.Color.White;
-            this.btnSaveChanges.Location = new System.Drawing.Point(90, 272);
+            this.btnSaveChanges.Location = new System.Drawing.Point(230, 274);
             this.btnSaveChanges.Name = "btnSaveChanges";
             this.btnSaveChanges.Size = new System.Drawing.Size(166, 34);
             this.btnSaveChanges.TabIndex = 16;
@@ -199,7 +199,7 @@
             // btnAddNewTopic
             // 
             this.btnAddNewTopic.BackColor = System.Drawing.Color.White;
-            this.btnAddNewTopic.Location = new System.Drawing.Point(262, 231);
+            this.btnAddNewTopic.Location = new System.Drawing.Point(402, 233);
             this.btnAddNewTopic.Name = "btnAddNewTopic";
             this.btnAddNewTopic.Size = new System.Drawing.Size(166, 34);
             this.btnAddNewTopic.TabIndex = 9;
@@ -210,7 +210,7 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(262, 272);
+            this.btnClose.Location = new System.Drawing.Point(402, 274);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(166, 34);
             this.btnClose.TabIndex = 17;
@@ -221,7 +221,7 @@
             // btnEditVocabulary
             // 
             this.btnEditVocabulary.BackColor = System.Drawing.Color.White;
-            this.btnEditVocabulary.Location = new System.Drawing.Point(264, 191);
+            this.btnEditVocabulary.Location = new System.Drawing.Point(404, 193);
             this.btnEditVocabulary.Name = "btnEditVocabulary";
             this.btnEditVocabulary.Size = new System.Drawing.Size(166, 34);
             this.btnEditVocabulary.TabIndex = 22;
@@ -232,7 +232,7 @@
             // btnAddVocabulary
             // 
             this.btnAddVocabulary.BackColor = System.Drawing.Color.White;
-            this.btnAddVocabulary.Location = new System.Drawing.Point(264, 191);
+            this.btnAddVocabulary.Location = new System.Drawing.Point(404, 193);
             this.btnAddVocabulary.Name = "btnAddVocabulary";
             this.btnAddVocabulary.Size = new System.Drawing.Size(166, 34);
             this.btnAddVocabulary.TabIndex = 23;
@@ -245,7 +245,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(442, 318);
+            this.ClientSize = new System.Drawing.Size(584, 318);
             this.Controls.Add(this.btnAddVocabulary);
             this.Controls.Add(this.btnEditVocabulary);
             this.Controls.Add(this.lblTopicNameEnglish);

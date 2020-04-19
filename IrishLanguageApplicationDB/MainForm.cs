@@ -69,13 +69,13 @@ namespace IrishLanguageApplicationDB
             {
                 cbxTopicList.Items.Add(reader["topic_name_english"].ToString() + " - " + reader["topic_name_irish"].ToString());
             }
+            connection.Close();
             cbxTopicList.SelectedIndex = 0;
             int index = cbxTopicList.SelectedItem.ToString().IndexOf('-');
             if (index > 0)
             {
                 selectedTopicNameEnglish = cbxTopicList.SelectedItem.ToString().Substring(0, index);
             };
-            connection.Close();
 
             if (userType != "Admin")
             {
@@ -98,12 +98,12 @@ namespace IrishLanguageApplicationDB
             selectedVocabularyImagePath = "";
             pbxImages.Image = null;
 
-            connection.Open();
             if (!(newPosition > lbxVocabulary.Items.Count - 1) && !(newPosition < 0))
             {
                 lbxVocabulary.SelectedIndex = newPosition;
             }
 
+            connection.Open();
             int index = lbxVocabulary.SelectedItem.ToString().IndexOf('-');
             if (index > 0)
             {
@@ -175,10 +175,9 @@ namespace IrishLanguageApplicationDB
             {
                 selectedTopicNameEnglish = cbxTopicList.SelectedItem.ToString().Substring(0, index);
             };
-            connection.Close();
 
-            connection.Open();
             lbxVocabulary.Items.Clear();
+            connection.Open();
             cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE topic_name_english='" + selectedTopicNameEnglish + "';", connection);
             reader = cmd.ExecuteReader();
             int numberOfVocabulary = 0;
@@ -222,7 +221,6 @@ namespace IrishLanguageApplicationDB
                 txtEnglishVocabulary.Text = "";
                 txtIrishVocabulary.Text = "";
             }
-            connection.Close();
         }
 
         private void lbxVocabulary_SelectedIndexChanged(object sender, EventArgs e)
