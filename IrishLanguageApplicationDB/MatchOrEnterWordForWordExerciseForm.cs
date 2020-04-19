@@ -13,6 +13,10 @@ namespace IrishLanguageApplicationDB
 {
     public partial class MatchOrEnterWordForWordExerciseForm : Form
     {
+        SqlConnection connection;
+        SqlCommand cmd;
+        SqlDataReader reader;
+
         string currentUser = "", exerciseTopic = "", exerciseType = "", exerciseDescription = "";
         List<string> vocabularyEnglish = new List<string>(), vocabularyIrish = new List<string>();
         List<TextBox> textboxesIrish = new List<TextBox>(), textboxesEnglish = new List<TextBox>(), textboxesAnswers = new List<TextBox>();
@@ -22,16 +26,15 @@ namespace IrishLanguageApplicationDB
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Form MainForm = new ChoosingExerciseForm(currentUser, exerciseTopic);
+            Form MainForm = new ChoosingExerciseForm(connection, currentUser, exerciseTopic);
             MainForm.Show();
             this.Enabled = false;
             this.Hide();
         }
 
-        SqlConnection connection = new SqlConnection();
-
-        public MatchOrEnterWordForWordExerciseForm()
+        public MatchOrEnterWordForWordExerciseForm(SqlConnection sqlConnection)
         {
+            connection = sqlConnection;
             InitializeComponent();
         }
 
@@ -118,9 +121,9 @@ namespace IrishLanguageApplicationDB
             {
                 int oldScore = 0;
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM LeaderBoard WHERE user_id = '" + currentUser + "' AND exerciseType = '" + exerciseType + "';", connection);
+                cmd = new SqlCommand("SELECT * FROM LeaderBoard WHERE username = '" + currentUser + "' AND exerciseType = '" + exerciseType + "';", connection);
 
-                SqlDataReader reader = cmd.ExecuteReader();
+                reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     oldScore = Int16.Parse(reader["score"].ToString());
@@ -130,7 +133,7 @@ namespace IrishLanguageApplicationDB
                 if (oldScore < score)
                 {
                     connection.Open();
-                    cmd = new SqlCommand("INSERT INTO LeaderBoard (user_id, score, topic, exerciseType) VALUES ('" + currentUser + "', " + scorePercentage + ", '" + exerciseTopic + "', '" + exerciseType + "');", connection);
+                    cmd = new SqlCommand("INSERT INTO LeaderBoard (username, score, topic, exerciseType) VALUES ('" + currentUser + "', " + scorePercentage + ", '" + exerciseTopic + "', '" + exerciseType + "');", connection);
 
                     reader = cmd.ExecuteReader();
                     connection.Close();
@@ -139,8 +142,9 @@ namespace IrishLanguageApplicationDB
             }
         }
 
-        public MatchOrEnterWordForWordExerciseForm(string user, bool isStudentUser, string topic, string extype, string description)
+        public MatchOrEnterWordForWordExerciseForm(SqlConnection sqlConnection, string user, bool isStudentUser, string topic, string extype, string description)
         {
+            connection = sqlConnection;
             currentUser = user;
             isStudent = isStudentUser;
             exerciseTopic = topic;
@@ -185,11 +189,18 @@ namespace IrishLanguageApplicationDB
             textboxesAnswers.Add(txtAnswerNine);
             textboxesAnswers.Add(txtAnswerTen);
 
-            connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
+            if (exerciseType == "EnterEnglishForIrish")
+            {
+                displayEnglish = false;
+            }
+            else if (exerciseType == "EnterIrishForEnglish")
+            {
+                displayIrish = false;
+            }
 
             connection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE topic_name_english='" + exerciseTopic + "';", connection);
-            SqlDataReader reader = cmd.ExecuteReader();
+            cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE topic_name_english='" + exerciseTopic + "';", connection);
+            reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 int index = 0;
@@ -205,7 +216,7 @@ namespace IrishLanguageApplicationDB
             numberOfInstances = vocabularyEnglish.Count();
             Random rand = new Random();
 
-            // http://csharphelper.com/blog/2014/07/randomize-arrays-in-c/
+            // Stephens, R., 2014. Randomize arrays in C#. [Blog] C# Helper, Available at: <http://csharphelper.com/blog/2014/07/randomize-arrays-in-c/> [Accessed 3 March 2020].
             for (int i = 0; i < numberOfInstances - 1; i++)
             {
                 int j = rand.Next(i, numberOfInstances);

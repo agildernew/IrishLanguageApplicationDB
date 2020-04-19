@@ -13,6 +13,10 @@ namespace IrishLanguageApplicationDB
 {
     public partial class MatchWordToPictureExerciseForm : Form
     {
+        SqlConnection connection;
+        SqlCommand cmd;
+        SqlDataReader reader;
+
         string currentUser = "", exerciseTopic = "", exerciseType = "", exerciseDescription = "", currentIrishAnswer = "";
         List<string> vocabularyIrish = new List<string>(), vocabularyEnglish = new List<string>(), vocabularyImagePath = new List<string>();
         List<Button> buttonsIrish = new List<Button>();
@@ -21,7 +25,6 @@ namespace IrishLanguageApplicationDB
         string[] sortedVocabularyIrish, sortedVocabularyEnglish, sortedVocabularyImagePath;
         bool isStudent = false;
         Image currentImage;
-        SqlConnection connection = new SqlConnection();
 
         private void MatchWordToPictureExerciseForm_Load(object sender, EventArgs e)
         {
@@ -67,12 +70,10 @@ namespace IrishLanguageApplicationDB
                 pictureboxesImages[i].Hide();
             }
 
-            connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
-
             connection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE topic_name_english='" + exerciseTopic + "' AND vocabulary_image IS NOT NULL;", connection);
+            cmd = new SqlCommand("SELECT * FROM Vocabulary WHERE topic_name_english='" + exerciseTopic + "' AND vocabulary_image IS NOT NULL;", connection);
 
-            SqlDataReader reader = cmd.ExecuteReader();
+            reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 int index = 0;
@@ -91,7 +92,7 @@ namespace IrishLanguageApplicationDB
             numberOfInstances = vocabularyIrish.Count();
             Random rand = new Random();
 
-            // http://csharphelper.com/blog/2014/07/randomize-arrays-in-c/
+            // Stephens, R., 2014. Randomize arrays in C#. [Blog] C# Helper, Available at: <http://csharphelper.com/blog/2014/07/randomize-arrays-in-c/> [Accessed 3 March 2020].
             for (int i = 0; i < numberOfInstances - 1; i++)
             {
                 int j = rand.Next(i, numberOfInstances);
@@ -171,9 +172,9 @@ namespace IrishLanguageApplicationDB
             {
                 int oldScore = 0;
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM LeaderBoard WHERE user_id = '" + currentUser + "' AND exerciseType = '" + exerciseType + "';", connection);
+                cmd = new SqlCommand("SELECT * FROM LeaderBoard WHERE username = '" + currentUser + "' AND exerciseType = '" + exerciseType + "';", connection);
 
-                SqlDataReader reader = cmd.ExecuteReader();
+                reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
                     oldScore = Int16.Parse(reader["score"].ToString());
@@ -183,7 +184,7 @@ namespace IrishLanguageApplicationDB
                 if (oldScore < score)
                 {
                     connection.Open();
-                    cmd = new SqlCommand("INSERT INTO LeaderBoard (user_id, score, topic, exerciseType) VALUES ('" + currentUser + "', " + scorePercentage + ", '" + exerciseTopic + "', '" + exerciseType + "');", connection);
+                    cmd = new SqlCommand("INSERT INTO LeaderBoard (username, score, topic, exerciseType) VALUES ('" + currentUser + "', " + scorePercentage + ", '" + exerciseTopic + "', '" + exerciseType + "');", connection);
 
                     reader = cmd.ExecuteReader();
                     connection.Close();
@@ -192,8 +193,9 @@ namespace IrishLanguageApplicationDB
             }
         }
 
-        public MatchWordToPictureExerciseForm(string username, bool isStudentUser, string topic, string type, string description)
+        public MatchWordToPictureExerciseForm(SqlConnection sqlConnection, string username, bool isStudentUser, string topic, string type, string description)
         {
+            connection = sqlConnection;
             currentUser = username;
             isStudent = isStudentUser;
             exerciseTopic = topic;
@@ -379,7 +381,7 @@ namespace IrishLanguageApplicationDB
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Form MainForm = new ChoosingExerciseForm(currentUser, exerciseTopic);
+            Form MainForm = new ChoosingExerciseForm(connection, currentUser, exerciseTopic);
             MainForm.Show();
             this.Enabled = false;
             this.Hide();

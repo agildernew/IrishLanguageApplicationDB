@@ -13,8 +13,13 @@ namespace IrishLanguageApplicationDB
 {
     public partial class AddTopicsForm : Form
     {
-        public AddTopicsForm()
+        SqlConnection connection;
+        SqlCommand cmd;
+        SqlDataReader reader;
+
+        public AddTopicsForm(SqlConnection sqlConnection)
         {
+            connection = sqlConnection;
             InitializeComponent();
         }
 
@@ -22,18 +27,13 @@ namespace IrishLanguageApplicationDB
         {
             if (txtTopicNameEnglish.Text.Length > 0 && txtTopicNameIrish.Text.Length > 0)
             {
-                SqlConnection connection = new SqlConnection();
-                connection.ConnectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename=\"C:\\Users\\Ryan Skillen\\Documents\\GitHub\\IrishLanguageApplicationDB\\IrishLanguageApplicationDB\\IrishAppDB.mdf\"; Integrated Security = True";
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Topics (topic_name_english, topic_name_irish) VALUES ('" + txtTopicNameEnglish.Text + "', '" + txtTopicNameIrish.Text + "');", connection);
-                SqlDataReader reader = cmd.ExecuteReader();
+                cmd = new SqlCommand("INSERT INTO Topics (topic_name_english, topic_name_irish) VALUES ('" + txtTopicNameEnglish.Text + "', '" + txtTopicNameIrish.Text + "');", connection);
+                reader = cmd.ExecuteReader();
                 connection.Close();
 
-                string topic = txtTopicNameEnglish.ToString();
-                //this.Enabled = false;
-                //this.Hide();
-                //Form ChoosingExerciseForm = new ChoosingExerciseForm();
-                Form AddVocabularyForm = new AddVocabularyForm(topic);
+                string topic = txtTopicNameEnglish.Text;
+                Form AddVocabularyForm = new AddVocabularyForm(connection, topic);
                 AddVocabularyForm.Show();
             }
         }
