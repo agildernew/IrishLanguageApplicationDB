@@ -115,7 +115,9 @@ namespace IrishLanguageApplicationDB
         }
 
         private void btnBack_Click(object sender, EventArgs e)
-        {;
+        {
+            Form MainForm = new MainForm(connection, currentUser);
+            MainForm.Show();
             this.Enabled = false;
             this.Hide();
         }
