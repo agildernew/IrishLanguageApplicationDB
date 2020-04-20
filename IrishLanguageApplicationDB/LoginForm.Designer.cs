@@ -118,7 +118,7 @@
             this.Controls.Add(this.lblWelcome);
             this.Font = new System.Drawing.Font("Verdana", 12F);
             this.Name = "LoginForm";
-            this.Text = "s";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
