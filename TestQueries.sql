@@ -1,1 +1,0 @@
-﻿select topic_name_english from Topics;
