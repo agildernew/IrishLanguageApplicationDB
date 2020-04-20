@@ -131,8 +131,6 @@ namespace IrishLanguageApplicationDB
                     txtVocabularyEnglish.Clear();
                     txtVocabularyIrish.Clear();
                     txtImagePath.Clear();
-                    message = "There is no vocabulary to edit for the topic " + currentTopic + ". Please add some vocabulary for this topic first.";
-                    MessageBox.Show(message);
                 }
             }
         }
@@ -168,7 +166,10 @@ namespace IrishLanguageApplicationDB
 
         private void btnAddNewTopic_Click(object sender, EventArgs e)
         {
-
+            Form AddTopicsForm = new AddTopicsForm(connection);
+            AddTopicsForm.Show();
+            this.Enabled = false;
+            this.Hide();
         }
 
         private void btnNext_Click(object sender, EventArgs e)

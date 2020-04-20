@@ -24,12 +24,13 @@ namespace IrishLanguageApplicationDB
         List<TextBox> textboxesAnswers = new List<TextBox>();
         List<PictureBox> pictureboxesImages = new List<PictureBox>();
         string[] sortedVocabularyIrish, sortedVocabularyEnglish, sortedVocabularyImagePath;
-        bool isStudent = false;
+        bool isStudent = false, isParent = false;
         Image currentImage;
 
         private void MatchWordToPictureExerciseForm_Load(object sender, EventArgs e)
         {
             lblExerciseInstructions.Text = exerciseDescription;
+            btnViewLeaderBoard.Hide();
 
             buttonsIrish.Add(btnOne);
             buttonsIrish.Add(btnTwo);
@@ -119,7 +120,7 @@ namespace IrishLanguageApplicationDB
             DisplayVocabulary();
         }
 
-        private void btnFinish_Click(object sender, EventArgs e)
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
             string currentEnglish = "", currentIrish = "", currentAnswer = "";
             int score = 0;
@@ -170,6 +171,22 @@ namespace IrishLanguageApplicationDB
                 markingMessage = "Coinnigh ort ag iarraidh - Keep trying";
             }
             lblScore.Text = "Scór = " + score.ToString() + "/" + numberOfInstances.ToString() + " -> " + scorePercentage.ToString() + "% \r\n" + markingMessage;
+
+
+            connection.Open();
+            cmd = new SqlCommand("SELECT * FROM Users WHERE username ='" + currentUser + "';", connection);
+
+            reader = cmd.ExecuteReader();
+            isParent = false;
+            while (reader.Read())
+            {
+                if (Int32.Parse(reader["user_type_id"].ToString()) == 4)
+                {
+                    isParent = true;
+                }
+            }
+            connection.Close();
+            btnViewLeaderBoard.Show();
 
             if (isStudent)
             {
@@ -400,6 +417,22 @@ namespace IrishLanguageApplicationDB
             MainForm.Show();
             this.Enabled = false;
             this.Hide();
+        }
+
+        private void btnViewLeaderBoard_Click(object sender, EventArgs e)
+        {
+            Form LeaderBoardForm;
+            if (isParent)
+            {
+                LeaderBoardForm = new LeaderBoardForm(connection, exerciseTopic, "All", currentUser);
+
+            }
+            else
+            {
+                LeaderBoardForm = new LeaderBoardForm(connection, exerciseTopic, "All");
+
+            }
+            LeaderBoardForm.Show();
         }
 
         private void pbxImageThree_Click(object sender, EventArgs e)

@@ -63,6 +63,7 @@
             this.txtImageNine = new System.Windows.Forms.TextBox();
             this.txtImageTen = new System.Windows.Forms.TextBox();
             this.lblScore = new System.Windows.Forms.Label();
+            this.btnViewLeaderBoard = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImageOne)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImageTwo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImageThree)).BeginInit();
@@ -210,7 +211,7 @@
             this.btnSubmit.TabIndex = 1;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
-            this.btnSubmit.Click += new System.EventHandler(this.btnFinish_Click);
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnClose
             // 
@@ -228,9 +229,9 @@
             this.pbxImageOne.Location = new System.Drawing.Point(214, 100);
             this.pbxImageOne.Name = "pbxImageOne";
             this.pbxImageOne.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageOne.TabIndex = 14;
             this.pbxImageOne.TabStop = false;
-            this.pbxImageOne.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageOne.Click += new System.EventHandler(this.pbxImageOne_Click);
             // 
             // pbxImageTwo
@@ -238,9 +239,9 @@
             this.pbxImageTwo.Location = new System.Drawing.Point(382, 100);
             this.pbxImageTwo.Name = "pbxImageTwo";
             this.pbxImageTwo.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageTwo.TabIndex = 15;
             this.pbxImageTwo.TabStop = false;
-            this.pbxImageTwo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageTwo.Click += new System.EventHandler(this.pbxImageTwo_Click);
             // 
             // pbxImageThree
@@ -248,9 +249,9 @@
             this.pbxImageThree.Location = new System.Drawing.Point(550, 100);
             this.pbxImageThree.Name = "pbxImageThree";
             this.pbxImageThree.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageThree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageThree.TabIndex = 16;
             this.pbxImageThree.TabStop = false;
-            this.pbxImageThree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageThree.Click += new System.EventHandler(this.pbxImageThree_Click);
             // 
             // pbxImageFour
@@ -258,9 +259,9 @@
             this.pbxImageFour.Location = new System.Drawing.Point(718, 100);
             this.pbxImageFour.Name = "pbxImageFour";
             this.pbxImageFour.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageFour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageFour.TabIndex = 17;
             this.pbxImageFour.TabStop = false;
-            this.pbxImageFour.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageFour.Click += new System.EventHandler(this.pbxImageFour_Click);
             // 
             // pbxImageFive
@@ -268,9 +269,9 @@
             this.pbxImageFive.Location = new System.Drawing.Point(886, 100);
             this.pbxImageFive.Name = "pbxImageFive";
             this.pbxImageFive.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageFive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageFive.TabIndex = 18;
             this.pbxImageFive.TabStop = false;
-            this.pbxImageFive.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageFive.Click += new System.EventHandler(this.pbxImageFive_Click);
             // 
             // pbxImageSix
@@ -278,9 +279,9 @@
             this.pbxImageSix.Location = new System.Drawing.Point(214, 314);
             this.pbxImageSix.Name = "pbxImageSix";
             this.pbxImageSix.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageSix.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageSix.TabIndex = 19;
             this.pbxImageSix.TabStop = false;
-            this.pbxImageSix.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageSix.Click += new System.EventHandler(this.pbxImageSix_Click);
             // 
             // pbxImageSeven
@@ -288,9 +289,9 @@
             this.pbxImageSeven.Location = new System.Drawing.Point(382, 314);
             this.pbxImageSeven.Name = "pbxImageSeven";
             this.pbxImageSeven.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageSeven.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageSeven.TabIndex = 20;
             this.pbxImageSeven.TabStop = false;
-            this.pbxImageSeven.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageSeven.Click += new System.EventHandler(this.pbxImageSeven_Click);
             // 
             // pbxImageEight
@@ -298,9 +299,9 @@
             this.pbxImageEight.Location = new System.Drawing.Point(550, 314);
             this.pbxImageEight.Name = "pbxImageEight";
             this.pbxImageEight.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageEight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageEight.TabIndex = 21;
             this.pbxImageEight.TabStop = false;
-            this.pbxImageEight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageEight.Click += new System.EventHandler(this.pbxImageEight_Click);
             // 
             // pbxImageNine
@@ -308,9 +309,9 @@
             this.pbxImageNine.Location = new System.Drawing.Point(718, 314);
             this.pbxImageNine.Name = "pbxImageNine";
             this.pbxImageNine.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageNine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageNine.TabIndex = 22;
             this.pbxImageNine.TabStop = false;
-            this.pbxImageNine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageNine.Click += new System.EventHandler(this.pbxImageNine_Click);
             // 
             // pbxImageTen
@@ -318,9 +319,9 @@
             this.pbxImageTen.Location = new System.Drawing.Point(886, 314);
             this.pbxImageTen.Name = "pbxImageTen";
             this.pbxImageTen.Size = new System.Drawing.Size(162, 163);
+            this.pbxImageTen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageTen.TabIndex = 23;
             this.pbxImageTen.TabStop = false;
-            this.pbxImageTen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImageTen.Click += new System.EventHandler(this.pbxImageTen_Click);
             // 
             // txtImageOne
@@ -421,12 +422,24 @@
             this.lblScore.Size = new System.Drawing.Size(0, 18);
             this.lblScore.TabIndex = 34;
             // 
+            // btnViewLeaderBoard
+            // 
+            this.btnViewLeaderBoard.BackColor = System.Drawing.Color.White;
+            this.btnViewLeaderBoard.Location = new System.Drawing.Point(886, 546);
+            this.btnViewLeaderBoard.Name = "btnViewLeaderBoard";
+            this.btnViewLeaderBoard.Size = new System.Drawing.Size(162, 33);
+            this.btnViewLeaderBoard.TabIndex = 35;
+            this.btnViewLeaderBoard.Text = "View Leaderboard";
+            this.btnViewLeaderBoard.UseVisualStyleBackColor = false;
+            this.btnViewLeaderBoard.Click += new System.EventHandler(this.btnViewLeaderBoard_Click);
+            // 
             // MatchWordToPictureExerciseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1090, 591);
+            this.Controls.Add(this.btnViewLeaderBoard);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.txtImageTen);
             this.Controls.Add(this.txtImageNine);
@@ -520,5 +533,6 @@
         private System.Windows.Forms.TextBox txtImageNine;
         private System.Windows.Forms.TextBox txtImageTen;
         private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.Button btnViewLeaderBoard;
     }
 }

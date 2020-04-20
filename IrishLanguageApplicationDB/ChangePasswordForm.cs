@@ -65,6 +65,11 @@ namespace IrishLanguageApplicationDB
                         string message = "Your password has been changed.";
                         MessageBox.Show(message);
                     }
+                    else
+                    {
+                        string message = "Please ensure your new password matches the confirmed password and you have entered you current password correctly..";
+                        MessageBox.Show(message);
+                    }
     
                 }
                 else
