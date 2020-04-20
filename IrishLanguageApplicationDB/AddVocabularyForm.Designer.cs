@@ -166,9 +166,9 @@
             // btnAddImage
             // 
             this.btnAddImage.BackColor = System.Drawing.Color.White;
-            this.btnAddImage.Location = new System.Drawing.Point(230, 193);
+            this.btnAddImage.Location = new System.Drawing.Point(126, 193);
             this.btnAddImage.Name = "btnAddImage";
-            this.btnAddImage.Size = new System.Drawing.Size(166, 34);
+            this.btnAddImage.Size = new System.Drawing.Size(218, 34);
             this.btnAddImage.TabIndex = 14;
             this.btnAddImage.Text = "Add Image";
             this.btnAddImage.UseVisualStyleBackColor = false;
@@ -177,9 +177,9 @@
             // btnRemoveImage
             // 
             this.btnRemoveImage.BackColor = System.Drawing.Color.White;
-            this.btnRemoveImage.Location = new System.Drawing.Point(230, 233);
+            this.btnRemoveImage.Location = new System.Drawing.Point(126, 233);
             this.btnRemoveImage.Name = "btnRemoveImage";
-            this.btnRemoveImage.Size = new System.Drawing.Size(166, 34);
+            this.btnRemoveImage.Size = new System.Drawing.Size(218, 34);
             this.btnRemoveImage.TabIndex = 15;
             this.btnRemoveImage.Text = "Remove Image";
             this.btnRemoveImage.UseVisualStyleBackColor = false;
@@ -188,9 +188,9 @@
             // btnSaveChanges
             // 
             this.btnSaveChanges.BackColor = System.Drawing.Color.White;
-            this.btnSaveChanges.Location = new System.Drawing.Point(230, 274);
+            this.btnSaveChanges.Location = new System.Drawing.Point(126, 274);
             this.btnSaveChanges.Name = "btnSaveChanges";
-            this.btnSaveChanges.Size = new System.Drawing.Size(166, 34);
+            this.btnSaveChanges.Size = new System.Drawing.Size(218, 34);
             this.btnSaveChanges.TabIndex = 16;
             this.btnSaveChanges.Text = "Save Changes";
             this.btnSaveChanges.UseVisualStyleBackColor = false;
@@ -199,9 +199,9 @@
             // btnAddNewTopic
             // 
             this.btnAddNewTopic.BackColor = System.Drawing.Color.White;
-            this.btnAddNewTopic.Location = new System.Drawing.Point(402, 233);
+            this.btnAddNewTopic.Location = new System.Drawing.Point(350, 233);
             this.btnAddNewTopic.Name = "btnAddNewTopic";
-            this.btnAddNewTopic.Size = new System.Drawing.Size(166, 34);
+            this.btnAddNewTopic.Size = new System.Drawing.Size(218, 34);
             this.btnAddNewTopic.TabIndex = 9;
             this.btnAddNewTopic.Text = "Add New Topic";
             this.btnAddNewTopic.UseVisualStyleBackColor = false;
@@ -210,9 +210,9 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(402, 274);
+            this.btnClose.Location = new System.Drawing.Point(350, 274);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(166, 34);
+            this.btnClose.Size = new System.Drawing.Size(218, 34);
             this.btnClose.TabIndex = 17;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -221,9 +221,9 @@
             // btnEditVocabulary
             // 
             this.btnEditVocabulary.BackColor = System.Drawing.Color.White;
-            this.btnEditVocabulary.Location = new System.Drawing.Point(404, 193);
+            this.btnEditVocabulary.Location = new System.Drawing.Point(352, 193);
             this.btnEditVocabulary.Name = "btnEditVocabulary";
-            this.btnEditVocabulary.Size = new System.Drawing.Size(166, 34);
+            this.btnEditVocabulary.Size = new System.Drawing.Size(218, 34);
             this.btnEditVocabulary.TabIndex = 22;
             this.btnEditVocabulary.Text = "Edit Vocabulary";
             this.btnEditVocabulary.UseVisualStyleBackColor = false;
@@ -232,11 +232,11 @@
             // btnAddVocabulary
             // 
             this.btnAddVocabulary.BackColor = System.Drawing.Color.White;
-            this.btnAddVocabulary.Location = new System.Drawing.Point(404, 193);
+            this.btnAddVocabulary.Location = new System.Drawing.Point(350, 193);
             this.btnAddVocabulary.Name = "btnAddVocabulary";
-            this.btnAddVocabulary.Size = new System.Drawing.Size(166, 34);
+            this.btnAddVocabulary.Size = new System.Drawing.Size(218, 34);
             this.btnAddVocabulary.TabIndex = 23;
-            this.btnAddVocabulary.Text = "Add Vocabulary";
+            this.btnAddVocabulary.Text = "Enter New Vocabulary";
             this.btnAddVocabulary.UseVisualStyleBackColor = false;
             this.btnAddVocabulary.Click += new System.EventHandler(this.btnAddVocabulary_Click);
             // 
