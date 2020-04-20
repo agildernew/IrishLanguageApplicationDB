@@ -78,9 +78,9 @@
             // 
             // lblExerciseInstructions
             // 
-            this.lblExerciseInstructions.Location = new System.Drawing.Point(10, 40);
+            this.lblExerciseInstructions.Location = new System.Drawing.Point(18, 40);
             this.lblExerciseInstructions.Name = "lblExerciseInstructions";
-            this.lblExerciseInstructions.Size = new System.Drawing.Size(620, 59);
+            this.lblExerciseInstructions.Size = new System.Drawing.Size(898, 59);
             this.lblExerciseInstructions.TabIndex = 13;
             this.lblExerciseInstructions.Text = "Sample Exercise text ";
             // 
@@ -88,23 +88,23 @@
             // 
             this.lblIrish.Location = new System.Drawing.Point(10, 114);
             this.lblIrish.Name = "lblIrish";
-            this.lblIrish.Size = new System.Drawing.Size(143, 21);
+            this.lblIrish.Size = new System.Drawing.Size(240, 21);
             this.lblIrish.TabIndex = 0;
             this.lblIrish.Text = "Irish";
             // 
             // lblEnglish
             // 
-            this.lblEnglish.Location = new System.Drawing.Point(225, 114);
+            this.lblEnglish.Location = new System.Drawing.Point(316, 114);
             this.lblEnglish.Name = "lblEnglish";
-            this.lblEnglish.Size = new System.Drawing.Size(143, 21);
+            this.lblEnglish.Size = new System.Drawing.Size(240, 21);
             this.lblEnglish.TabIndex = 0;
             this.lblEnglish.Text = "English";
             // 
             // lblAnswer
             // 
-            this.lblAnswer.Location = new System.Drawing.Point(434, 115);
+            this.lblAnswer.Location = new System.Drawing.Point(623, 115);
             this.lblAnswer.Name = "lblAnswer";
-            this.lblAnswer.Size = new System.Drawing.Size(143, 21);
+            this.lblAnswer.Size = new System.Drawing.Size(240, 21);
             this.lblAnswer.TabIndex = 0;
             this.lblAnswer.Text = "Answer";
             // 
@@ -114,7 +114,7 @@
             this.txtIrishWordOne.Location = new System.Drawing.Point(12, 139);
             this.txtIrishWordOne.Name = "txtIrishWordOne";
             this.txtIrishWordOne.ReadOnly = true;
-            this.txtIrishWordOne.Size = new System.Drawing.Size(193, 27);
+            this.txtIrishWordOne.Size = new System.Drawing.Size(290, 27);
             this.txtIrishWordOne.TabIndex = 1;
             // 
             // txtIrishWordTwo
@@ -123,7 +123,7 @@
             this.txtIrishWordTwo.Location = new System.Drawing.Point(12, 169);
             this.txtIrishWordTwo.Name = "txtIrishWordTwo";
             this.txtIrishWordTwo.ReadOnly = true;
-            this.txtIrishWordTwo.Size = new System.Drawing.Size(193, 27);
+            this.txtIrishWordTwo.Size = new System.Drawing.Size(290, 27);
             this.txtIrishWordTwo.TabIndex = 1;
             // 
             // txtIrishWordThree
@@ -132,7 +132,7 @@
             this.txtIrishWordThree.Location = new System.Drawing.Point(12, 199);
             this.txtIrishWordThree.Name = "txtIrishWordThree";
             this.txtIrishWordThree.ReadOnly = true;
-            this.txtIrishWordThree.Size = new System.Drawing.Size(193, 27);
+            this.txtIrishWordThree.Size = new System.Drawing.Size(290, 27);
             this.txtIrishWordThree.TabIndex = 1;
             // 
             // txtIrishWordFour
@@ -141,7 +141,7 @@
             this.txtIrishWordFour.Location = new System.Drawing.Point(12, 229);
             this.txtIrishWordFour.Name = "txtIrishWordFour";
             this.txtIrishWordFour.ReadOnly = true;
-            this.txtIrishWordFour.Size = new System.Drawing.Size(193, 27);
+            this.txtIrishWordFour.Size = new System.Drawing.Size(290, 27);
             this.txtIrishWordFour.TabIndex = 1;
             // 
             // txtIrishWordFive
@@ -150,7 +150,7 @@
             this.txtIrishWordFive.Location = new System.Drawing.Point(12, 259);
             this.txtIrishWordFive.Name = "txtIrishWordFive";
             this.txtIrishWordFive.ReadOnly = true;
-            this.txtIrishWordFive.Size = new System.Drawing.Size(193, 27);
+            this.txtIrishWordFive.Size = new System.Drawing.Size(290, 27);
             this.txtIrishWordFive.TabIndex = 1;
             // 
             // txtIrishWordSix
@@ -159,7 +159,7 @@
             this.txtIrishWordSix.Location = new System.Drawing.Point(12, 289);
             this.txtIrishWordSix.Name = "txtIrishWordSix";
             this.txtIrishWordSix.ReadOnly = true;
-            this.txtIrishWordSix.Size = new System.Drawing.Size(193, 27);
+            this.txtIrishWordSix.Size = new System.Drawing.Size(290, 27);
             this.txtIrishWordSix.TabIndex = 1;
             // 
             // txtIrishWordSeven
@@ -168,7 +168,7 @@
             this.txtIrishWordSeven.Location = new System.Drawing.Point(12, 319);
             this.txtIrishWordSeven.Name = "txtIrishWordSeven";
             this.txtIrishWordSeven.ReadOnly = true;
-            this.txtIrishWordSeven.Size = new System.Drawing.Size(193, 27);
+            this.txtIrishWordSeven.Size = new System.Drawing.Size(290, 27);
             this.txtIrishWordSeven.TabIndex = 1;
             // 
             // txtIrishWordEight
@@ -177,7 +177,7 @@
             this.txtIrishWordEight.Location = new System.Drawing.Point(12, 349);
             this.txtIrishWordEight.Name = "txtIrishWordEight";
             this.txtIrishWordEight.ReadOnly = true;
-            this.txtIrishWordEight.Size = new System.Drawing.Size(193, 27);
+            this.txtIrishWordEight.Size = new System.Drawing.Size(290, 27);
             this.txtIrishWordEight.TabIndex = 1;
             // 
             // txtIrishWordNine
@@ -186,7 +186,7 @@
             this.txtIrishWordNine.Location = new System.Drawing.Point(12, 379);
             this.txtIrishWordNine.Name = "txtIrishWordNine";
             this.txtIrishWordNine.ReadOnly = true;
-            this.txtIrishWordNine.Size = new System.Drawing.Size(193, 27);
+            this.txtIrishWordNine.Size = new System.Drawing.Size(290, 27);
             this.txtIrishWordNine.TabIndex = 1;
             // 
             // txtIrishWordTen
@@ -195,183 +195,183 @@
             this.txtIrishWordTen.Location = new System.Drawing.Point(12, 409);
             this.txtIrishWordTen.Name = "txtIrishWordTen";
             this.txtIrishWordTen.ReadOnly = true;
-            this.txtIrishWordTen.Size = new System.Drawing.Size(193, 27);
+            this.txtIrishWordTen.Size = new System.Drawing.Size(290, 27);
             this.txtIrishWordTen.TabIndex = 1;
             // 
             // txtEnglishWordOne
             // 
             this.txtEnglishWordOne.BackColor = System.Drawing.Color.White;
-            this.txtEnglishWordOne.Location = new System.Drawing.Point(228, 139);
+            this.txtEnglishWordOne.Location = new System.Drawing.Point(319, 139);
             this.txtEnglishWordOne.Name = "txtEnglishWordOne";
             this.txtEnglishWordOne.ReadOnly = true;
-            this.txtEnglishWordOne.Size = new System.Drawing.Size(193, 27);
+            this.txtEnglishWordOne.Size = new System.Drawing.Size(290, 27);
             this.txtEnglishWordOne.TabIndex = 1;
             // 
             // txtEnglishWordTwo
             // 
             this.txtEnglishWordTwo.BackColor = System.Drawing.Color.White;
-            this.txtEnglishWordTwo.Location = new System.Drawing.Point(228, 169);
+            this.txtEnglishWordTwo.Location = new System.Drawing.Point(319, 169);
             this.txtEnglishWordTwo.Name = "txtEnglishWordTwo";
             this.txtEnglishWordTwo.ReadOnly = true;
-            this.txtEnglishWordTwo.Size = new System.Drawing.Size(193, 27);
+            this.txtEnglishWordTwo.Size = new System.Drawing.Size(290, 27);
             this.txtEnglishWordTwo.TabIndex = 1;
             // 
             // txtEnglishWordThree
             // 
             this.txtEnglishWordThree.BackColor = System.Drawing.Color.White;
-            this.txtEnglishWordThree.Location = new System.Drawing.Point(228, 199);
+            this.txtEnglishWordThree.Location = new System.Drawing.Point(319, 199);
             this.txtEnglishWordThree.Name = "txtEnglishWordThree";
             this.txtEnglishWordThree.ReadOnly = true;
-            this.txtEnglishWordThree.Size = new System.Drawing.Size(193, 27);
+            this.txtEnglishWordThree.Size = new System.Drawing.Size(290, 27);
             this.txtEnglishWordThree.TabIndex = 1;
             // 
             // txtEnglishWordFour
             // 
             this.txtEnglishWordFour.BackColor = System.Drawing.Color.White;
-            this.txtEnglishWordFour.Location = new System.Drawing.Point(228, 229);
+            this.txtEnglishWordFour.Location = new System.Drawing.Point(319, 229);
             this.txtEnglishWordFour.Name = "txtEnglishWordFour";
             this.txtEnglishWordFour.ReadOnly = true;
-            this.txtEnglishWordFour.Size = new System.Drawing.Size(193, 27);
+            this.txtEnglishWordFour.Size = new System.Drawing.Size(290, 27);
             this.txtEnglishWordFour.TabIndex = 1;
             // 
             // txtEnglishWordFive
             // 
             this.txtEnglishWordFive.BackColor = System.Drawing.Color.White;
-            this.txtEnglishWordFive.Location = new System.Drawing.Point(228, 259);
+            this.txtEnglishWordFive.Location = new System.Drawing.Point(319, 259);
             this.txtEnglishWordFive.Name = "txtEnglishWordFive";
             this.txtEnglishWordFive.ReadOnly = true;
-            this.txtEnglishWordFive.Size = new System.Drawing.Size(193, 27);
+            this.txtEnglishWordFive.Size = new System.Drawing.Size(290, 27);
             this.txtEnglishWordFive.TabIndex = 1;
             // 
             // txtEnglishWordSix
             // 
             this.txtEnglishWordSix.BackColor = System.Drawing.Color.White;
-            this.txtEnglishWordSix.Location = new System.Drawing.Point(228, 289);
+            this.txtEnglishWordSix.Location = new System.Drawing.Point(319, 289);
             this.txtEnglishWordSix.Name = "txtEnglishWordSix";
             this.txtEnglishWordSix.ReadOnly = true;
-            this.txtEnglishWordSix.Size = new System.Drawing.Size(193, 27);
+            this.txtEnglishWordSix.Size = new System.Drawing.Size(290, 27);
             this.txtEnglishWordSix.TabIndex = 1;
             // 
             // txtEnglishWordSeven
             // 
             this.txtEnglishWordSeven.BackColor = System.Drawing.Color.White;
-            this.txtEnglishWordSeven.Location = new System.Drawing.Point(228, 319);
+            this.txtEnglishWordSeven.Location = new System.Drawing.Point(319, 319);
             this.txtEnglishWordSeven.Name = "txtEnglishWordSeven";
             this.txtEnglishWordSeven.ReadOnly = true;
-            this.txtEnglishWordSeven.Size = new System.Drawing.Size(193, 27);
+            this.txtEnglishWordSeven.Size = new System.Drawing.Size(290, 27);
             this.txtEnglishWordSeven.TabIndex = 1;
             // 
             // txtEnglishWordEight
             // 
             this.txtEnglishWordEight.BackColor = System.Drawing.Color.White;
-            this.txtEnglishWordEight.Location = new System.Drawing.Point(228, 349);
+            this.txtEnglishWordEight.Location = new System.Drawing.Point(319, 349);
             this.txtEnglishWordEight.Name = "txtEnglishWordEight";
             this.txtEnglishWordEight.ReadOnly = true;
-            this.txtEnglishWordEight.Size = new System.Drawing.Size(193, 27);
+            this.txtEnglishWordEight.Size = new System.Drawing.Size(290, 27);
             this.txtEnglishWordEight.TabIndex = 1;
             // 
             // txtEnglishWordNine
             // 
             this.txtEnglishWordNine.BackColor = System.Drawing.Color.White;
-            this.txtEnglishWordNine.Location = new System.Drawing.Point(228, 379);
+            this.txtEnglishWordNine.Location = new System.Drawing.Point(319, 379);
             this.txtEnglishWordNine.Name = "txtEnglishWordNine";
             this.txtEnglishWordNine.ReadOnly = true;
-            this.txtEnglishWordNine.Size = new System.Drawing.Size(193, 27);
+            this.txtEnglishWordNine.Size = new System.Drawing.Size(290, 27);
             this.txtEnglishWordNine.TabIndex = 1;
             // 
             // txtEnglishWordTen
             // 
             this.txtEnglishWordTen.BackColor = System.Drawing.Color.White;
-            this.txtEnglishWordTen.Location = new System.Drawing.Point(228, 409);
+            this.txtEnglishWordTen.Location = new System.Drawing.Point(319, 409);
             this.txtEnglishWordTen.Name = "txtEnglishWordTen";
             this.txtEnglishWordTen.ReadOnly = true;
-            this.txtEnglishWordTen.Size = new System.Drawing.Size(193, 27);
+            this.txtEnglishWordTen.Size = new System.Drawing.Size(290, 27);
             this.txtEnglishWordTen.TabIndex = 1;
             // 
             // txtAnswerOne
             // 
             this.txtAnswerOne.BackColor = System.Drawing.Color.White;
-            this.txtAnswerOne.Location = new System.Drawing.Point(437, 139);
+            this.txtAnswerOne.Location = new System.Drawing.Point(626, 139);
             this.txtAnswerOne.Name = "txtAnswerOne";
-            this.txtAnswerOne.Size = new System.Drawing.Size(193, 27);
+            this.txtAnswerOne.Size = new System.Drawing.Size(290, 27);
             this.txtAnswerOne.TabIndex = 1;
             // 
             // txtAnswerTwo
             // 
             this.txtAnswerTwo.BackColor = System.Drawing.Color.White;
-            this.txtAnswerTwo.Location = new System.Drawing.Point(437, 169);
+            this.txtAnswerTwo.Location = new System.Drawing.Point(626, 169);
             this.txtAnswerTwo.Name = "txtAnswerTwo";
-            this.txtAnswerTwo.Size = new System.Drawing.Size(193, 27);
+            this.txtAnswerTwo.Size = new System.Drawing.Size(290, 27);
             this.txtAnswerTwo.TabIndex = 1;
             // 
             // txtAnswerThree
             // 
             this.txtAnswerThree.BackColor = System.Drawing.Color.White;
-            this.txtAnswerThree.Location = new System.Drawing.Point(437, 199);
+            this.txtAnswerThree.Location = new System.Drawing.Point(626, 199);
             this.txtAnswerThree.Name = "txtAnswerThree";
-            this.txtAnswerThree.Size = new System.Drawing.Size(193, 27);
+            this.txtAnswerThree.Size = new System.Drawing.Size(290, 27);
             this.txtAnswerThree.TabIndex = 1;
             // 
             // txtAnswerFour
             // 
             this.txtAnswerFour.BackColor = System.Drawing.Color.White;
-            this.txtAnswerFour.Location = new System.Drawing.Point(437, 229);
+            this.txtAnswerFour.Location = new System.Drawing.Point(626, 229);
             this.txtAnswerFour.Name = "txtAnswerFour";
-            this.txtAnswerFour.Size = new System.Drawing.Size(193, 27);
+            this.txtAnswerFour.Size = new System.Drawing.Size(290, 27);
             this.txtAnswerFour.TabIndex = 1;
             // 
             // txtAnswerFive
             // 
             this.txtAnswerFive.BackColor = System.Drawing.Color.White;
-            this.txtAnswerFive.Location = new System.Drawing.Point(437, 259);
+            this.txtAnswerFive.Location = new System.Drawing.Point(626, 259);
             this.txtAnswerFive.Name = "txtAnswerFive";
-            this.txtAnswerFive.Size = new System.Drawing.Size(193, 27);
+            this.txtAnswerFive.Size = new System.Drawing.Size(290, 27);
             this.txtAnswerFive.TabIndex = 1;
             // 
             // txtAnswerSix
             // 
             this.txtAnswerSix.BackColor = System.Drawing.Color.White;
-            this.txtAnswerSix.Location = new System.Drawing.Point(437, 289);
+            this.txtAnswerSix.Location = new System.Drawing.Point(626, 289);
             this.txtAnswerSix.Name = "txtAnswerSix";
-            this.txtAnswerSix.Size = new System.Drawing.Size(193, 27);
+            this.txtAnswerSix.Size = new System.Drawing.Size(290, 27);
             this.txtAnswerSix.TabIndex = 1;
             // 
             // txtAnswerSeven
             // 
             this.txtAnswerSeven.BackColor = System.Drawing.Color.White;
-            this.txtAnswerSeven.Location = new System.Drawing.Point(437, 319);
+            this.txtAnswerSeven.Location = new System.Drawing.Point(626, 319);
             this.txtAnswerSeven.Name = "txtAnswerSeven";
-            this.txtAnswerSeven.Size = new System.Drawing.Size(193, 27);
+            this.txtAnswerSeven.Size = new System.Drawing.Size(290, 27);
             this.txtAnswerSeven.TabIndex = 1;
             // 
             // txtAnswerEight
             // 
             this.txtAnswerEight.BackColor = System.Drawing.Color.White;
-            this.txtAnswerEight.Location = new System.Drawing.Point(437, 349);
+            this.txtAnswerEight.Location = new System.Drawing.Point(626, 349);
             this.txtAnswerEight.Name = "txtAnswerEight";
-            this.txtAnswerEight.Size = new System.Drawing.Size(193, 27);
+            this.txtAnswerEight.Size = new System.Drawing.Size(290, 27);
             this.txtAnswerEight.TabIndex = 1;
             // 
             // txtAnswerNine
             // 
             this.txtAnswerNine.BackColor = System.Drawing.Color.White;
-            this.txtAnswerNine.Location = new System.Drawing.Point(437, 379);
+            this.txtAnswerNine.Location = new System.Drawing.Point(626, 379);
             this.txtAnswerNine.Name = "txtAnswerNine";
-            this.txtAnswerNine.Size = new System.Drawing.Size(193, 27);
+            this.txtAnswerNine.Size = new System.Drawing.Size(290, 27);
             this.txtAnswerNine.TabIndex = 1;
             // 
             // txtAnswerTen
             // 
             this.txtAnswerTen.BackColor = System.Drawing.Color.White;
-            this.txtAnswerTen.Location = new System.Drawing.Point(437, 409);
+            this.txtAnswerTen.Location = new System.Drawing.Point(626, 409);
             this.txtAnswerTen.Name = "txtAnswerTen";
-            this.txtAnswerTen.Size = new System.Drawing.Size(193, 27);
+            this.txtAnswerTen.Size = new System.Drawing.Size(290, 27);
             this.txtAnswerTen.TabIndex = 1;
             // 
             // btnSubmit
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(512, 454);
+            this.btnSubmit.Location = new System.Drawing.Point(798, 454);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(118, 26);
             this.btnSubmit.TabIndex = 14;
@@ -390,7 +390,7 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(512, 486);
+            this.btnClose.Location = new System.Drawing.Point(798, 486);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(118, 26);
             this.btnClose.TabIndex = 16;
@@ -403,7 +403,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(663, 523);
+            this.ClientSize = new System.Drawing.Size(930, 522);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.btnSubmit);

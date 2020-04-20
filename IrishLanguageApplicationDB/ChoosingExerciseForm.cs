@@ -107,7 +107,8 @@ namespace IrishLanguageApplicationDB
         private void btnMatchEnglishWordToIrishWord_Click(object sender, EventArgs e)
         {
             exerciseType = "MatchEnglishToIrish";
-            exerciseDescription = "Match the English word to the given Irish word e.g. if the Irish word is 'Gaeilge' enter the English word for this (i.e. English)";
+            exerciseDescription = "Match the English word to the given Irish word e.g. if the Irish word is 'Gaeilge' enter the English word for this (i.e. English)." +
+                "\n\rComplete the answer column with vocabulary from the English column (your answer should be in English)";
             Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(connection, currentUser, isStudentUser, exerciseTopic, exerciseType, exerciseDescription);
             MatchOrEnterWordForWordExerciseForm.Show();
             this.Enabled = false;
@@ -125,7 +126,8 @@ namespace IrishLanguageApplicationDB
         private void btnMatchIrishWordToEnglishWord_Click(object sender, EventArgs e)
         {
             exerciseType = "MatchIrishToEnglish";
-            exerciseDescription = "Match the Irish word to the given English word e.g. if the English word is 'Irish' enter the Irish word for this (i.e. Gaeilge)";
+            exerciseDescription = "Match the Irish word to the given English word e.g. if the English word is 'Irish' enter the Irish word for this (i.e. Gaeilge)" +
+                "\n\rComplete the answer column with vocabulary from the Irish column (your answer should be in Irish)";
             Form MatchOrEnterWordForWordExerciseForm = new MatchOrEnterWordForWordExerciseForm(connection, currentUser, isStudentUser, exerciseTopic, exerciseType, exerciseDescription);
             MatchOrEnterWordForWordExerciseForm.Show();
             this.Enabled = false;

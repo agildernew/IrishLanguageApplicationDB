@@ -266,8 +266,8 @@ namespace IrishLanguageApplicationDB
             {
                 textboxesIrish[n].Text = sortedVocabularyIrish[n];
                 textboxesIrish[n].Show();
-                textboxesEnglish[n].Show();
                 textboxesAnswers[n].Show();
+                textboxesAnswers[n].Focus();
                 n = n + 1;
             } while (n < numberOfInstances);
         }
@@ -278,7 +278,6 @@ namespace IrishLanguageApplicationDB
             do
             {
                 textboxesEnglish[n].Text = sortedVocabularyEnglish[n];
-                textboxesIrish[n].Show();
                 textboxesEnglish[n].Show();
                 textboxesAnswers[n].Show();
                 textboxesAnswers[n].Focus();

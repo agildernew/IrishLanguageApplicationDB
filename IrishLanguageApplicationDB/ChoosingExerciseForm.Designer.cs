@@ -34,7 +34,6 @@
             this.btnMatchIrishWordToEnglishWord = new System.Windows.Forms.Button();
             this.btnEnterEnglishWordForIrishWord = new System.Windows.Forms.Button();
             this.btnEnterIrishWordForEnglishWord = new System.Windows.Forms.Button();
-            this.btnFillInBlanks = new System.Windows.Forms.Button();
             this.btnMultipleChoice = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -43,14 +42,14 @@
             // 
             this.lblChooseExercise.Location = new System.Drawing.Point(12, 20);
             this.lblChooseExercise.Name = "lblChooseExercise";
-            this.lblChooseExercise.Size = new System.Drawing.Size(393, 27);
+            this.lblChooseExercise.Size = new System.Drawing.Size(393, 68);
             this.lblChooseExercise.TabIndex = 0;
             this.lblChooseExercise.Text = "Choose an exercise for the topic xxx";
             // 
             // btnMatchIrishWordToPicture
             // 
             this.btnMatchIrishWordToPicture.BackColor = System.Drawing.Color.White;
-            this.btnMatchIrishWordToPicture.Location = new System.Drawing.Point(10, 50);
+            this.btnMatchIrishWordToPicture.Location = new System.Drawing.Point(10, 91);
             this.btnMatchIrishWordToPicture.Name = "btnMatchIrishWordToPicture";
             this.btnMatchIrishWordToPicture.Size = new System.Drawing.Size(395, 35);
             this.btnMatchIrishWordToPicture.TabIndex = 1;
@@ -61,7 +60,7 @@
             // btnMatchEnglishWordToIrishWord
             // 
             this.btnMatchEnglishWordToIrishWord.BackColor = System.Drawing.Color.White;
-            this.btnMatchEnglishWordToIrishWord.Location = new System.Drawing.Point(10, 91);
+            this.btnMatchEnglishWordToIrishWord.Location = new System.Drawing.Point(10, 132);
             this.btnMatchEnglishWordToIrishWord.Name = "btnMatchEnglishWordToIrishWord";
             this.btnMatchEnglishWordToIrishWord.Size = new System.Drawing.Size(395, 35);
             this.btnMatchEnglishWordToIrishWord.TabIndex = 1;
@@ -72,7 +71,7 @@
             // btnMatchIrishWordToEnglishWord
             // 
             this.btnMatchIrishWordToEnglishWord.BackColor = System.Drawing.Color.White;
-            this.btnMatchIrishWordToEnglishWord.Location = new System.Drawing.Point(10, 132);
+            this.btnMatchIrishWordToEnglishWord.Location = new System.Drawing.Point(10, 173);
             this.btnMatchIrishWordToEnglishWord.Name = "btnMatchIrishWordToEnglishWord";
             this.btnMatchIrishWordToEnglishWord.Size = new System.Drawing.Size(395, 35);
             this.btnMatchIrishWordToEnglishWord.TabIndex = 1;
@@ -83,7 +82,7 @@
             // btnEnterEnglishWordForIrishWord
             // 
             this.btnEnterEnglishWordForIrishWord.BackColor = System.Drawing.Color.White;
-            this.btnEnterEnglishWordForIrishWord.Location = new System.Drawing.Point(10, 173);
+            this.btnEnterEnglishWordForIrishWord.Location = new System.Drawing.Point(10, 214);
             this.btnEnterEnglishWordForIrishWord.Name = "btnEnterEnglishWordForIrishWord";
             this.btnEnterEnglishWordForIrishWord.Size = new System.Drawing.Size(395, 35);
             this.btnEnterEnglishWordForIrishWord.TabIndex = 1;
@@ -94,23 +93,13 @@
             // btnEnterIrishWordForEnglishWord
             // 
             this.btnEnterIrishWordForEnglishWord.BackColor = System.Drawing.Color.White;
-            this.btnEnterIrishWordForEnglishWord.Location = new System.Drawing.Point(10, 214);
+            this.btnEnterIrishWordForEnglishWord.Location = new System.Drawing.Point(10, 255);
             this.btnEnterIrishWordForEnglishWord.Name = "btnEnterIrishWordForEnglishWord";
             this.btnEnterIrishWordForEnglishWord.Size = new System.Drawing.Size(395, 35);
             this.btnEnterIrishWordForEnglishWord.TabIndex = 1;
             this.btnEnterIrishWordForEnglishWord.Text = "Enter the Irish Word for the given English Word";
             this.btnEnterIrishWordForEnglishWord.UseVisualStyleBackColor = false;
             this.btnEnterIrishWordForEnglishWord.Click += new System.EventHandler(this.btnEnterIrishWordForEnglishWord_Click);
-            // 
-            // btnFillInBlanks
-            // 
-            this.btnFillInBlanks.BackColor = System.Drawing.Color.White;
-            this.btnFillInBlanks.Location = new System.Drawing.Point(10, 255);
-            this.btnFillInBlanks.Name = "btnFillInBlanks";
-            this.btnFillInBlanks.Size = new System.Drawing.Size(395, 35);
-            this.btnFillInBlanks.TabIndex = 1;
-            this.btnFillInBlanks.Text = "Fill in the blanks";
-            this.btnFillInBlanks.UseVisualStyleBackColor = false;
             // 
             // btnMultipleChoice
             // 
@@ -145,7 +134,6 @@
             this.Controls.Add(this.btnMatchIrishWordToEnglishWord);
             this.Controls.Add(this.btnEnterEnglishWordForIrishWord);
             this.Controls.Add(this.btnEnterIrishWordForEnglishWord);
-            this.Controls.Add(this.btnFillInBlanks);
             this.Controls.Add(this.btnMultipleChoice);
             this.Controls.Add(this.btnCancel);
             this.Font = new System.Drawing.Font("Verdana", 12F);
@@ -166,7 +154,6 @@
         private System.Windows.Forms.Button btnMatchIrishWordToEnglishWord;
         private System.Windows.Forms.Button btnEnterEnglishWordForIrishWord;
         private System.Windows.Forms.Button btnEnterIrishWordForEnglishWord;
-        private System.Windows.Forms.Button btnFillInBlanks;
         private System.Windows.Forms.Button btnMultipleChoice;
         private System.Windows.Forms.Button btnCancel;
     }
