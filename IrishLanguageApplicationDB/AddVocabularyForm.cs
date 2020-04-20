@@ -168,7 +168,10 @@ namespace IrishLanguageApplicationDB
 
         private void btnAddNewTopic_Click(object sender, EventArgs e)
         {
-
+            Form AddTopicsForm = new AddTopicsForm(connection);
+            AddTopicsForm.Show();
+            this.Enabled = false;
+            this.Hide();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
