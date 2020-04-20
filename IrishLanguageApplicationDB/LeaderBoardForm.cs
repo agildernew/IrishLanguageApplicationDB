@@ -53,14 +53,6 @@ namespace IrishLanguageApplicationDB
 
         int numberOfInstances = 0;
 
-
-        public LeaderBoardForm(SqlConnection sqlConnection, string yearGroup)
-        {
-            connection = sqlConnection;
-            currentYearGroup = yearGroup;
-            InitializeComponent();
-        }
-
         public LeaderBoardForm(SqlConnection sqlConnection, string topic, string yearGroup)
         {
             connection = sqlConnection;

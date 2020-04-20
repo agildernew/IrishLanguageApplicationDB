@@ -66,6 +66,7 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.lblScore = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnViewLeaderBoard = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblExerciseInstructionsLabel
@@ -371,9 +372,9 @@
             // btnSubmit
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(798, 454);
+            this.btnSubmit.Location = new System.Drawing.Point(751, 454);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(118, 26);
+            this.btnSubmit.Size = new System.Drawing.Size(165, 26);
             this.btnSubmit.TabIndex = 14;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
@@ -390,20 +391,32 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(798, 486);
+            this.btnClose.Location = new System.Drawing.Point(751, 486);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(118, 26);
+            this.btnClose.Size = new System.Drawing.Size(165, 26);
             this.btnClose.TabIndex = 16;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnViewLeaderBoard
+            // 
+            this.btnViewLeaderBoard.BackColor = System.Drawing.Color.White;
+            this.btnViewLeaderBoard.Location = new System.Drawing.Point(751, 518);
+            this.btnViewLeaderBoard.Name = "btnViewLeaderBoard";
+            this.btnViewLeaderBoard.Size = new System.Drawing.Size(165, 26);
+            this.btnViewLeaderBoard.TabIndex = 17;
+            this.btnViewLeaderBoard.Text = "View Leaderboard";
+            this.btnViewLeaderBoard.UseVisualStyleBackColor = false;
+            this.btnViewLeaderBoard.Click += new System.EventHandler(this.btnViewLeaderBoard_Click);
             // 
             // MatchOrEnterWordForWordExerciseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(242)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(930, 522);
+            this.ClientSize = new System.Drawing.Size(930, 557);
+            this.Controls.Add(this.btnViewLeaderBoard);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.btnSubmit);
@@ -494,5 +507,6 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnViewLeaderBoard;
     }
 }

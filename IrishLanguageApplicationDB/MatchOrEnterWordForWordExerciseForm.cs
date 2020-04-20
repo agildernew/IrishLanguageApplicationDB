@@ -22,7 +22,23 @@ namespace IrishLanguageApplicationDB
         List<TextBox> textboxesIrish = new List<TextBox>(), textboxesEnglish = new List<TextBox>(), textboxesAnswers = new List<TextBox>();
         string[] sortedVocabularyIrish, sortedVocabularyEnglish;
         int numberOfInstances;
-        bool displayIrish = true, displayEnglish = true, isStudent = false;
+        bool displayIrish = true, displayEnglish = true, isStudent = false, isParent = false;
+
+        private void btnViewLeaderBoard_Click(object sender, EventArgs e)
+        {
+            Form LeaderBoardForm;
+            if (isParent)
+            {
+                LeaderBoardForm = new LeaderBoardForm(connection, exerciseTopic, "All", currentUser);
+
+            }
+            else
+            {
+                LeaderBoardForm = new LeaderBoardForm(connection, exerciseTopic, "All");
+
+            }
+            LeaderBoardForm.Show();
+        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -117,6 +133,21 @@ namespace IrishLanguageApplicationDB
             }
             lblScore.Text = "Scór = " + score.ToString() + "/" + numberOfInstances.ToString() + " -> " + scorePercentage.ToString() + "% \r\n" + markingMessage;
 
+            connection.Open();
+            cmd = new SqlCommand("SELECT * FROM Users WHERE username ='" + currentUser + "';", connection);
+
+            reader = cmd.ExecuteReader();
+            isParent = false;
+            while (reader.Read())
+            {
+                if (Int32.Parse(reader["user_type_id"].ToString()) == 4)
+                {
+                    isParent = true;
+                }
+            }
+            connection.Close();
+            btnViewLeaderBoard.Show();
+
             if (isStudent)
             {
                 int oldScore = 0;
@@ -156,6 +187,8 @@ namespace IrishLanguageApplicationDB
         private void MatchOrEnterWordForWordExerciseForm_Load(object sender, EventArgs e)
         {
             lblExerciseInstructions.Text = exerciseDescription;
+            btnViewLeaderBoard.Hide();
+
             textboxesEnglish.Add(txtEnglishWordOne);
             textboxesEnglish.Add(txtEnglishWordTwo);
             textboxesEnglish.Add(txtEnglishWordThree);
