@@ -133,7 +133,6 @@ namespace IrishLanguageApplicationDB
             if (yearGroup == "All")
             {
                 lblYearGroup.Text = "These are the scores for the students in All Year Groups for the topic " + topic;
-
             }
             else
             {
@@ -154,41 +153,41 @@ namespace IrishLanguageApplicationDB
                 children.Clear();
             }
 
-                if (parentUsername != "")
+            if (parentUsername != "")
+            {
+                connection.Open();
+                cmd = new SqlCommand("SELECT * FROM ParentStudent WHERE username = '" + parentUsername + "';", connection);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    connection.Open();
-                    cmd = new SqlCommand("SELECT * FROM ParentStudent WHERE username = '" + parentUsername + "';", connection);
-                    reader = cmd.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        int index = 0;
-                        children.Add(reader["student_username"].ToString());
-                        index = index + 1;
-                    }
-                    connection.Close();
-
-                    for (int i = 0; i < children.Count; i++)
-                    {
-
-                        connection.Open();
-                        cmd = new SqlCommand("SELECT * FROM LeaderBoard WHERE topic = '" + currentTopic + "' AND username = '" + children[i] + "' ORDER BY score DESC;", connection);
-                        reader = cmd.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            int index = 0;
-                            userId.Add(reader["username"].ToString());
-                            score.Add(reader["score"].ToString());
-                            exerciseType.Add(reader["exerciseType"].ToString());
-                            index = index + 1;
-                        }
-                        connection.Close();
-                    }
+                    int index = 0;
+                    children.Add(reader["student_username"].ToString());
+                    index = index + 1;
                 }
-                else
+                connection.Close();
+
+                for (int i = 0; i < children.Count; i++)
                 {
                     connection.Open();
-                    cmd = new SqlCommand("SELECT * FROM LeaderBoard WHERE topic = '" + currentTopic + "' ORDER BY score DESC;", connection);
+
+                    if (currentYearGroup == "8")
+                    {
+                        cmd = new SqlCommand("SELECT TOP 10[LeaderBoard].[username],[LeaderBoard].[score],[LeaderBoard].[topic],[LeaderBoard].[exerciseType],[Users].[form_class] FROM LeaderBoard LEFT JOIN Users ON LeaderBoard.username=Users.username WHERE topic = '" + currentTopic + "' AND [LeaderBoard].[username] = '" + children[i] + "' AND form_class LIKE '08%' ORDER BY score DESC;", connection);
+                    }
+                    else if (currentYearGroup == "9")
+                    {
+                        cmd = new SqlCommand("SELECT TOP 10[LeaderBoard].[username],[LeaderBoard].[score],[LeaderBoard].[topic],[LeaderBoard].[exerciseType],[Users].[form_class] FROM LeaderBoard LEFT JOIN Users ON LeaderBoard.username=Users.username WHERE topic = '" + currentTopic + "' AND [LeaderBoard].[username] = '" + children[i] + "' AND form_class LIKE '09%' ORDER BY score DESC;", connection);
+                    }
+                    else if (currentYearGroup == "10")
+                    {
+                        cmd = new SqlCommand("SELECT TOP 10[LeaderBoard].[username],[LeaderBoard].[score],[LeaderBoard].[topic],[LeaderBoard].[exerciseType],[Users].[form_class] FROM LeaderBoard LEFT JOIN Users ON LeaderBoard.username=Users.username WHERE topic = '" + currentTopic + "' AND [LeaderBoard].[username] = '" + children[i] + "' AND form_class LIKE '10%' ORDER BY score DESC;", connection);
+                    }
+                    else
+                    {
+                        cmd = new SqlCommand("SELECT TOP 10[LeaderBoard].[username],[LeaderBoard].[score],[LeaderBoard].[topic],[LeaderBoard].[exerciseType],[Users].[form_class] FROM LeaderBoard LEFT JOIN Users ON LeaderBoard.username=Users.username WHERE topic = '" + currentTopic + "' AND [LeaderBoard].[username] = '" + children[i] + "' ORDER BY score DESC;", connection);
+                    }
+
                     reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
@@ -200,68 +199,55 @@ namespace IrishLanguageApplicationDB
                     }
                     connection.Close();
                 }
+            }
+            else
+            {
+                connection.Open();
+                
+                if (currentYearGroup == "8")
+                {
+                    cmd = new SqlCommand("SELECT TOP 10[LeaderBoard].[username],[LeaderBoard].[score],[LeaderBoard].[topic],[LeaderBoard].[exerciseType],[Users].[form_class] FROM LeaderBoard LEFT JOIN Users ON LeaderBoard.username=Users.username WHERE topic = '" + currentTopic + "' AND form_class LIKE '08%' ORDER BY score DESC;", connection);
+                }
+                else if (currentYearGroup == "9")
+                {
+                    cmd = new SqlCommand("SELECT TOP 10[LeaderBoard].[username],[LeaderBoard].[score],[LeaderBoard].[topic],[LeaderBoard].[exerciseType],[Users].[form_class] FROM LeaderBoard LEFT JOIN Users ON LeaderBoard.username=Users.username WHERE topic = '" + currentTopic + "' AND form_class LIKE '09%' ORDER BY score DESC;", connection);
+                }
+                else if (currentYearGroup == "10")
+                {
+                    cmd = new SqlCommand("SELECT TOP 10[LeaderBoard].[username],[LeaderBoard].[score],[LeaderBoard].[topic],[LeaderBoard].[exerciseType],[Users].[form_class] FROM LeaderBoard LEFT JOIN Users ON LeaderBoard.username=Users.username WHERE topic = '" + currentTopic + "' AND form_class LIKE '10%' ORDER BY score DESC;", connection);
+                }
+                else
+                {
+                    cmd = new SqlCommand("SELECT TOP 10[LeaderBoard].[username],[LeaderBoard].[score],[LeaderBoard].[topic],[LeaderBoard].[exerciseType],[Users].[form_class] FROM LeaderBoard LEFT JOIN Users ON LeaderBoard.username=Users.username WHERE topic = '" + currentTopic + "' ORDER BY score DESC;", connection);
+                }
+
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int index = 0;
+                    userId.Add(reader["username"].ToString());
+                    score.Add(reader["score"].ToString());
+                    exerciseType.Add(reader["exerciseType"].ToString());
+                    index = index + 1;
+                }
+                connection.Close();
+            }
 
             numberOfInstances = userId.Count();
-                for (int i = 0; i < numberOfInstances; i++)
+            for (int i = 0; i < numberOfInstances; i++)
+            {
+                connection.Open();
+                cmd = new SqlCommand("SELECT * FROM Users WHERE username = '" + userId[i] + "';", connection);
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
                 {
-                    connection.Open();
-
-                    cmd = new SqlCommand("SELECT * FROM Users WHERE username = '" + userId[i] + "';", connection);
-
-                    reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        formClass.Add(reader["form_class"].ToString());
-                    }
-
-                    connection.Close();
+                    formClass.Add(reader["form_class"].ToString());
                 }
+                connection.Close();
+            }
 
-                for (int i = numberOfInstances - 1; i >= 0; i--)
-                {
-                    if (currentYearGroup == "8")
-                    {
-                        if (formClass[i].Contains("9") || formClass[i].Contains("10"))
-                        {
-                            userId.RemoveAt(i);
-                            score.RemoveAt(i);
-                            formClass.RemoveAt(i);
-
-                            userId.ToArray();
-                            score.ToArray();
-                            formClass.ToArray();
-                        }
-                    }
-
-                    if (currentYearGroup == "9")
-                    {
-                        if (formClass[i].Contains("8") || formClass[i].Contains("10"))
-                        {
-                            userId.RemoveAt(i);
-                            score.RemoveAt(i);
-                            formClass.RemoveAt(i);
-
-                            userId.ToArray();
-                            score.ToArray();
-                            formClass.ToArray();
-                        }
-                    }
-
-                    if (currentYearGroup == "10")
-                    {
-                        if (formClass[i].Contains("8") || formClass[i].Contains("9"))
-                        {
-                            userId.RemoveAt(i);
-                            score.RemoveAt(i);
-                            formClass.RemoveAt(i);
-
-                            userId.ToArray();
-                            score.ToArray();
-                            formClass.ToArray();
-                            //}
-                        }
-                }
-
+            for (int i = numberOfInstances - 1; i >= 0; i--)
+            {
                 numberOfInstances = userId.Count();
 
                 if (numberOfInstances > 0)

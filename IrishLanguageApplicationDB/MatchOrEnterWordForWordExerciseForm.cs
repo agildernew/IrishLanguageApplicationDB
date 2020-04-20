@@ -214,6 +214,10 @@ namespace IrishLanguageApplicationDB
             sortedVocabularyIrish = vocabularyIrish.ToArray();
 
             numberOfInstances = vocabularyEnglish.Count();
+            if (numberOfInstances > 10)
+            {
+                numberOfInstances = 10;
+            }
             Random rand = new Random();
 
             // Stephens, R., 2014. Randomize arrays in C#. [Blog] C# Helper, Available at: <http://csharphelper.com/blog/2014/07/randomize-arrays-in-c/> [Accessed 3 March 2020].
